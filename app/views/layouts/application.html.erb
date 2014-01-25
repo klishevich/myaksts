@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Myaksts" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Myaksts" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "Конференция АНТОК в Екатеринбурге, июль 2014" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Конференция АНТОК в Екатеринбурге, июль 2014" %>">
     <%= stylesheet_link_tag "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -38,6 +38,37 @@
       <div class="jumbotron">
         <h1>Добро пожаловать на конференцию АНТОК-2014 в Екатеринбург!</h1>
         <p class="lead">Конференция АНТОК-2014 по науке и технике объединяет инженеров и ученых из всей России а также Кореи, с целью обсудить последние достижения и будущие тенденции в науке и технике. АНТОК-2014 пройдет в Екатеринбурге в июле 2014г.</p>
+            <div class="my1">
+            <div id="myCarousel" class="carousel slide">
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                  <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <%= image_tag("slide-image-1.jpg", alt: "") %>
+                    <div class="carousel-caption">
+                      <p>Конференция АНТОК-2011, Звенигород</p>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <%= image_tag("slide-image-2.jpg", alt: "") %>
+                    <div class="carousel-caption">
+                      <p>Этническая корейская научная конференция, Сеул, 2012</p>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <%= image_tag("slide-image-3.jpg", alt: "") %>
+                    <div class="carousel-caption">
+                      <p>Конференция АНТОК-2013, Новосибирск</p>
+                    </div>
+                  </div>
+                </div>
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+              </div>
+            </div>
         <a class="btn btn-large btn-success" href="#">Зарегистрироваться</a>
       </div>
 
