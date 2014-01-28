@@ -1,3 +1,65 @@
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        <h1>Добро пожаловать на конференцию АНТОК-2014 в Екатеринбург!</h1>
+        <p class="lead">В конференции АНТОК-2014 могут принять участие все желающие, в том числе члены научно-технических обществ корейцев России, а также стран СНГ, Европейского союза и Кореи. Программа конференции предусматривает возможность участия в ней специалистов из разных областей науки и техники. На конференции они смогут обсудить результаты последних научных и технологических разработок. Конференция состоится в Екатеринбурге в июле 2014 г.</p>
+            <div class="my1">
+            <div id="myCarousel" class="carousel slide">
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                  <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <%= image_tag("slide-image-1.jpg", alt: "") %>
+                    <div class="carousel-caption">
+                      <p>Конференция АНТОК-2011, Звенигород</p>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <%= image_tag("slide-image-2.jpg", alt: "") %>
+                    <div class="carousel-caption">
+                      <p>Этническая корейская научная конференция, Сеул, 2012</p>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <%= image_tag("slide-image-3.jpg", alt: "") %>
+                    <div class="carousel-caption">
+                      <p>Конференция АНТОК-2013, Новосибирск</p>
+                    </div>
+                  </div>
+                </div>
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+              </div>
+            </div>
+        <a class="btn btn-large btn-success" href="#">Зарегистрироваться</a>
+      </div>
+
+      <hr>
+
+      <!-- Example row of columns -->     
+      <div class="row-fluid">
+        <div class="span4">
+          <h3>Глобальное потепление</h3>
+          <p>Доклад профессора Иванова из МГУ по вопросам глобального потепления. Станет ли Сибирь Африкой?</p>
+          <p><a class="btn" href="#">Подробности &raquo;</a></p>
+        </div>
+        <div class="span4">
+          <h3>Куда падают метеориты</h3>
+          <p>Доклад профессора Петрова из Забайкальского госуниверситета. Как получить сувенир в виде метеорита? Астрономические расчеты.</p>
+          <p><a class="btn" href="#">Подробности &raquo;</a></p>
+       </div>
+        <div class="span4">
+          <h3>Куда уезжают люди</h3>
+          <p>Доклад доцента кафедры Новосибирского госуниверситета. О миграционных циклах на планете</p>
+          <p><a class="btn" href="#">Подробности &raquo;</a></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="span12">
+
+        </div>
+      </div> 
+      <hr>
+

@@ -1,0 +1,21 @@
+/- @users.each do |user|
+/  =>link_to user.name, user
+/!  |<span>test</span>
+ul
+  li.first: a[href="/a"] A link
+  li: a[href="/b"] B link
+h1 id="headline" 
+  |Welcome to my site.
+h1[id="headline" 
+class="lkjlkj"] page_headline
+h1#headline page_headline2
+a href="http://slim-lang.com" title='Slim Homepage' Goto the Slim homepage
+br
+- @users.each do |user|
+  =>link_to user.name, user
+  br
+  a href="/users/#{user.id}" Goto the #{user.name}
+  br
+  a href=="&amp;"
+  br
+  a href="&amp;"

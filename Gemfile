@@ -6,6 +6,8 @@ gem 'pg'
 gem 'capistrano'
 gem 'rvm-capistrano'
 gem 'capistrano-deploy'
+gem "slim-rails"
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
