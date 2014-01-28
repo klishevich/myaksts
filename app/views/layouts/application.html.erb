@@ -22,7 +22,7 @@
                 <li><a href="/about">О Конференции</a></li>
                 <li><a href="/programme">Программа</a></li>
                 <li><a href="/hotel">Размещение</a></li>
-                <li><a href="/sponsors">Спонсоры</a></li>
+                <li><%= link_to "Спонсоры", sponsors_path %></li>
                 <% if user_signed_in? %>
                 <li><%= link_to 'Выход', destroy_user_session_path, :method=>'delete' %></li>
                 <% else %>
