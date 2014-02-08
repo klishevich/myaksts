@@ -11,4 +11,11 @@ Myaksts::Application.routes.draw do
   root :to => "home#index"
   devise_for :users
   resources :users
+
+  resources :applics
+  
+  get 'view_applic', to: 'applics#show'
+  match '/edit_applic', to: 'applics#edit'
+  match '/apply', to: 'applics#new'
+
 end

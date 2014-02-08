@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="span8 offset2 applic-form">
+    <%= form_for(@applic) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <h3>Персональная информация</h3>
+      <%= f.label :fio %><%= f.text_field :fio %>
+      <%= f.label :fio_eng %><%= f.text_field :fio_eng %>      
+      <%= f.label :birth_date %><%= f.text_field :birth_date %>     
+      <%= f.label :sex %><%= f.text_field :sex %>   
+      <%= f.label :post_address %><%= f.text_field :post_address %>
+      <%= f.label :email %><%= f.text_field :email %>
+      <%= f.label :phones %><%= f.text_field :phones %>   
+      <h3>Образование</h3>            
+      <%= f.label :edu_institute %><%= f.text_field :edu_institute %>  
+      <%= f.label :edu_institute_address %><%= f.text_field :edu_institute_address %>      
+      <%= f.label :edu_specialization %><%= f.text_field :edu_specialization %>  
+      <%= f.label :uch_stepen %><%= f.text_field :uch_stepen %>
+      <h3>Работа</h3>
+      <%= f.label :work_company %><%= f.text_field :work_company %>
+      <%= f.label :work_start_year %><%= f.text_field :work_start_year %>
+      <%= f.label :work_department %><%= f.text_field :work_department %>
+      <%= f.label :work_position %><%= f.text_field :work_position %>
+      <%= f.label :work_specialization %><%= f.text_field :work_specialization %>
+      <h3>Дополнительная информация</h3>
+      <%= f.label :antok_city %><%= f.text_field :antok_city %>
+      <%= f.label :public_organizations %><%= f.text_field :public_organizations %>
+      <h3>Заявка на конференцию</h3>
+      <%= f.label :science_interests %><%= f.text_field :science_interests %>
+      <%= f.label :conf_topic %><%= f.text_field :conf_topic %>
+      <%= f.label :conf_section %><%= f.text_field :conf_section %>
+      <%= f.label :conf_coauthors %><%= f.text_field :conf_coauthors %>
+      <%= f.label :participation_type %><%= f.text_field :participation_type %>
+       <div class="alert">
+         <button type="button" class="close" data-dismiss="alert">&times;</button>
+           Перед тем как сохранить, проверьте правильность внесенных данных. После сохранения анкеты, внести изменения будет не возможно.
+       </div>
+      <%= f.submit 'Сохранить', class: "btn btn-large btn-primary", id: "Save" %>
+      <%= link_to 'Отменить', root_path, class: "btn btn-large btn-secondary" %>
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+ $(document).ready(function(){
+   $('#applic_birth').datepicker({format: 'yyyy-mm-dd'});
+})
+</script>

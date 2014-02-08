@@ -11,7 +11,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140119121058) do
+ActiveRecord::Schema.define(:version => 20140208191031) do
+
+  create_table "applics", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "fio"
+    t.string   "fio_eng"
+    t.date     "birth_date"
+    t.string   "sex"
+    t.text     "post_address"
+    t.string   "email"
+    t.string   "phones"
+    t.string   "edu_institute"
+    t.text     "edu_institute_address"
+    t.string   "edu_specialization"
+    t.string   "uch_stepen"
+    t.string   "work_company"
+    t.integer  "work_start_year"
+    t.string   "work_department"
+    t.string   "work_position"
+    t.string   "work_specialization"
+    t.text     "public_organizations"
+    t.string   "antok_city"
+    t.text     "science_interests"
+    t.text     "conf_topic"
+    t.string   "conf_section"
+    t.text     "conf_coauthors"
+    t.string   "participation_type"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
+
+  add_index "applics", ["user_id"], :name => "index_applics_on_user_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -38,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20140119121058) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "name"
+    t.boolean  "is_antok_member"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

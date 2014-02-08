@@ -2,4 +2,13 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+    activerecord:
+      attributes:
+        user:
+          name: "ФИО" 
+          password: "Пароль"
+          password_confirmation: "Подтверждение пароля"
+          remember_me: "Запомнить меня"
+          current_password: "Текущий пароль"
+          is_antok_member: "Являюсь членом АНТОК"
+    hello: "Hello world"
