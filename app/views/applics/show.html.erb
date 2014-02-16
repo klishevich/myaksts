@@ -7,36 +7,40 @@
       <%= render 'shared/error_messages', object: f.object %>
       <h3>Персональная информация</h3>
       <%= f.label :fio %><%= f.text_field :fio, disabled: true  %>
-      <%= f.label :fio_eng %><%= f.text_field :fio_eng, disabled: true  %>      
-      <%= f.label :birth_date %><%= f.text_field :birth_date, disabled: true  %>     
-      <%= f.label :sex %><%= f.text_field :sex, disabled: true  %>   
-      <%= f.label :post_address %><%= f.text_field :post_address, disabled: true  %>
+      <% if not_antok_member? %>
+        <%= f.label :fio_eng %><%= f.text_field :fio_eng, disabled: true  %>      
+        <%= f.label :birth_date %><%= f.text_field :birth_date, disabled: true  %>     
+        <%= f.label :sex %><%= f.text_field :sex, disabled: true  %>   
+        <%= f.label :post_address %><%= f.text_field :post_address, disabled: true  %>
+      <% end %>
       <%= f.label :email %><%= f.text_field :email, disabled: true  %>
       <%= f.label :phones %><%= f.text_field :phones, disabled: true  %>   
-      <h3>Образование</h3>            
-      <%= f.label :edu_institute %><%= f.text_field :edu_institute, disabled: true  %>  
-      <%= f.label :edu_institute_address %><%= f.text_field :edu_institute_address, disabled: true  %>      
-      <%= f.label :edu_specialization %><%= f.text_field :edu_specialization, disabled: true  %>  
+      <h3>Образование</h3>   
+      <% if not_antok_member? %>                 
+        <%= f.label :edu_institute %><%= f.text_field :edu_institute, disabled: true  %>  
+        <%= f.label :edu_institute_address %><%= f.text_field :edu_institute_address, disabled: true  %>      
+        <%= f.label :edu_specialization %><%= f.text_field :edu_specialization, disabled: true  %>  
+      <% end %>
       <%= f.label :uch_stepen %><%= f.text_field :uch_stepen, disabled: true  %>
       <h3>Работа</h3>
       <%= f.label :work_company %><%= f.text_field :work_company, disabled: true  %>
-      <%= f.label :work_start_year %><%= f.text_field :work_start_year, disabled: true  %>
-      <%= f.label :work_department %><%= f.text_field :work_department, disabled: true  %>
+      <% if not_antok_member? %> 
+        <%= f.label :work_start_year %><%= f.text_field :work_start_year, disabled: true  %>
+        <%= f.label :work_department %><%= f.text_field :work_department, disabled: true  %>
+        <%= f.label :work_specialization %><%= f.text_field :work_specialization, disabled: true  %>
+      <% end %>        
       <%= f.label :work_position %><%= f.text_field :work_position, disabled: true  %>
-      <%= f.label :work_specialization %><%= f.text_field :work_specialization, disabled: true  %>
       <h3>Дополнительная информация</h3>
       <%= f.label :antok_city %><%= f.text_field :antok_city, disabled: true  %>
-      <%= f.label :public_organizations %><%= f.text_field :public_organizations, disabled: true  %>
+      <% if not_antok_member? %> 
+        <%= f.label :public_organizations %><%= f.text_field :public_organizations, disabled: true  %>
+      <% end %>
       <h3>Заявка на конференцию</h3>
       <%= f.label :science_interests %><%= f.text_field :science_interests, disabled: true  %>
       <%= f.label :conf_topic %><%= f.text_field :conf_topic, disabled: true  %>
       <%= f.label :conf_section %><%= f.text_field :conf_section, disabled: true  %>
       <%= f.label :conf_coauthors %><%= f.text_field :conf_coauthors, disabled: true  %>
       <%= f.label :participation_type %><%= f.text_field :participation_type, disabled: true  %>
-       <div class="alert">
-         <button type="button" class="close" data-dismiss="alert">&times;</button>
-           Перед тем как сохранить, проверьте правильность внесенных данных. После сохранения анкеты, внести изменения будет не возможно.
-       </div>
     <% end %>    
     <%= link_to 'На главную', root_path, class: "btn btn-large btn-secondary" %>
   </div>
