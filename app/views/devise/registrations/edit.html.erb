@@ -4,6 +4,7 @@
   <%= display_base_errors resource %>
   <%= f.input :name, :autofocus => true %>
   <%= f.input :is_antok_member, :as => :boolean %>
+  <%= f.input :antok_id%>  
   <%= f.input :email, :required => true %>
   <%= f.input :password, :autocomplete => "off", :hint => "оставьте пустым если не хотите изменять", :required => false %>
   <%= f.input :password_confirmation, :required => false %>

@@ -8,10 +8,18 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :role_ids, :as => :admin
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :is_antok_member
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :is_antok_member, :antok_id
 
   validates :name, presence: true
 
   has_one :applic, dependent: :destroy  
+
+  validate :antok_id_cannot_be_blank
+
+  def antok_id_cannot_be_blank
+    if is_antok_member && antok_id.blank?
+      errors.add(:antok_id, :blank)
+    end
+  end
   
 end

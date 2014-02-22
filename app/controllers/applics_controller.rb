@@ -8,7 +8,7 @@ class ApplicsController < ApplicationController
   end
 
   def new
-    @applic = current_user.build_applic
+    @applic = current_user.build_applic(email: current_user.email, fio: current_user.name)
   end
 
   def create
