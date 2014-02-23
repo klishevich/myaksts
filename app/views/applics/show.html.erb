@@ -36,7 +36,7 @@
         <%= f.label :public_organizations %><%= f.text_field :public_organizations, disabled: true  %>
       <% end %>
       <h3>Заявка на конференцию</h3>
-      <%= f.label :science_interests %><%= f.text_field :science_interests, disabled: true  %>
+      <%= f.label :science_interests %><%= f.text_area :science_interests, rows: 5, disabled: true %>
       <%= f.label :conf_topic %><%= f.text_field :conf_topic, disabled: true  %>
       <%= f.label :conf_section %><%= f.text_field :conf_section, disabled: true  %>
       <%= f.label :conf_coauthors %><%= f.text_field :conf_coauthors, disabled: true  %>

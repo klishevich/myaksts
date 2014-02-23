@@ -17,7 +17,6 @@ class Applic < ActiveRecord::Base
   validates :science_interests, presence: true
   validates :conf_topic, presence: true
   validates :conf_section, presence: true
-  validates :conf_coauthors, presence: true
   validates :participation_type, presence: true
 
   validate :fio_eng_cannot_be_blank, :birth_date_cannot_be_blank, :sex_cannot_be_blank, :post_address_cannot_be_blank,
@@ -27,67 +26,67 @@ class Applic < ActiveRecord::Base
 
   def fio_eng_cannot_be_blank
     if !self.user.is_antok_member? && fio_eng.blank?
-      errors.add(:fio_eng, "can't be blank")
+      errors.add(:fio_eng, :blank)
     end
   end
 
   def birth_date_cannot_be_blank
     if !self.user.is_antok_member? && birth_date.blank?
-      errors.add(:birth_date, "can't be blank")
+      errors.add(:birth_date, :blank)
     end
   end
   
   def sex_cannot_be_blank
     if !self.user.is_antok_member? && sex.blank?
-      errors.add(:sex, "can't be blank")
+      errors.add(:sex, :blank)
     end
   end
 
   def post_address_cannot_be_blank
     if !self.user.is_antok_member? && post_address.blank?
-      errors.add(:post_address, "can't be blank")
+      errors.add(:post_address, :blank)
     end
   end
 
   def edu_institute_cannot_be_blank
     if !self.user.is_antok_member? && edu_institute.blank?
-      errors.add(:edu_institute, "can't be blank")
+      errors.add(:edu_institute, :blank)
     end
   end
 
   def edu_institute_address_cannot_be_blank
     if !self.user.is_antok_member? && edu_institute_address.blank?
-      errors.add(:edu_institute_address, "can't be blank")
+      errors.add(:edu_institute_address, :blank)
     end
   end
 
   def edu_specialization_cannot_be_blank
     if !self.user.is_antok_member? && edu_specialization.blank?
-      errors.add(:edu_specialization, "can't be blank")
+      errors.add(:edu_specialization, :blank)
     end
   end  
 
   def work_start_year_cannot_be_blank
     if !self.user.is_antok_member? && work_start_year.blank?
-      errors.add(:edu_specialization, "can't be blank")
+      errors.add(:edu_specialization, :blank)
     end
   end 
 
   def work_department_cannot_be_blank
     if !self.user.is_antok_member? && work_department.blank?
-      errors.add(:work_department, "can't be blank")
+      errors.add(:work_department, :blank)
     end
   end 
 
   def work_specialization_cannot_be_blank
     if !self.user.is_antok_member? && work_specialization.blank?
-      errors.add(:work_specialization, "can't be blank")
+      errors.add(:work_specialization, :blank)
     end
   end 
 
   def public_organizations_cannot_be_blank
     if !self.user.is_antok_member? && public_organizations.blank?
-      errors.add(:public_organizations, "can't be blank")
+      errors.add(:public_organizations, :blank)
     end
   end         
 

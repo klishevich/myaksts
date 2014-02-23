@@ -7,7 +7,8 @@
       <% if not_antok_member? %>
         <%= f.label :fio_eng %><%= f.text_field :fio_eng %>      
         <%= f.label :birth_date %><%= f.text_field :birth_date %>     
-        <%= f.label :sex %><%= f.text_field :sex %>   
+        <%= f.label :sex %><%= f.select :sex, 
+          options_for_select(["", "Мужской", "Женский"], :selected=> @applic.sex) %>   
         <%= f.label :post_address %><%= f.text_field :post_address %>
       <% end %>
       <%= f.label :email %><%= f.text_field :email %>
@@ -28,16 +29,18 @@
       <% end %>
       <%= f.label :work_position %><%= f.text_field :work_position %>
       <h3>Дополнительная информация</h3>
-      <%= f.label :antok_city %><%= f.text_field :antok_city %>
+      <%= f.label :antok_city %><%= f.select :antok_city, 
+          options_for_select(["","Москва", "Воронеж", "Екатеринбург", "Новосибирск", "Красноярск", "Дальний Восток"], :selected=> @applic.antok_city) %>
       <% if not_antok_member? %>       
         <%= f.label :public_organizations %><%= f.text_field :public_organizations %>
       <% end %>  
       <h3>Заявка на конференцию</h3>
-      <%= f.label :science_interests %><%= f.text_field :science_interests %>
+      <%= f.label :science_interests %><%= f.text_area :science_interests, rows: 5 %>
       <%= f.label :conf_topic %><%= f.text_field :conf_topic %>
       <%= f.label :conf_section %><%= f.text_field :conf_section %>
       <%= f.label :conf_coauthors %><%= f.text_field :conf_coauthors %>
-      <%= f.label :participation_type %><%= f.text_field :participation_type %>
+      <%= f.label :participation_type %><%= f.select :participation_type, 
+          options_for_select(["","Очное", "Заочное"], :selected=> @applic.participation_type) %>
        <div class="alert alert-info">
          <button type="button" class="close" data-dismiss="alert">&times;</button>
            Перед тем как сохранить, проверьте правильность внесенных данных. После сохранения анкеты, внести изменения будет не возможно.
@@ -49,6 +52,6 @@
 </div>
 <script type="text/javascript">
  $(document).ready(function(){
-   $('#applic_birth').datepicker({format: 'yyyy-mm-dd'});
+   $('#applic_birth_date').datepicker({format: 'yyyy-mm-dd'});
 })
 </script>
