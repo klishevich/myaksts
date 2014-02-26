@@ -68,7 +68,7 @@ class Applic < ActiveRecord::Base
 
   def work_start_year_cannot_be_blank
     if !self.user.is_antok_member? && work_start_year.blank?
-      errors.add(:edu_specialization, :blank)
+      errors.add(:work_start_year, :blank)
     end
   end 
 

@@ -1,12 +1,12 @@
 <h2>Регистрация на конференцию</h2>
 <div class="alert alert-info">
-  <b>Шаг 1 из 2</b>: На данном шаге указывается являетесь ли вы членом АНТОК.
+  <b>Шаг 1 из 2</b>: Создание учетной записи участника конференции АНТОК
 </div>
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
   <%= f.error_notification %>
   <%= display_base_errors resource %>
   <%= f.input :name, :autofocus => true, :required => true %>
-  <%= f.input :is_antok_member, :as => :boolean %>
+  <%= f.input :is_antok_member, :as => :boolean %> 
   <%= f.input :antok_id%>
   <%= f.input :email, :required => true %>
   <%= f.input :password, :required => true %>

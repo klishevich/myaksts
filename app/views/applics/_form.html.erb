@@ -37,7 +37,8 @@
       <h3>Заявка на конференцию</h3>
       <%= f.label :science_interests %><%= f.text_area :science_interests, rows: 5 %>
       <%= f.label :conf_topic %><%= f.text_field :conf_topic %>
-      <%= f.label :conf_section %><%= f.text_field :conf_section %>
+      <%= f.label :conf_section %><%= f.select :conf_section, 
+          options_for_select(["","Физика, математика", "Информационные (IT) и нанотехнологии", "Энергетика, электротехника, машиностроение, механика", "Химия, новые материалы и технологии их обработки", "Биотехнологии, биология, технологии живых систем, океанография", "Геология, природные ресурсы", "Общественные науки"], :selected=> @applic.conf_section) %>
       <%= f.label :conf_coauthors %><%= f.text_field :conf_coauthors %>
       <%= f.label :participation_type %><%= f.select :participation_type, 
           options_for_select(["","Очное", "Заочное"], :selected=> @applic.participation_type) %>
