@@ -74,14 +74,14 @@ Myaksts::Application.configure do
   config.action_mailer.sendmail_settings = {
     address: "localhost",
     port: 25,
-    domain: "my.aksts.ru",
+    domain: "e2014.aksts.ru",
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: "info@aksts.ru",
     password: "12345678m"
   }
 
-  config.action_mailer.default_url_options = { :host => 'my.aksts.ru' }
+  config.action_mailer.default_url_options = { :host => 'e2014.aksts.ru' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :sendmail
