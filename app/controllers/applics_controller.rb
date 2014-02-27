@@ -14,6 +14,7 @@ class ApplicsController < ApplicationController
   def create
     @applic = current_user.build_applic(params[:applic])
     if @applic.save
+      @applic.deliver
       flash[:success] = t(:application_sent)
       redirect_to @applic
     else

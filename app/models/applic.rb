@@ -24,6 +24,11 @@ class Applic < ActiveRecord::Base
   		:work_start_year_cannot_be_blank, :work_department_cannot_be_blank, :work_specialization_cannot_be_blank,
   		:public_organizations_cannot_be_blank
 
+  # Delivers to subscribers via email
+  def deliver
+    ApplicMailer.new_applic_notification(self).deliver
+  end
+
   def fio_eng_cannot_be_blank
     if !self.user.is_antok_member? && fio_eng.blank?
       errors.add(:fio_eng, :blank)
