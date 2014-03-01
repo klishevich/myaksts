@@ -1,10 +1,14 @@
       <!-- Jumbotron -->
       <div class="jumbotron">
         <% if user_signed_in? %>
-          <% if current_user.applic %>
-            <%= link_to "Смотреть мою заявку", current_user.applic, class: "btn btn-large btn-success"%>
+          <% if current_user.has_role? :admin %>
+            <%= link_to "Смотреть все заявки", applics_path, class: "btn btn-large btn-success"%>
           <% else %>
-            <%= link_to "Подать заявку (шаг 2)", new_applic_path, class: "btn btn-large btn-success"%>
+            <% if current_user.applic %>
+              <%= link_to "Смотреть мою заявку", current_user.applic, class: "btn btn-large btn-success"%>
+            <% else %>
+              <%= link_to "Подать заявку (шаг 2)", new_applic_path, class: "btn btn-large btn-success"%>
+            <% end %>
           <% end %>
           <%= link_to "Моя учетная запись", edit_user_registration_path, class: "btn btn-large"%>
         <% end %>

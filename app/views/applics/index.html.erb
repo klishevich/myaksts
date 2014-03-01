@@ -1,6 +1,6 @@
 <h1 id='h1_all_applics'>Поданные заявки</h1>
 <ul class="applics">
   <% @applics.each do |applic|%>
-    <li> <%= applic.fio %></li>
+    <li> <%= link_to applic.fio, applic %> (заявка подана: <%= applic.created_at.strftime("%d %b %Y") %>)</li>
   <% end %>
 </ul>

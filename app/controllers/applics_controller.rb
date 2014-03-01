@@ -1,10 +1,11 @@
 class ApplicsController < ApplicationController
   before_filter :signed_in_user
   before_filter :have_no_applic, only: [:new, :create]
+  load_and_authorize_resource only: :show
   # before_filter :admin_user, only: :index
 
   def index
-    @applics=Applic.all
+    @applics=Applic.limit(100).order("id desc")
   end
 
   def new
@@ -23,11 +24,7 @@ class ApplicsController < ApplicationController
   end
 
   def show
-  	# if current_user.admin? 
       @applic = Applic.find(params[:id])
-    # else
-      # @applic||=current_user.applic
-    # end
     # pdf = Prawn::Document.new
     # pdf.text "Hello World"
     # pdf.render_file "assignment.pdf"

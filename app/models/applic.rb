@@ -9,17 +9,18 @@ class Applic < ActiveRecord::Base
   validates :fio, presence: true, length: {minimum: 5}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}  
-  validates :phones, presence: true
-  validates :uch_stepen, presence: true
-  validates :work_company, presence: true
-  validates :work_position, presence: true
+  validates :phones, presence: true, length: {minimum: 10}
+  validates :uch_stepen, presence: true, length: {minimum: 5}
+  validates :work_company, presence: true, length: {minimum: 5}
+  validates :work_position, presence: true, length: {minimum: 5}
   validates :antok_city, presence: true
-  validates :science_interests, presence: true
-  validates :conf_topic, presence: true
+  validates :science_interests, presence: true, length: {minimum: 5}
+  validates :conf_topic, presence: true, length: {minimum: 10}
   validates :conf_section, presence: true
   validates :participation_type, presence: true
 
-  validate :fio_eng_cannot_be_blank, :birth_date_cannot_be_blank, :sex_cannot_be_blank, :post_address_cannot_be_blank,
+  validate :fio_eng_cannot_be_blank, :birth_date_cannot_be_blank, :birth_date_should_be_1920_1990, 
+      :sex_cannot_be_blank, :post_address_cannot_be_blank,
   		:edu_institute_cannot_be_blank, :edu_institute_address_cannot_be_blank, :edu_specialization_cannot_be_blank,
   		:work_start_year_cannot_be_blank, :work_department_cannot_be_blank, :work_specialization_cannot_be_blank,
   		:public_organizations_cannot_be_blank
@@ -38,6 +39,14 @@ class Applic < ActiveRecord::Base
   def birth_date_cannot_be_blank
     if !self.user.is_antok_member? && birth_date.blank?
       errors.add(:birth_date, :blank)
+    end
+  end
+
+  def birth_date_should_be_1920_1990
+    if !self.user.is_antok_member? && !birth_date.blank? && 
+      ((birth_date < Date.strptime("{ 1920, 1, 1 }", "{ %Y, %m, %d }")) ||
+      (birth_date > Date.strptime("{ 1990, 1, 1 }", "{ %Y, %m, %d }")))
+      errors.add(:birth_date, :should_be_1920_1990)
     end
   end
   
