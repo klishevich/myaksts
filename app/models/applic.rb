@@ -19,7 +19,7 @@ class Applic < ActiveRecord::Base
   validates :conf_section, presence: true
   validates :participation_type, presence: true
 
-  validate :fio_eng_cannot_be_blank, :birth_date_cannot_be_blank, :birth_date_should_be_1920_1990, 
+  validate :fio_eng_cannot_be_blank, :birth_date_cannot_be_blank, :birth_date_should_be_1920_2000, 
       :sex_cannot_be_blank, :post_address_cannot_be_blank,
   		:edu_institute_cannot_be_blank, :edu_institute_address_cannot_be_blank, :edu_specialization_cannot_be_blank,
   		:work_start_year_cannot_be_blank, :work_department_cannot_be_blank, :work_specialization_cannot_be_blank,
@@ -42,11 +42,11 @@ class Applic < ActiveRecord::Base
     end
   end
 
-  def birth_date_should_be_1920_1990
+  def birth_date_should_be_1920_2000
     if !self.user.is_antok_member? && !birth_date.blank? && 
       ((birth_date < Date.strptime("{ 1920, 1, 1 }", "{ %Y, %m, %d }")) ||
-      (birth_date > Date.strptime("{ 1990, 1, 1 }", "{ %Y, %m, %d }")))
-      errors.add(:birth_date, :should_be_1920_1990)
+      (birth_date > Date.strptime("{ 2000, 1, 1 }", "{ %Y, %m, %d }")))
+      errors.add(:birth_date, :should_be_1920_2000)
     end
   end
   
