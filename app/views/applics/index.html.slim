@@ -2,24 +2,24 @@ h1#h1_all_applics Поданные заявки
 table class="table table-striped"
   tr
     th №
-    th Дата подачи (МСК)
     th ФИО
     / th Работа, должность
     th Член АНТОК
     th Направление
     th Тип участия
+    th Дата подачи (МСК)    
     th 
   - var = 0
   - @applics.each do |applic|
     - var+=1
     tr
       td = var
-      td = l applic.created_at.in_time_zone("Moscow"), format: :short
       td = link_to applic.fio, applic
       / td #{applic.work_company}, #{applic.work_position}
       td = (applic.user.is_antok_member ? "Да" : "Нет")
       td = applic.conf_section
       td = applic.participation_type
+      td = l applic.created_at.in_time_zone("Moscow"), format: :short      
       td = link_to 'Скачать анкету', applic_path(applic, format: :pdf)
 
 / ul.applics
