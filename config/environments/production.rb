@@ -71,16 +71,6 @@ Myaksts::Application.configure do
   #   password: ENV["GMAIL_PASSWORD"]
   # }
 
-  # config.action_mailer.sendmail_settings = {
-  #   address: "localhost",
-  #   port: 25,
-  #   domain: "e2014.aksts.ru",
-  #   authentication: "plain",
-  #   enable_starttls_auto: true,
-  #   user_name: "info@aksts.ru",
-  #   password: "12345678m"
-  # }
-
   config.action_mailer.default_url_options = { :host => 'e2014.aksts.ru' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
