@@ -6,6 +6,11 @@ class ApplicsController < ApplicationController
 
   def index
     @applics=Applic.limit(100).order("id")
+    respond_to do |format|
+      format.html
+      format.csv { render text: @applics.to_csv }
+      format.xls #{ send_data @applics.to_csv(col_sep: "\t") }
+    end
   end
 
   def new

@@ -30,6 +30,15 @@ class Applic < ActiveRecord::Base
     ApplicMailer.new_applic_notification(self).deliver
   end
 
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |applic|
+        csv << applic.attributes.values_at(*column_names)
+      end
+    end
+  end  
+
   def fio_eng_cannot_be_blank
     if !self.user.is_antok_member? && fio_eng.blank?
       errors.add(:fio_eng, :blank)
