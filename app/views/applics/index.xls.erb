@@ -37,8 +37,8 @@
       </Row>
     <% @applics.each do |applic| %>
       <Row>
-        <Cell><Data ss:Type="Number"><%= applic.id %></Data></Cell>
-        <Cell><Data ss:Type="Date"><%= applic.created_at.strftime("%d.%m.%Y") %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.created_at.strftime("%d.%m.%Y") %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.user.is_antok_member ? "Да" : "Нет" %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.user.antok_id %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.fio %></Data></Cell>
