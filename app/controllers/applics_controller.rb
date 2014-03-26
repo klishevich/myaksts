@@ -62,11 +62,11 @@ class ApplicsController < ApplicationController
   # end
 
   def edit
-  	@applic=current_user.applic
+  	@applic=Applic.find(params[:id])
   end
 
   def update
-    @applic = current_user.applic
+    @applic = Applic.find(params[:id])
     if @applic.update_attributes(params[:applic])
       flash[:success] = t(:application_updated_successfuly)
       redirect_to @applic
