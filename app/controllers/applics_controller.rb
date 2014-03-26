@@ -1,11 +1,12 @@
 class ApplicsController < ApplicationController
   before_filter :signed_in_user
   before_filter :have_no_applic, only: [:new, :create]
-  load_and_authorize_resource only: :show
+  load_and_authorize_resource 
   # before_filter :admin_user, only: :index
 
   def index
     @applics=Applic.limit(100).order("id")
+    authorize! :index, @applics
     respond_to do |format|
       format.html
       format.csv { render text: @applics.to_csv }
@@ -30,6 +31,7 @@ class ApplicsController < ApplicationController
 
   def show
     @applic = Applic.find(params[:id])
+    # authorize! :show, @applic
     pdf = ApplicReport.new
     pdf.generate(@applic)
     respond_to do |format|
