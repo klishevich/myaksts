@@ -1,0 +1,348 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+ru:
+    date:
+      abbr_day_names:
+      - Вс
+      - Пн
+      - Вт
+      - Ср
+      - Чт
+      - Пт
+      - Сб
+      abbr_month_names:
+      -
+      - янв.
+      - февр.
+      - марта
+      - апр.
+      - мая
+      - июня
+      - июля
+      - авг.
+      - сент.
+      - окт.
+      - нояб.
+      - дек.
+      day_names:
+      - воскресенье
+      - понедельник
+      - вторник
+      - среда
+      - четверг
+      - пятница
+      - суббота
+      formats:
+        default: ! '%d.%m.%Y'
+        long: ! '%d %B %Y'
+        short: ! '%d %b'
+      month_names:
+      -
+      - января
+      - февраля
+      - марта
+      - апреля
+      - мая
+      - июня
+      - июля
+      - августа
+      - сентября
+      - октября
+      - ноября
+      - декабря
+      order:
+      - :day
+      - :month
+      - :year
+    datetime:
+      distance_in_words:
+        about_x_hours:
+          few: около %{count} часов
+          many: около %{count} часов
+          one: около %{count} часа
+          other: около %{count} часа
+        about_x_months:
+          few: около %{count} месяцев
+          many: около %{count} месяцев
+          one: около %{count} месяца
+          other: около %{count} месяца
+        about_x_years:
+          few: около %{count} лет
+          many: около %{count} лет
+          one: около %{count} года
+          other: около %{count} лет
+        almost_x_years:
+          one: почти 1 год
+          few: почти %{count} года
+          many: почти %{count} лет
+          other: почти %{count} лет
+        half_a_minute: меньше минуты
+        less_than_x_minutes:
+          few: меньше %{count} минут
+          many: меньше %{count} минут
+          one: меньше %{count} минуты
+          other: меньше %{count} минуты
+        less_than_x_seconds:
+          few: меньше %{count} секунд
+          many: меньше %{count} секунд
+          one: меньше %{count} секунды
+          other: меньше %{count} секунды
+        over_x_years:
+          few: больше %{count} лет
+          many: больше %{count} лет
+          one: больше %{count} года
+          other: больше %{count} лет
+        x_days:
+          few: ! '%{count} дня'
+          many: ! '%{count} дней'
+          one: ! '%{count} день'
+          other: ! '%{count} дня'
+        x_minutes:
+          few: ! '%{count} минуты'
+          many: ! '%{count} минут'
+          one: ! '%{count} минуту'
+          other: ! '%{count} минуты'
+        x_months:
+          few: ! '%{count} месяца'
+          many: ! '%{count} месяцев'
+          one: ! '%{count} месяц'
+          other: ! '%{count} месяца'
+        x_seconds:
+          few: ! '%{count} секунды'
+          many: ! '%{count} секунд'
+          one: ! '%{count} секунда'
+          other: ! '%{count} секунды'
+      prompts:
+        day: День
+        hour: Часов
+        minute: Минут
+        month: Месяц
+        second: Секунд
+        year: Год
+    errors: &errors
+      format: ! '%{attribute} %{message}'
+      messages:
+        accepted: нужно подтвердить
+        blank: не может быть пустым
+        should_be_1920_2000: должна быть от 1920 до 2000 года
+        confirmation: не совпадает с подтверждением
+        empty: не может быть пустым
+        equal_to: может иметь лишь значение, равное %{count}
+        even: может иметь лишь нечетное значение
+        exclusion: имеет зарезервированное значение
+        greater_than: может иметь значение большее %{count}
+        greater_than_or_equal_to: может иметь значение большее или равное %{count}
+        inclusion: имеет непредусмотренное значение
+        invalid: имеет неверное значение
+        less_than: может иметь значение меньшее чем %{count}
+        less_than_or_equal_to: может иметь значение меньшее или равное %{count}
+        not_a_number: не является числом
+        not_an_integer: не является целым числом
+        odd: может иметь лишь четное значение
+        record_invalid: ! 'Возникли ошибки: %{errors}'
+        taken: уже существует
+        too_long:
+          few: слишком большой длины (не может быть больше чем %{count} символа)
+          many: слишком большой длины (не может быть больше чем %{count} символов)
+          one: слишком большой длины (не может быть больше чем %{count} символ)
+          other: слишком большой длины (не может быть больше чем %{count} символа)
+        too_short:
+          few: недостаточной длины (не может быть меньше %{count} символов)
+          many: недостаточной длины (не может быть меньше %{count} символов)
+          one: недостаточной длины (не может быть меньше %{count} символа)
+          other: недостаточной длины (не может быть меньше %{count} символа)
+        wrong_length:
+          few: неверной длины (может быть длиной ровно %{count} символа)
+          many: неверной длины (может быть длиной ровно %{count} символов)
+          one: неверной длины (может быть длиной ровно %{count} символ)
+          other: неверной длины (может быть длиной ровно %{count} символа)
+      template:
+        body: ! 'Проблемы возникли со следующими полями:'
+        header:
+          few: ! '%{model}: сохранение не удалось из-за %{count} ошибок'
+          many: ! '%{model}: сохранение не удалось из-за %{count} ошибок'
+          one: ! '%{model}: сохранение не удалось из-за %{count} ошибки'
+          other: ! '%{model}: сохранение не удалось из-за %{count} ошибки'
+    helpers:
+      select:
+        prompt: ! 'Выберите: '
+      submit:
+        create: Создать %{model}
+        submit: Сохранить %{model}
+        update: Сохранить %{model}
+    number:
+      currency:
+        format:
+          delimiter: ! ' '
+          format: ! '%n %u'
+          precision: 2
+          separator: ','
+          significant: false
+          strip_insignificant_zeros: false
+          unit: 'руб.'
+      format:
+        delimiter: ! ' '
+        precision: 3
+        separator: ','
+        significant: false
+        strip_insignificant_zeros: false
+      human:
+        decimal_units:
+          format: ! '%n %u'
+          units:
+            billion:
+              few: миллиардов
+              many: миллиардов
+              one: миллиард
+              other: миллиардов
+            million:
+              few: миллионов
+              many: миллионов
+              one: миллион
+              other: миллионов
+            quadrillion:
+              few: квадриллионов
+              many: квадриллионов
+              one: квадриллион
+              other: квадриллионов
+            thousand:
+              few: тысяч
+              many: тысяч
+              one: тысяча
+              other: тысяч
+            trillion:
+              few: триллионов
+              many: триллионов
+              one: триллион
+              other: триллионов
+            unit: ''
+        format:
+          delimiter: ''
+          precision: 1
+          significant: false
+          strip_insignificant_zeros: false
+        storage_units:
+          format: ! '%n %u'
+          units:
+            byte:
+              few: байта
+              many: байт
+              one: байт
+              other: байта
+            gb: ГБ
+            kb: КБ
+            mb: МБ
+            tb: ТБ
+      percentage:
+        format:
+          delimiter: ''
+      precision:
+        format:
+          delimiter: ''
+    support:
+      array:
+        last_word_connector: ! ' и '
+        two_words_connector: ! ' и '
+        words_connector: ! ', '
+    time:
+      am: утра
+      formats:
+        default: ! '%a, %d %b %Y, %H:%M:%S %z'
+        long: ! '%d %B %Y, %H:%M'
+        short: ! '%d %b, %H:%M'
+      pm: вечера
+    activerecord:
+      attributes:
+        user:
+          name: "ФИО" 
+          password: "Пароль"
+          password_confirmation: "Подтверждение пароля"
+          remember_me: "Запомнить меня"
+          current_password: "Текущий пароль"
+          is_antok_member: "Являюсь членом АНТОК"
+          antok_id: "ID АНТОК (заполняется для членов АНТОК, свой ID можно узнать у Елены Хе - elenakhe@ngs.ru)"
+          cant_be_blank: "не может быть пустым"
+        applic:
+          fio: "ФИО"
+          fio_eng: "ФИО по-английски"
+          birth_date: "Дата рождения (формат ГГГГ-ММ-ДД)"
+          sex: "Пол"
+          post_address: "Почтовый адрес"
+          phones: "Телефоны с кодом города (мобильный / рабочий / домашний / факс)"
+          edu_institute: "Институт"
+          edu_institute_address: "Адрес института"
+          edu_specialization: "Специализация / направление обучения"
+          uch_stepen: "Ученая степень, ученое звание, диплом специалиста, бакалавра, магистра и год получения / студентам указывать курс"
+          work_company: "Название организации"
+          work_start_year: "Год начала работы в организации"
+          work_department: "Подразделение / отдел / департамент / кафедра"
+          work_position: "Должность"
+          work_specialization: "Специализация (пример: химия, энергетика, авиастроение, новые материалы, биотехнологии, прикладная математика, ИТ)"
+          antok_city: "Ближайшее подразделение АНТОК"
+          public_organizations: "Участие в других общественных организациях"
+          science_interests: "Область научных/профессиональных интересов"
+          conf_topic: "Тема доклада"
+          conf_section: "Направление"
+          conf_coauthors: "Соавторы (указываются при наличии: ФИО, место работы, должность, почта)"
+          participation_type: "Тип участия"
+    hello: "Hello world"
+    edit_your_application: "Отредактируйте вашу анкету"
+    your_application_details: "Информация по вашей заявке"
+    home: "На главную"
+    edit: "Редактировать"
+    save: "Сохранить"
+    cancel: "Отмена"
+    sign_up: "Зарегистрироваться"
+    sign_up_to_contest: "Подать заявку на конкурс"
+    create_my_account: "Заргегистрировать"
+    application_updated_successfuly: "Ваша заявка успешна сохранена"
+    application_sent: "Ваша заявка отправлена"
+    grant_contest: "Конкурс грантов АНТОК!"
+    grant_contest_description: "Конкурс грантов АНТОК для молодежи - российских корейцев"
+    view_application: "Посмотреть мою заявку"
+    your_status: "1. Ваш текущий статус"
+    your_event: "2. Отметьте, в каком мероприятии хотите участвовать (можно отметить несколько)"
+    your_specialization: "4. Ваше направление подготовки/специализация"
+    your_personal_info: "3. Персональные данные"
+    your_add_info: "5. Дополнительная информация"
+    your_bal: "Академическая успеваемость (информация должна быть подтверждена документально)"
+    your_social: "Опыт участия в общественной работе"
+    your_recomendations: "Наличие рекомендаций для участия в конкурсе грантов АНТОК (информация должна быть подтверждена документально)"
+    your_esse: "6. Вопросы-эссе (обязательны для заполнения)"
+    welcome_aksts: "Конкурс грантов АНТОК"
+    welcome_aksts_description: "Конкурс грантов АНТОК для молодежи - российских корейцев!"
+    welcome_to_aksts: "Добро пожаловать в АНТОК!"
+    welcome_email_subject: "Добро пожаловать на сайт АНТОК"
+    password_reset_email_subject: "Сброс пароля на сайте АНТОК"
+    profile_updated: "Ваш профиль был обновлен"
+    user_destroyed: "Пользователь удален"
+    you_can_not_delete_youself: "Нельзя удалить себя"
+    email_sent_with_password_reset_instructions: "Отправлено эл. письмо с инструкцией по смене пароля"
+    password_reset_has_expired: "Ссылка для изменения пароля просрочена"
+    password_has_been_reset: "Пароль был изменен"
+    message_saved: "Новость сохранена"
+    message_updated_successfuly: "Новость успешно обновлена"
+    new_message: "Создать новость"
+    messages_list: "К списку новостей"
+    too_long_twit: "Длина твита не должна превышать 140 знаков. Длина вашего: "
+    your_sex: "Ваш пол"
+    please_sign_in: "Пожалуйста войдите в систему"
+    you_already_have_application: "У вас уже есть заявка на конференцию"
+    application_registered: "Зарегистрирована заявка на конференцию АНТОК-2014"
+    in_development: "Тут будут данные участника... пока еще не готово :)"
+    anketa: "Анкета участника конференции АНТОК-2014"
+    personal_info: "Персональная информация"
+    education: "Образование"
+    work: "Работа"
+    additional_info: "Дополнительная информация"
+    applicaion_info: "Заявка на конференцию"
+    yes1: "Да"
+    no1: "Нет"
+    id_antok: "ID АНТОК"
+    application_number: "Номер заявки"
+    application_date: "Дата подачи заявки"
+    phones: "Телефоны (моб/раб/дом/факс)"
+    birth_date: "Дата рождения (формат ДД.ММ.ГГГГ)"
+    work_specialization: "Специализация"
+    conf_coauthors: "Соавторы"

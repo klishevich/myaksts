@@ -42,35 +42,79 @@
 
 
       /* Customize the navbar links to be fill the entire space of the .navbar */
-      .navbar .navbar-inner {
+      .navbar {
+        padding: 20px 0 0 0;
+        // padding-top: 50;
+      } 
+
+      .navbar-inner {
         padding: 0;
       }
       .navbar .nav {
         margin: 0;
         display: table;
         width: 100%;
-      }
-      .navbar .nav li {
-        display: table-cell;
-        width: 16.5%;
-        float: none;
-      }
-      .navbar .nav li a {
-        font-weight: bold;
-        text-align: center;
-        border-left: 1px solid rgba(255,255,255,.75);
-        border-right: 1px solid rgba(0,0,0,.1);
-      }
-      .navbar .nav li:first-child a {
-        border-left: 0;
-        border-radius: 3px 0 0 3px;
-      }
-      .navbar .nav li:last-child a {
-        border-right: 0;
-        border-radius: 0 3px 3px 0;
+        li {
+          display: table-cell;
+          width: 16.5%;
+          float: none; 
+          a {
+            font-weight: bold;
+            text-align: center;
+            border-left: 1px solid rgba(255,255,255,.75);
+            border-right: 1px solid rgba(0,0,0,.1);            
+          }   
+          &:first-child a {
+            border-left: 0;
+            border-radius: 3px 0 0 3px;            
+          }     
+          &:last-child a {
+            border-right: 0;
+            border-radius: 0 3px 3px 0;
+          } 
+        }
       }
 
       .my1 {
         width: 660px;
         margin: 0 auto;
       }
+
+      .site-name {
+        float: left;
+        width: 70%;
+      }
+
+      .lang-box {
+        float:right;
+        width: 30%;
+      }
+
+      .lang1 {
+        float:left;
+      }
+
+
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px;
+  a {
+    color: gray;
+    &:hover {
+      color: black;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}
