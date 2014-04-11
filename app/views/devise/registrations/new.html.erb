@@ -1,6 +1,6 @@
-<h2>Регистрация на конференцию</h2>
+<h2><%= t :sign_up_registration %></h2>
 <div class="alert alert-info">
-  <b>Шаг 1 из 2</b>: Создание учетной записи участника конференции АНТОК
+  <%= t :sign_up_info %>
 </div>
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
   <%= f.error_notification %>
@@ -11,6 +11,6 @@
   <%= f.input :email, :required => true %>
   <%= f.input :password, :required => true %>
   <%= f.input :password_confirmation, :required => true %>
-  <%= f.button :submit, 'Зарегистрироваться', :class => 'btn-primary' %>
+  <%= f.button :submit, t(:sign_up), :class => 'btn-primary' %>
 <% end %>
 <%= render "devise/shared/links" %>

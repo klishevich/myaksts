@@ -1,11 +1,11 @@
-<% provide(:title, 'Заполнение заявки на конференцию') %>
-<h1>Заполнение заявки на конференцию</h1>
+<% provide(:title, t(:step2_title)) %>
+<h1><%= t(:step2_title) %></h1>
 <% if antok_member? %>
-  <p>( Сокращенная форма анкеты для члена АНТОК )</p>
+  <p><%= t(:step2_comment_short) %></p>
 <% else %>
-  <p>( Расширенная форма анкеты для не членов АНТОК )</p>
+  <p><%= t(:step2_comment_full) %></p>
 <% end %>
 <div class="alert alert-info">
-  <b>Шаг 2 из 2</b>: Подача заявки на участие в конференции
+  <%= t(:step2_info) %>
 </div>
 <%= render 'form' %>

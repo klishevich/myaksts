@@ -5,15 +5,15 @@
             <%= link_to "Смотреть все заявки", applics_path, class: "btn btn-large btn-success"%>
           <% else %>
             <% if current_user.applic %>
-              <%= link_to "Смотреть мою заявку", current_user.applic, class: "btn btn-large btn-success"%>
+              <%= link_to t(:step2_view_btn), current_user.applic, class: "btn btn-large btn-success"%>
             <% else %>
-              <%= link_to "Подать заявку (шаг 2)", new_applic_path, class: "btn btn-large btn-success"%>
+              <%= link_to t(:step2_apply_btn), new_applic_path, class: "btn btn-large btn-success"%>
             <% end %>
           <% end %>
-          <%= link_to "Моя учетная запись", edit_user_registration_path, class: "btn btn-large"%>
+          <%= link_to t(:step2_my_account_btn), edit_user_registration_path, class: "btn btn-large"%>
         <% end %>
-        <h1>Добро пожаловать на конференцию АНТОК-2014 в Екатеринбург!</h1>
-        <p class="lead">В конференции АНТОК-2014 могут принять участие все желающие, в том числе члены научно-технических обществ корейцев России, а также стран СНГ, Европейского союза и Кореи. Программа конференции предусматривает возможность участия в ней специалистов из разных областей науки и техники. На конференции они смогут обсудить результаты последних научных и технологических разработок. Конференция состоится в Екатеринбурге в июле 2014 г.</p>
+        <h1><%= t(:home_welcome) %></h1>
+        <p class="lead"><%= t(:home_lead) %></p>
             <div class="my1">
             <div id="myCarousel" class="carousel slide">
                 <ol class="carousel-indicators">
@@ -49,7 +49,7 @@
         <p><%= link_to "Download 1-st informational letter (in english)", '/docs/Inform1-AKSTSconf2014_eng.pdf'%></p>
         <br/>    
         <% if !user_signed_in? %>
-        <%= link_to "Зарегистрироваться", new_user_registration_path, class: "btn btn-large btn-success"%>
+        <%= link_to t(:sign_up), new_user_registration_path, class: "btn btn-large btn-success"%>
         <% end %>
       </div>
 

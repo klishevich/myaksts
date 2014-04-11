@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Конференция АНТОК в Екатеринбурге, июль 2014" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : t(:home_conf_antok) %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Конференция АНТОК в Екатеринбурге, июль 2014" %>">
     <%= stylesheet_link_tag "application", media: "all" %>
     <%= javascript_include_tag "application" %>
@@ -14,29 +14,29 @@
       <div class="container">          
       <div class="masthead">
         <div class="site-name">
-          <h3 class="muted">Конференция АНТОК в Екатеринбурге, июль 2014</h3>
+          <h3 class="muted"><%= t :home_conf_antok %></h3>
         </div>
         <div class="lang_box">
           <div class="lang1">
-            <%= link_to image_tag("ru.png", alt: ""), '/?locale=ru', title: "Переключиться на Русский" %>
+            <%= link_to image_tag("ru.png", alt: ""), "#{request.path}?locale=ru", title: "Переключиться на Русский" %>
           </div>
           <div class="lang2">
-            <%= link_to image_tag("en.png", alt: ""), '/?locale=en', title: "Switch to English" %>
+            <%= link_to image_tag("en.png", alt: ""), "#{request.path}?locale=en", title: "Switch to English" %>
           </div>
         </div>
         <div class="navbar">
           <div class="navbar-inner">
             <div class="container">
               <ul class="nav">
-                <li><%= link_to 'Главная', root_path %></li>
-                <li><a href="/about">О Конференции</a></li>
-                <li><a href="/programme">Программа</a></li>
-                <li><a href="/hotel">Размещение</a></li>
-                <li><%= link_to "Спонсоры", sponsors_path %></li>
+                <li><%= link_to t(:home_link_home), root_path %></li>
+                <li><%= link_to t(:home_link_conf), about_path %></li>
+                <li><%= link_to t(:home_link_prog), programme_path %></li>
+                <li><%= link_to t(:home_link_hotel), hotel_path %></li>
+                <li><%= link_to t(:home_link_sp), sponsors_path %></li>
                 <% if user_signed_in? %>
-                <li><%= link_to 'Выход', destroy_user_session_path, :method=>'delete' %></li>
+                <li><%= link_to t(:home_link_log_out), destroy_user_session_path, :method=>'delete' %></li>
                 <% else %>
-                <li><%= link_to 'Вход', new_user_session_path %></li>
+                <li><%= link_to t(:home_link_log_in), new_user_session_path %></li>
                 <% end %>
               </ul>
             </div>
