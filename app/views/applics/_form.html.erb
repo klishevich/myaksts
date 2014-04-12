@@ -8,7 +8,8 @@
         <%= f.label :fio_eng %><%= f.text_field :fio_eng %>      
         <%= f.label :birth_date %><%= f.text_field :birth_date %>     
         <%= f.label :sex %><%= f.select :sex, 
-          options_for_select(["", "Мужской", "Женский"], :selected=> @applic.sex) %>   
+          options_for_select([[t(:choose_value),""],[t(:male), "Мужской"], 
+            [t(:female), "Женский"]], @applic.sex) %>   
         <%= f.label :post_address %><%= f.text_field :post_address %>
       <% end %>
       <%= f.label :email %><%= f.text_field :email %>
@@ -30,7 +31,9 @@
       <%= f.label :work_position %><%= f.text_field :work_position %>
       <h3><%= t(:additional_info) %></h3>
       <%= f.label :antok_city %><%= f.select :antok_city, 
-          options_for_select(["","Москва", "Воронеж", "Екатеринбург", "Новосибирск", "Красноярск", "Дальний Восток"], :selected=> @applic.antok_city) %>
+          options_for_select([[t(:choose_value),""], [t(:moscow),"Москва"], [t(:voronezh), "Воронеж"],
+            [t(:ekaterinburg), "Екатеринбург"], [t(:novosibirsk),"Новосибирск"], [t(:krasnoyarsk),"Красноярск"],
+            [t(:far_east),"Дальний Восток"]], :selected=> @applic.antok_city) %>
       <% if not_antok_member? %>       
         <%= f.label :public_organizations %><%= f.text_field :public_organizations %>
       <% end %>  
@@ -38,10 +41,10 @@
       <%= f.label :science_interests %><%= f.text_area :science_interests, rows: 5 %>
       <%= f.label :conf_topic %><%= f.text_field :conf_topic %>
       <%= f.label :conf_section %><%= f.select :conf_section, 
-          options_for_select(["","Физика, математика", "Информационные (IT) и нанотехнологии", "Энергетика, электротехника, машиностроение, механика", "Химия, новые материалы и технологии их обработки", "Биотехнологии, биология, технологии живых систем, океанография", "Геология, природные ресурсы", "Общественные науки"], :selected=> @applic.conf_section) %>
+          options_for_select([[t(:choose_value),""],[t(:physics_maths),"Физика, математика"], [t(:it_nanothechnologies), "Информационные (IT) и нанотехнологии"], [t(:power_electrical_engineering),"Энергетика, электротехника, машиностроение, механика"], [t(:chemistry_new_materials), "Химия, новые материалы и технологии их обработки"], [t(:biotechnology_biology), "Биотехнологии, биология, технологии живых систем, океанография"], [t(:geology_natural_resources), "Геология, природные ресурсы"], [t(:social_sciences), "Общественные науки"]], :selected=> @applic.conf_section) %>
       <%= f.label :conf_coauthors %><%= f.text_field :conf_coauthors %>
       <%= f.label :participation_type %><%= f.select :participation_type, 
-          options_for_select(["","Очное", "Заочное"], :selected=> @applic.participation_type) %>
+          options_for_select([[t(:choose_value),""], [t(:participance), "Очное"], [t(:publications_only), "Заочное"]], :selected=> @applic.participation_type) %>
        <div class="alert alert-info">
          <button type="button" class="close" data-dismiss="alert">&times;</button>
            <%= t(:step2_warning) %>

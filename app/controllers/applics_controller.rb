@@ -42,25 +42,6 @@ class ApplicsController < ApplicationController
     end
   end
 
-  #   def show
-  #   if current_user.admin? 
-  #     @applic = Applic.find(params[:id])
-  #   else
-  #     @applic||=current_user.applic
-  #   end
-  #   # pdf = Prawn::Document.new
-  #   # pdf.text "Hello World"
-  #   # pdf.render_file "assignment.pdf"
-  #   pdf = ApplicReport1.new
-  #   pdf.generate(@applic)
-  #   respond_to do |format|
-  #     format.html
-  #     format.pdf do
-  #       send_data pdf.render, filename: "applic#{@applic.id}.pdf", type: "application/pdf", disposition: "inline"
-  #     end          
-  #   end
-  # end
-
   def edit
   	@applic=Applic.find(params[:id])
   end
