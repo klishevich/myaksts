@@ -13,7 +13,7 @@ class Applic < ActiveRecord::Base
   validates :uch_stepen, presence: true, length: {minimum: 5}
   validates :work_company, presence: true, length: {minimum: 5}
   validates :work_position, presence: true, length: {minimum: 5}
-  validates :antok_city, presence: true
+  # validates :antok_city, presence: true
   validates :science_interests, presence: true, length: {minimum: 5}
   validates :conf_topic, presence: true, length: {minimum: 10}
   validates :conf_section, presence: true

@@ -38,9 +38,14 @@
       <h3><%= t(:applicaion_info) %></h3>
       <%= f.label :science_interests %><%= f.text_area :science_interests, rows: 5, disabled: true %>
       <%= f.label :conf_topic %><%= f.text_field :conf_topic, disabled: true  %>
-      <%= f.label :conf_section %><%= f.text_field :conf_section, disabled: true  %>
+      <!-- <%= f.label :conf_section %><%= f.text_field :conf_section, disabled: true  %> -->
+      <%= f.label :conf_section %><%= f.select :conf_section, 
+          options_for_select([[t(:choose_value),""],[t(:physics_maths),"Физика, математика"], [t(:it_nanothechnologies), "Информационные (IT) и нанотехнологии"], [t(:power_electrical_engineering),"Энергетика, электротехника, машиностроение, механика"], [t(:chemistry_new_materials), "Химия, новые материалы и технологии их обработки"], [t(:biotechnology_biology), "Биотехнологии, биология, технологии живых систем, океанография"], [t(:geology_natural_resources), "Геология, природные ресурсы"], [t(:social_sciences), "Общественные науки"]], :selected=> @applic.conf_section), {:size=>30}, {:disabled => true} %>
       <%= f.label :conf_coauthors %><%= f.text_field :conf_coauthors, disabled: true  %>
-      <%= f.label :participation_type %><%= f.text_field :participation_type, disabled: true  %>
+      <%= f.label :participation_type %>
+      <%= f.select :participation_type, 
+          options_for_select([[t(:choose_value),""], [t(:participance), "Очное"], [t(:publications_only), "Заочное"]], :selected=> @applic.participation_type), {}, {:disabled => true} %>
+      <!-- <%= f.text_field :participation_type, disabled: true  %> -->
     <% end %>    
     <%= link_to t(:home_link), root_path, class: "btn btn-large btn-secondary" %>
   </div>
