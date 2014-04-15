@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :role_ids, :as => :admin
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :is_antok_member, :antok_id
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :is_antok_member, :antok_id,
+    :is_foreign
 
   validates :name, presence: true
 
@@ -16,10 +17,21 @@ class User < ActiveRecord::Base
 
   validate :antok_id_cannot_be_blank
 
+  before_save :update_foreign_params
+
   def antok_id_cannot_be_blank
     if is_antok_member && antok_id.blank?
       errors.add(:antok_id, :blank)
     end
   end
+
+  private
+
+    def update_foreign_params
+      if self.is_foreign
+        self.is_antok_member = true
+        self.antok_id = 'F'
+      end
+    end
   
 end

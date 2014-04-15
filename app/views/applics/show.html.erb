@@ -30,8 +30,10 @@
         <%= f.label :work_specialization %><%= f.text_field :work_specialization, disabled: true  %>
       <% end %>        
       <%= f.label :work_position %><%= f.text_field :work_position, disabled: true  %>
-      <h3><%= t(:additional_info) %></h3>
-      <%= f.label :antok_city %><%= f.text_field :antok_city, disabled: true  %>
+      <% if params[:locale]!='en' %>
+        <h3><%= t(:additional_info) %></h3>
+        <%= f.label :antok_city %><%= f.text_field :antok_city, disabled: true  %>
+      <% end %>
       <% if not_antok_member? %> 
         <%= f.label :public_organizations %><%= f.text_field :public_organizations, disabled: true  %>
       <% end %>

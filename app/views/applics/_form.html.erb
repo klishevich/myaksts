@@ -29,11 +29,13 @@
         <%= f.label :work_specialization %><%= f.text_field :work_specialization %>
       <% end %>
       <%= f.label :work_position %><%= f.text_field :work_position %>
-      <h3><%= t(:additional_info) %></h3>
-      <%= f.label :antok_city %><%= f.select :antok_city, 
+      <% if params[:locale]!='en' %>
+        <h3><%= t(:additional_info) %></h3>
+        <%= f.label :antok_city %><%= f.select :antok_city, 
           options_for_select([[t(:choose_value),""], [t(:moscow),"Москва"], [t(:voronezh), "Воронеж"],
             [t(:ekaterinburg), "Екатеринбург"], [t(:novosibirsk),"Новосибирск"], [t(:krasnoyarsk),"Красноярск"],
             [t(:far_east),"Дальний Восток"]], :selected=> @applic.antok_city) %>
+      <% end %>
       <% if not_antok_member? %>       
         <%= f.label :public_organizations %><%= f.text_field :public_organizations %>
       <% end %>  

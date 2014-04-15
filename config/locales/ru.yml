@@ -263,6 +263,7 @@ ru:
           is_antok_member: "Являюсь членом АНТОК"
           antok_id: "ID АНТОК (заполняется для членов АНТОК, свой ID можно узнать у Елены Хе - elenakhe@ngs.ru)"
           cant_be_blank: "не может быть пустым"
+          is_foreign: "Являюсь иностранным участником"
         applic:
           fio: "ФИО"
           fio_eng: "ФИО по-английски"
@@ -362,3 +363,6 @@ ru:
     cancel_my_account: "Удалить мой аккаунт"
     are_you_sure: "Вы уверены"
     back: "Назад"
+    application_id_number: "Идентификационный номер участника"
+    questions_application: "По всем вопросам, включая внесение изменений в заявку, обращайтесь по AKSTSRussia@gmail.com"
+    abstracts: "Тезисы для зарегистрированных участников необходимо выслать на e-mail AKSTSRussia@gmail.com до 15 мая 2014."  

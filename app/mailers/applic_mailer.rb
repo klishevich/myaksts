@@ -20,6 +20,7 @@ class ApplicMailer < ActionMailer::Base
   def new_applic_notification(applic)
     @applic = applic
     mail to: "for54biz@yandex.ru, AKSTSRussia@gmail.com, yunbase@mail.ru, #{applic.email}", subject: t(:application_registered)
+    # mail to: "m.klishevich@yandex.ru", subject: t(:application_registered)
   end
 
   def test_email1

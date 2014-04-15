@@ -3,8 +3,13 @@
   <%= f.error_notification %>
   <%= display_base_errors resource %>
   <%= f.input :name, :autofocus => true %>
-  <%= f.input :is_antok_member, :as => :boolean %>
-  <%= f.input :antok_id%>  
+  <% if params[:locale]=='en' %>
+    <%= f.input :is_foreign, :as => :boolean %>
+  <% end %>
+  <% if params[:locale]!='en' %>  
+    <%= f.input :is_antok_member, :as => :boolean %>
+    <%= f.input :antok_id%>  
+  <% end %>
   <%= f.input :email, :required => true %>
   <%= f.input :password, :autocomplete => "off", :hint => t(:leave_it_blank), :required => false %>
   <%= f.input :password_confirmation, :required => false %>

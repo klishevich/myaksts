@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140222204735) do
+ActiveRecord::Schema.define(:version => 20140415173804) do
 
   create_table "applics", :force => true do |t|
     t.integer  "user_id"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20140222204735) do
     t.string   "name"
     t.boolean  "is_antok_member"
     t.string   "antok_id"
+    t.boolean  "is_foreign"
   end
 
   add_index "users", ["antok_id"], :name => "index_users_on_antok_id"
