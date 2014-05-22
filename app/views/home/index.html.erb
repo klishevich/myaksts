@@ -1,17 +1,5 @@
       <!-- Jumbotron -->
       <div class="jumbotron">
-        <% if user_signed_in? %>
-          <% if current_user.has_role? :admin %>
-            <%= link_to "Смотреть все заявки", applics_path, class: "btn btn-large btn-success"%>
-          <% else %>
-            <% if current_user.applic %>
-              <%= link_to t(:step2_view_btn), current_user.applic, class: "btn btn-large btn-success"%>
-            <% else %>
-              <%= link_to t(:step2_apply_btn), new_applic_path, class: "btn btn-large btn-success"%>
-            <% end %>
-          <% end %>
-          <%= link_to t(:step2_my_account_btn), edit_user_registration_path, class: "btn btn-large"%>
-        <% end %>
         <div class="row">
           <div class="span7">
             <h2>Приветственное слово представителя KOFST в России</h2>
@@ -30,6 +18,20 @@
             <div id="attach">
               <p style="text-align:center;"><%= link_to "Скачать информационное письмо (на русском)", '/docs/info_letter_eburg2014_rus.docx' %></p>
               <p style="text-align:center;"><%= link_to "Download informational letter (in english)", '/docs/Inform1-AKSTSconf2014_eng.pdf'%></p>  
+            </div>
+            <div class="buttonsclass">
+            <% if user_signed_in? %>
+              <% if current_user.has_role? :admin %>
+                <p><%= link_to "Смотреть все заявки", applics_path, class: "btn btn-large btn-success"%></p>
+              <% else %>
+                <% if current_user.applic %>
+                  <p><%= link_to t(:step2_view_btn), current_user.applic, class: "btn btn-large btn-success"%></p>
+                <% else %>
+                  <p><%= link_to t(:step2_apply_btn), new_applic_path, class: "btn btn-large btn-success"%></p>
+                <% end %>
+              <% end %>
+              <p><%= link_to t(:step2_my_account_btn), edit_user_registration_path, class: "btn btn-large"%></p>
+            <% end %>
             </div>
           </div>
         </div>
@@ -71,31 +73,4 @@
         <%= link_to t(:sign_up), new_user_registration_path, class: "btn btn-large btn-success"%>
         <% end %> -->
       </div>
-
-      <!-- Example row of columns  
-      <hr>
-
-         
-      <div class="row-fluid">
-        <div class="span4">
-          <h3>Глобальное потепление</h3>
-          <p>Доклад профессора Иванова из МГУ по вопросам глобального потепления. Станет ли Сибирь Африкой?</p>
-          <p><a class="btn" href="#">Подробности &raquo;</a></p>
-        </div>
-        <div class="span4">
-          <h3>Куда падают метеориты</h3>
-          <p>Доклад профессора Петрова из Забайкальского госуниверситета. Как получить сувенир в виде метеорита? Астрономические расчеты.</p>
-          <p><a class="btn" href="#">Подробности &raquo;</a></p>
-       </div>
-        <div class="span4">
-          <h3>Куда уезжают люди</h3>
-          <p>Доклад доцента кафедры Новосибирского госуниверситета. О миграционных циклах на планете</p>
-          <p><a class="btn" href="#">Подробности &raquo;</a></p>
-        </div>
-      </div> --> 
-       <div class="row">
-        <div class="span12">
-
-        </div>
-      </div> 
 
