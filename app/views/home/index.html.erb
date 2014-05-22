@@ -12,9 +12,30 @@
           <% end %>
           <%= link_to t(:step2_my_account_btn), edit_user_registration_path, class: "btn btn-large"%>
         <% end %>
-        <h1><%= t(:home_welcome) %></h1>
-        <p class="lead"><%= t(:home_lead) %></p>
-            <div class="my1">
+        <div class="row">
+          <div class="span7">
+            <h2>Приветственное слово представителя KOFST в России</h2>
+            <p style="text-align:center;">Дорогие дамы и господа, ученые и инженеры!</p>
+            <p>Рад сообщить, что 15-я конференция будет проходить с 4 по 5 июля 2014г. в Екатеринбурге.  Несомненно, ученые как России, так и Кореи вносят большой вклад в организацию этого мероприятия.</p>
+            <p>Организационный комитет делает все возможное, чтобы конференция прошла успешно. Нам помогают Уральское отделение Общероссийского объединения корейцев (ООК), Корейско-Российский Центр научно-технологического сотрудничества (KORUSTEC) при поддержке Корейской федерации научно-технологических обществ (KOFST). Я уверен, что благодаря нашим усилиям конференция станет одним из запоминающихся событий 2014 года.</p>
+            <p>4 июля 2014 года в первой и во второй половине дня будет проходить работа секций конференции по направлениям: физика, математика, информационные технологии и нанотехнологии, энергетика, электротехника, машиностроение, механика, химия, новые материалы и технологии их обработки, биотехнологии, биология, технологии живых систем, океанография, геология, природные ресурсы и общественные науки.</p>
+            <p>В рамках конференции будет проходить круглый стол по проблемам международного научного сотрудничества, а также семинар «Опыт публикаций научных данных в ведущих изданиях WEB of Science, Scopus».</p>
+            <p>5 июля состоится экскурсия по городу Екатеринбург и посещение концерта, посвященного Юбилею добровольного переселения корейцев в Россию.</p>
+            <p>Ваше участие в мероприятии имеет большое значение. Конференция даст вам замечательную возможность встретиться с коллегами и обменяться профессиональным опытом для дальнейшего сотрудничества.</p>
+            <p>Представитель KOFST в России<br/>
+            д.т.н., проф. НИТУ МИСИС Тен Эдис Борисович</p>           
+          </div>
+          <div class="span5">
+            <%= image_tag "teneb.jpg" %>
+            <div id="attach">
+              <p style="text-align:center;"><%= link_to "Скачать информационное письмо (на русском)", '/docs/info_letter_eburg2014_rus.docx' %></p>
+              <p style="text-align:center;"><%= link_to "Download informational letter (in english)", '/docs/Inform1-AKSTSconf2014_eng.pdf'%></p>  
+            </div>
+          </div>
+        </div>
+<!--         <h1><%= t(:home_welcome) %></h1>
+        <p class="lead"><%= t(:home_lead) %></p> -->
+<!--             <div class="my1">
             <div id="myCarousel" class="carousel slide">
                 <ol class="carousel-indicators">
                   <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -44,15 +65,11 @@
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
                 <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
               </div>
-            </div>
-<!--         <p><%= link_to "Скачать программу конференции (рус.)", '/docs/Program_rus(1804).doc' %></p>
-        <p><%= link_to "Download conference program (eng.)", '/docs/Program_eng(1804).doc' %></p> -->
-        <p><%= link_to "Скачать информационное письмо (на русском)", '/docs/info_letter_eburg2014_rus.docx' %></p>
-        <p><%= link_to "Download informational letter (in english)", '/docs/Inform1-AKSTSconf2014_eng.pdf'%></p>
-        <br/>    
-        <% if !user_signed_in? %>
+            </div> -->
+
+<!--         <% if !user_signed_in? %>
         <%= link_to t(:sign_up), new_user_registration_path, class: "btn btn-large btn-success"%>
-        <% end %>
+        <% end %> -->
       </div>
 
       <!-- Example row of columns  
