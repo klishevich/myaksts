@@ -47,7 +47,8 @@ ActiveRecord::Schema.define(:version => 20140612084319) do
   create_table "messages", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.boolean  "send_email"
+    t.string   "send_type"
+    t.string   "email4test"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

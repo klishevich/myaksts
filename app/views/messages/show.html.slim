@@ -1,12 +1,20 @@
 div.row
   div class="span8 offset2 applic-form"
     h1 Просмотр сообщения
-    p <b>Заголовок:</b>
-	p =@message.title
-	p <b>Тело сообщения:</b>
-	p =@message.body
-	p <b>Отправлять на email:</b>
-	p = @message.send_email ? "Да" : "Нет"
+    = form_for(@message) do |f|
+      br
+      .field 
+        = f.label :title
+        = f.text_field :title, disabled: true
+      .field
+        = f.label :body
+        = f.text_area :body, rows: 10, disabled: true
+      .field
+        = f.label :send_type
+        = f.select :send_type, options_for_select([[t(:choose_value),""], [t(:email_test),"email_test"], [t(:email_real), "email_real"]], :selected=> @message.send_type), {:size=>30}, {:disabled => true}
+      .field
+        = f.label :email4test
+        = f.text_field :email4test, disabled: true 
 	=> link_to 'Редактировать', edit_message_path(@message)
 	span | 
 	=> link_to 'Список сообщений', messages_path

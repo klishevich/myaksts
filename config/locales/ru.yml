@@ -290,7 +290,8 @@ ru:
         message:
           title: "Заголовок"
           body: "Тело сообщения"
-          send_email: "Отправлять на email"
+          send_type: "Тип отправки сообщения"
+          email4test: "Email для отправки тестового сообщения"
     save: "Сохранить"
     cancel: "Отменить"
     you_already_have_application: "У вас уже есть заявка на конференцию"
@@ -370,3 +371,5 @@ ru:
     application_id_number: "Идентификационный номер участника"
     questions_application: "По всем вопросам, включая внесение изменений в заявку, обращайтесь по AKSTSRussia@gmail.com"
     abstracts: "Тезисы для зарегистрированных участников необходимо выслать на e-mail AKSTSRussia@gmail.com до 15 мая 2014."  
+    email_test: "Тестовая отправка на email"
+    email_real: "Разослать на email всем участникам конференции"

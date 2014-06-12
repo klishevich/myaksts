@@ -3,7 +3,8 @@ class CreateMessages < ActiveRecord::Migration
     create_table :messages do |t|
       t.string :title
       t.text :body
-      t.boolean :send_email
+      t.string :send_type
+      t.string :email4test
 
       t.timestamps
     end

@@ -8,8 +8,11 @@
     = f.label :body
     = f.text_area :body, rows: 10
   .field
-    = f.label :send_email
-    = f.check_box :send_email
+    = f.label :send_type
+    = f.select :send_type, options_for_select([[t(:choose_value),""], [t(:email_test),"email_test"], [t(:email_real), "email_real"]], :selected=> @message.send_type)
+  .field
+    = f.label :email4test
+    = f.text_field :email4test
   br
   .actions
     = submit_tag "Сохранить", class: "btn btn-large btn-primary"

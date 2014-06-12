@@ -1,4 +1,10 @@
 Myaksts::Application.routes.draw do
+  devise_for :user
+
+  authenticate :user do
+    # Rails.logger.debug 
+    mount Resque::Server, :at => "/resque" #if current_user.has_role :admin
+  end
 
   resources :messages
 

@@ -5,7 +5,7 @@ table class="table table-striped"
     th №
     th Заголовок
     th Тело сообщения
-    th Отправлять на email
+    th Тип отправки сообщения
     th Дата создания (МСК)    
   - var = 0
   - @messages.each do |message|
@@ -14,5 +14,5 @@ table class="table table-striped"
       td = var
       td = link_to message.title, message
       td = message.body
-      td = (message.send_email ? "Да" : "Нет")
+      td = message.send_type
       td = l message.created_at.in_time_zone("Moscow"), format: :short      

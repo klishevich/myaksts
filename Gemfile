@@ -9,7 +9,7 @@ gem 'capistrano-deploy'
 gem "slim-rails"
 gem 'bootstrap-datepicker-rails'
 gem "prawn"
-gem 'resque'
+gem 'resque', :require => 'resque/server'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
