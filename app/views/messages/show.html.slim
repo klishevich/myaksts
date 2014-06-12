@@ -1,0 +1,12 @@
+div.row
+  div class="span8 offset2 applic-form"
+    h1 Просмотр сообщения
+    p <b>Заголовок:</b>
+	p =@message.title
+	p <b>Тело сообщения:</b>
+	p =@message.body
+	p <b>Отправлять на email:</b>
+	p = @message.send_email ? "Да" : "Нет"
+	=> link_to 'Редактировать', edit_message_path(@message)
+	span | 
+	=> link_to 'Список сообщений', messages_path

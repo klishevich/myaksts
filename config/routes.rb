@@ -1,5 +1,7 @@
 Myaksts::Application.routes.draw do
 
+  resources :messages
+
   match '/about', to: 'static_pages#about'
   match '/programme', to: 'static_pages#programme'
   match '/hotel', to: 'static_pages#hotel'  

@@ -1,0 +1,7 @@
+div.row
+  div class="span8 offset2 applic-form"
+    h1 Редактирование сообщения
+	= render 'form'
+	= link_to 'Просмотр', @message
+	span  | 
+	= link_to 'Список статей', messages_path

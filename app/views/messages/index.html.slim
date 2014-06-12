@@ -1,0 +1,18 @@
+h1 Все сообщения
+p = link_to 'Новое сообщение', new_message_path
+table class="table table-striped"
+  tr
+    th №
+    th Заголовок
+    th Тело сообщения
+    th Отправлять на email
+    th Дата создания (МСК)    
+  - var = 0
+  - @messages.each do |message|
+    - var+=1
+    tr
+      td = var
+      td = link_to message.title, message
+      td = message.body
+      td = (message.send_email ? "Да" : "Нет")
+      td = l message.created_at.in_time_zone("Moscow"), format: :short      
