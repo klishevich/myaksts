@@ -15,7 +15,14 @@ class MessagesController < ApplicationController
     @message = Message.new(params[:message])
     if @message.save
       # @message.deliver
-      Resque.enqueue(DeliverMessages, @message.title, @message.body, @message.send_type,@message.email4test)
+      case @message.send_type
+      when "email_test"
+        Resque.enqueue(DeliverMessages, @message.title, @message.body, @message.email4test)
+      when "email_real"
+        Applic.all.each do |applic|
+          Resque.enqueue(DeliverMessages, @message.title, @message.body, applic.email)
+        end
+      end 
       flash[:success] = 'Message was successfully created'
       redirect_to @message
     else
@@ -33,9 +40,22 @@ class MessagesController < ApplicationController
 
   def update
     @message = Message.find(params[:id])
+    Rails.logger.info('31415926')
+    Rails.logger.info(params[:message][:send_type])
+    Rails.logger.info(@message.send_type)    
+    send_type_changed = @message.send_type!=params[:message][:send_type]
     if @message.update_attributes(params[:message])
       # @message.deliver
-      Resque.enqueue(DeliverMessages, @message.title, @message.body, @message.send_type,@message.email4test)
+      if (send_type_changed)
+        case @message.send_type
+        when "email_test"
+          Resque.enqueue(DeliverMessages, @message.title, @message.body, @message.email4test)
+        when "email_real"
+          Applic.all.each do |applic|
+            Resque.enqueue(DeliverMessages, @message.title, @message.body, applic.email)
+          end
+        end       
+      end
       flash[:success] = 'Message was successfuly updated'
       redirect_to @message
     else
