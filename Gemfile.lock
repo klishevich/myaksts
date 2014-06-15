@@ -260,7 +260,6 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-datepicker-rails
   bootstrap-sass (~> 2.3.2.2)
-  bundler
   cancan
   capistrano
   capistrano-deploy
