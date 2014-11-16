@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140612084319) do
+ActiveRecord::Schema.define(:version => 20141116183723) do
 
   create_table "applics", :force => true do |t|
     t.integer  "user_id"
@@ -44,6 +44,87 @@ ActiveRecord::Schema.define(:version => 20140612084319) do
 
   add_index "applics", ["user_id"], :name => "index_applics_on_user_id"
 
+  create_table "kofst_applics", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "applic_language"
+    t.string   "korean_name"
+    t.string   "english_name"
+    t.string   "gender"
+    t.date     "birth_date"
+    t.string   "job_type"
+    t.string   "job_organization"
+    t.string   "job_department"
+    t.string   "job_position"
+    t.string   "job_email"
+    t.string   "job_phone"
+    t.string   "mobile"
+    t.string   "address"
+    t.string   "country"
+    t.string   "association"
+    t.string   "nationality"
+    t.string   "final_academic_degree"
+    t.string   "e_period1"
+    t.string   "e_period2"
+    t.string   "e_period3"
+    t.string   "e_period4"
+    t.string   "e_period5"
+    t.string   "e_degree1"
+    t.string   "e_degree2"
+    t.string   "e_degree3"
+    t.string   "e_degree4"
+    t.string   "e_degree5"
+    t.string   "e_university1"
+    t.string   "e_university2"
+    t.string   "e_university3"
+    t.string   "e_university4"
+    t.string   "e_university5"
+    t.string   "e_major1"
+    t.string   "e_major2"
+    t.string   "e_major3"
+    t.string   "e_major4"
+    t.string   "e_major5"
+    t.string   "p_period1"
+    t.string   "p_period2"
+    t.string   "p_period3"
+    t.string   "p_period4"
+    t.string   "p_period5"
+    t.string   "p_organization1"
+    t.string   "p_organization2"
+    t.string   "p_organization3"
+    t.string   "p_organization4"
+    t.string   "p_organization5"
+    t.string   "p_position1"
+    t.string   "p_position2"
+    t.string   "p_position3"
+    t.string   "p_position4"
+    t.string   "p_position5"
+    t.string   "p_business_in_charge1"
+    t.string   "p_business_in_charge2"
+    t.string   "p_business_in_charge3"
+    t.string   "p_business_in_charge4"
+    t.string   "p_business_in_charge5"
+    t.text     "a_publications"
+    t.text     "a_awards"
+    t.text     "a_patents"
+    t.text     "a_research_activites"
+    t.text     "area_of_interest"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "science_field_id"
+    t.integer  "science_specific_field_id"
+    t.boolean  "i_joint_research"
+    t.boolean  "i_research_and_consulting"
+    t.boolean  "i_job"
+    t.boolean  "i_starting_a_business"
+    t.boolean  "i_lecture"
+    t.boolean  "i_internation_conference"
+    t.boolean  "i_seminar"
+    t.boolean  "i_information_interaction"
+    t.boolean  "i_others"
+  end
+
+  add_index "kofst_applics", ["user_id"], :name => "index_kofst_applics_on_user_id"
+
   create_table "messages", :force => true do |t|
     t.string   "title"
     t.text     "body"
@@ -63,6 +144,21 @@ ActiveRecord::Schema.define(:version => 20140612084319) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "science_fields", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "science_specific_fields", :force => true do |t|
+    t.integer  "science_field_id"
+    t.string   "name"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "science_specific_fields", ["science_field_id"], :name => "index_science_specific_fields_on_science_field_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
