@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Номер заявки</Data></Cell>
+        <Cell><Data ss:Type="String">Дата подачи заявки</Data></Cell>
+        <Cell><Data ss:Type="String">Член АНТОК</Data></Cell>
+        <Cell><Data ss:Type="String">ID АНТОК</Data></Cell>
+        <Cell><Data ss:Type="String">ФИО</Data></Cell>
+        <Cell><Data ss:Type="String">ФИО англ.</Data></Cell>
+        <Cell><Data ss:Type="String">Дата рождения</Data></Cell>
+        <Cell><Data ss:Type="String">Пол</Data></Cell>
+        <Cell><Data ss:Type="String">Почтовый адрес</Data></Cell>
+        <Cell><Data ss:Type="String">Email</Data></Cell>
+        <Cell><Data ss:Type="String">Телефоны</Data></Cell>
+        <Cell><Data ss:Type="String">Институт</Data></Cell>
+        <Cell><Data ss:Type="String">Почтовый адрес института</Data></Cell>
+        <Cell><Data ss:Type="String">Специальность в институте</Data></Cell>
+        <Cell><Data ss:Type="String">Ученая степень</Data></Cell>
+        <Cell><Data ss:Type="String">Компания</Data></Cell>
+        <Cell><Data ss:Type="String">Года начала работы</Data></Cell>
+        <Cell><Data ss:Type="String">Подразделение</Data></Cell>
+        <Cell><Data ss:Type="String">Должность</Data></Cell>
+        <Cell><Data ss:Type="String">Специализация на работе</Data></Cell>
+        <Cell><Data ss:Type="String">Участие в общественных орг.</Data></Cell>
+        <Cell><Data ss:Type="String">Ближайшее подразделение АНТОК</Data></Cell>
+        <Cell><Data ss:Type="String">Область научных интересов</Data></Cell>
+        <Cell><Data ss:Type="String">Тема доклада</Data></Cell>
+        <Cell><Data ss:Type="String">Направление</Data></Cell>
+        <Cell><Data ss:Type="String">Соавторы</Data></Cell>
+        <Cell><Data ss:Type="String">Тип участия</Data></Cell>
+      </Row>
+    <% @applics.each do |applic| %>
+      <Row>
+        <Cell><Data ss:Type="String"><%= applic.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.created_at.strftime("%d.%m.%Y") %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.user.is_antok_member ? "Да" : "Нет" %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.user.antok_id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.fio %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.fio_eng %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.birth_date %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.sex %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.post_address %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.email %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.phones %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.edu_institute %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.edu_institute_address %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.edu_specialization %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.uch_stepen %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.work_company %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.work_start_year %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.work_department %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.work_position %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.work_specialization %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.public_organizations %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.antok_city %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.science_interests %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.conf_topic %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.conf_section %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.conf_coauthors %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.participation_type %></Data></Cell>      
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
+ 

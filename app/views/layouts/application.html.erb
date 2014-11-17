@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : t(:home_conf_antok) %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Конференция АНТОК в Екатеринбурге, июль 2014" %>">
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Личный кабинет члена АНТОК" %>">
     <%= stylesheet_link_tag "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -29,15 +29,18 @@
             <div class="container">
               <ul class="nav">
                 <li><%= link_to t(:home_link_home), root_path %></li>
-                <li><%= link_to t(:home_link_prog), programme_path %></li>                
-                <li><%= link_to t(:home_link_conf), about_path %></li>
-                <li><%= link_to t(:home_link_hotel), hotel_path %></li>
-                <li><%= link_to t(:home_link_sp), sponsors_path %></li>
                 <% if user_signed_in? %>
+                <li><%= link_to t(:step2_my_account_btn), edit_user_registration_path %></li>
                 <li><%= link_to t(:home_link_log_out), destroy_user_session_path, :method=>'delete' %></li>
                 <% else %>
                 <li><%= link_to t(:home_link_log_in), new_user_session_path %></li>
-                <% end %>
+                <li><%= link_to t(:sign_up), new_user_registration_path %></li>
+                <% end %>                
+                <!--li><%= link_to t(:home_link_prog), programme_path %></li>
+                    
+                <li><%= link_to t(:home_link_conf), about_path %></li>
+                <li><%= link_to t(:home_link_hotel), hotel_path %></li>
+                <li><%= link_to t(:home_link_sp), sponsors_path %></li-->
               </ul>
             </div>
           </div>

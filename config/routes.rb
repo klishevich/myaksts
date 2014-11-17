@@ -1,4 +1,6 @@
 Myaksts::Application.routes.draw do
+  get "science_specific_fields/index"
+
   devise_for :user
 
   authenticate :user do
@@ -21,6 +23,8 @@ Myaksts::Application.routes.draw do
   resources :users
 
   resources :applics
+
+  resources :kofst_applics
   
   get 'view_applic', to: 'applics#show'
   match '/edit_applic', to: 'applics#edit'

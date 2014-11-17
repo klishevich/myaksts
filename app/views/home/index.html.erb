@@ -2,40 +2,29 @@
       <div class="jumbotron">
         <div class="row">
           <div class="span7">
-            <p style="text-align:center;"><b>Дорогие дамы и господа, ученые и инженеры!</b></p>
-            <p>Рад сообщить, что 15-я конференция будет проходить с 4 по 5 июля 2014г. в Екатеринбурге.  Несомненно, ученые как России, так и Кореи вносят большой вклад в организацию этого мероприятия.</p>
-            <p>Организационный комитет делает все возможное, чтобы конференция прошла успешно. Нам помогают Уральское отделение Общероссийского объединения корейцев (ООК), Корейско-Российский Центр научно-технологического сотрудничества (KORUSTEC) при поддержке Корейской федерации научно-технологических обществ (KOFST). Я уверен, что благодаря нашим усилиям конференция станет одним из запоминающихся событий 2014 года.</p>
-            <p>4 июля 2014 года в первой и во второй половине дня будет проходить работа секций конференции по направлениям: физика, математика, информационные технологии и нанотехнологии, энергетика, электротехника, машиностроение, механика, химия, новые материалы и технологии их обработки, биотехнологии, биология, технологии живых систем, океанография, геология, природные ресурсы и общественные науки.</p>
-            <p>В рамках конференции будет проходить круглый стол по проблемам международного научного сотрудничества, а также семинар «Опыт публикаций научных данных в ведущих изданиях WEB of Science, Scopus».</p>
-            <p>5 июля состоится экскурсия по городу Екатеринбург и посещение концерта, посвященного Юбилею добровольного переселения корейцев в Россию.</p>
-            <p>Ваше участие в мероприятии имеет большое значение. Конференция даст вам замечательную возможность встретиться с коллегами и обменяться профессиональным опытом для дальнейшего сотрудничества.</p>
-            <p>Председатель оргкомитета конференции,<br/>
-            д.т.н., проф. НИТУ МИСИС Тен Эдис Борисович</p>           
+            <p style="text-align:center;"><b>Добро пожаловать в личный кабинет АНТОК!</b></p>  
+            <p>Личный кабинет поможет нам автоматизировать работу по участию в конференциях семинарах и обмену актуальной информацией!</p>
+            <br/>
+            <div class="buttonsclass">
+              <% if user_signed_in? %>
+                <% if current_user.has_role? :admin %>
+                  <p><%= link_to "Смотреть все заявки", applics_path, class: "btn btn-large btn-success"%></p>
+                  <p><%= link_to "Отправка сообщений", messages_path, class: "btn btn-large btn-success"%></p>
+                  <p><%= link_to "Мониторинг отправки", "resque", class: "btn btn-large btn-success", target: "_blank"%></p>
+                <% else %>
+                  <% if current_user.applic %>
+                    <p><%= link_to t(:step2_view_btn), current_user.applic, class: "btn btn-large btn-success"%></p>
+                  <% else %>
+                    <p><%= link_to t(:step2_apply_btn), new_kofst_applic_path, class: "btn btn-large btn-success"%></p>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </div>   
           </div>
           <div class="span5">
             <%= image_tag "teneb.jpg" %>
             <div id="small">
-              Тэн Э.Б., проф. Национального исследовательского технологического университета "МИСиС", председатель оргкомитета конференции
-            </div>
-            <div id="attach">
-              <p style="text-align:center;"><%= link_to "Скачать программу конференции (Рус.)", '/docs/Program_RU_5.pdf' %></p>
-              <p style="text-align:center;"><%= link_to "Download conference program (Eng.)", '/docs/Program_ENG_5.pdf'%></p>  
-            </div>
-            <div class="buttonsclass">
-            <% if user_signed_in? %>
-              <% if current_user.has_role? :admin %>
-                <p><%= link_to "Смотреть все заявки", applics_path, class: "btn btn-large btn-success"%></p>
-                <p><%= link_to "Отправка сообщений", messages_path, class: "btn btn-large btn-success"%></p>
-                <p><%= link_to "Мониторинг отправки", "resque", class: "btn btn-large btn-success", target: "_blank"%></p>
-              <% else %>
-                <% if current_user.applic %>
-                  <p><%= link_to t(:step2_view_btn), current_user.applic, class: "btn btn-large btn-success"%></p>
-                <% else %>
-                  <p><%= link_to t(:step2_apply_btn), new_applic_path, class: "btn btn-large btn-success"%></p>
-                <% end %>
-              <% end %>
-              <p><%= link_to t(:step2_my_account_btn), edit_user_registration_path, class: "btn btn-large"%></p>
-            <% end %>
+              Тэн Э.Б., проф. Национального исследовательского технологического университета "МИСиС", президент АНТОК
             </div>
           </div>
         </div>
@@ -76,5 +65,6 @@
 <!--         <% if !user_signed_in? %>
         <%= link_to t(:sign_up), new_user_registration_path, class: "btn btn-large btn-success"%>
         <% end %> -->
+
       </div>
 

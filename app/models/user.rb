@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
 
   has_one :applic, dependent: :destroy  
 
+  has_many :kofst_applics, dependent: :destroy 
+
   validate :antok_id_cannot_be_blank
 
   before_save :update_foreign_params

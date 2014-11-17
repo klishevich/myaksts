@@ -13,13 +13,14 @@ class CreateKofstApplics < ActiveRecord::Migration
       t.string :job_position
       t.string :job_email
       t.string :job_phone
-      # to_do после добавления сущностей science_field и science_specific_field
-      # t.string :science_field
-      # t.string :science_specific_field
+
+      t.integer :science_field_id
+      t.integer :science_specific_field_id
+    
       t.string :mobile
       t.string :address
       t.string :country
-      t.string :association
+      t.string :kofst_association
       t.string :nationality
       t.string :final_academic_degree
 
@@ -72,8 +73,20 @@ class CreateKofstApplics < ActiveRecord::Migration
 
       t.text :area_of_interest
 
+      t.boolean :i_joint_research
+      t.boolean :i_research_and_consulting
+      t.boolean :i_job
+      t.boolean :i_starting_a_business
+      t.boolean :i_lecture
+      t.boolean :i_internation_conference
+      t.boolean :i_seminar
+      t.boolean :i_information_interaction
+      t.boolean :i_others       
+
       t.timestamps
     end
     add_index :kofst_applics, [:user_id]    
+    add_index :kofst_applics, [:science_field_id]
+    add_index :kofst_applics, [:science_specific_field_id]        
   end
 end

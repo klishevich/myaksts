@@ -1,0 +1,126 @@
+<div class="row">
+  <div class="span12 applic-form">
+    <%= simple_form_for(@applic) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.input :korean_name %>
+      <%= f.input :english_name %>
+      <%= f.input :gender, collection: [[t(:male), "male"], [t(:female), "female"]],label_method: :first, value_method: :last, prompt: t(:choose_value) %>
+      <%= f.input :birth_date, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 12 %>
+      <h3><%= t(:current_job) %></h3> 
+      <%= f.input :job_type %>      
+      <%= f.input :job_organization %>  
+      <%= f.input :job_department %>
+      <%= f.input :job_position %>
+      <%= f.input :job_email %>
+      <%= f.input :job_phone %>
+      <%= f.input :science_field_id, collection: ScienceField.all, label_method: :name, value_method: :id, prompt: t(:choose_value), :input_html => {:onChange => 'update_science_specific_field(this);'} %>
+      <%= f.input :science_specific_field_id, collection: ScienceSpecificField.all, label_method: :name, value_method: :id, prompt: t(:choose_value) %>      
+      <%= f.input :mobile %>
+      <%= f.input :address %>
+      <%= f.input :country, as: :string %>
+      <%= f.input :kofst_association %>
+      <%= f.input :nationality %>
+      <%= f.input :final_academic_degree, collection: [[t(:bachelor), "bachelor"], [t(:master), "master"], [t(:phd_or_doctor), "phd_or_doctor"]], label_method: :first, value_method: :last, prompt: t(:choose_value) %>   
+      <h3><%= t(:education) %></h3> 
+      <table class="t1">
+        <tr>
+          <th><%= t(:period) %></th>
+          <th><%= t(:degree) %></th>
+          <th><%= t(:university_or_institute) %></th>
+          <th><%= t(:major) %></th>
+        </tr>
+        <tr>
+          <td><%= f.text_field :e_period1 %></td>
+          <td><%= f.text_field :e_degree1 %></td>
+          <td><%= f.text_field :e_university1 %></td>
+          <td><%= f.text_field :e_major1 %></td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :e_period2 %></td>
+          <td><%= f.text_field :e_degree2 %></td>
+          <td><%= f.text_field :e_university2 %></td>
+          <td><%= f.text_field :e_major2 %></td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :e_period3 %></td>
+          <td><%= f.text_field :e_degree3 %></td>
+          <td><%= f.text_field :e_university3 %></td>
+          <td><%= f.text_field :e_major3 %></td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :e_period4 %></td>
+          <td><%= f.text_field :e_degree4 %></td>
+          <td><%= f.text_field :e_university4 %></td>
+          <td><%= f.text_field :e_major4 %></td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :e_period5 %></td>
+          <td><%= f.text_field :e_degree5 %></td>
+          <td><%= f.text_field :e_university5 %></td>
+          <td><%= f.text_field :e_major5 %></td>
+        </tr>                                
+      </table>
+      <h3><%= t(:professional_activities) %></h3> 
+      <table class="t1">
+        <tr>
+          <th><%= t(:period) %></th>
+          <th><%= t(:name_of_organization) %></th>
+          <th><%= t(:position) %></th>
+          <th><%= t(:business_in_charge) %></th>
+        </tr>
+        <tr>
+          <td><%= f.text_field :p_period1 %></td>
+          <td><%= f.text_field :p_organization1 %></td>
+          <td><%= f.text_field :p_position1 %></td>
+          <td><%= f.text_field :p_business_in_charge1 %></td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :p_period2 %></td>
+          <td><%= f.text_field :p_organization2 %></td>
+          <td><%= f.text_field :p_position2 %></td>
+          <td><%= f.text_field :p_business_in_charge2 %></td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :p_period3 %></td>
+          <td><%= f.text_field :p_organization3 %></td>
+          <td><%= f.text_field :p_position3 %></td>
+          <td><%= f.text_field :p_business_in_charge3 %></td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :p_period4 %></td>
+          <td><%= f.text_field :p_organization4 %></td>
+          <td><%= f.text_field :p_position4 %></td>
+          <td><%= f.text_field :p_business_in_charge4 %></td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :p_period5 %></td>
+          <td><%= f.text_field :p_organization5 %></td>
+          <td><%= f.text_field :p_position5 %></td>
+          <td><%= f.text_field :p_business_in_charge5 %></td>
+        </tr>                                                       
+      </table>      
+      <h3><%= t(:research_achievements) %></h3>      
+      <%= f.input :a_publications %>
+      <%= f.input :a_awards %>
+      <%= f.input :a_patents %>
+      <%= f.input :a_research_activites %>
+      <h3><%= t(:area_of_interest) %></h3>       
+      <%= f.input :i_joint_research, as: :boolean %>
+      <%= f.input :i_research_and_consulting, as: :boolean %>
+      <%= f.input :i_job, :as => :boolean %>
+      <%= f.input :i_starting_a_business, as: :boolean %>
+      <%= f.input :i_lecture, as: :boolean %>
+      <%= f.input :i_internation_conference, as: :boolean %>
+      <%= f.input :i_seminar, as: :boolean%>
+      <%= f.input :i_information_interaction, as: :boolean %>
+      <%= f.input :i_others, as: :boolean %>
+       <div class="alert alert-info">
+         <button type="button" class="close" data-dismiss="alert">&times;</button>
+           <%= t(:step2_warning) %>
+       </div>
+      <%= f.submit t(:save), class: "btn btn-large btn-primary", id: "Save" %>
+      <%= link_to t(:cancel), root_path, class: "btn btn-large btn-secondary" %>
+    <% end %>
+  </div>
+</div>

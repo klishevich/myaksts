@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141116183723) do
+ActiveRecord::Schema.define(:version => 20141116126608) do
 
   create_table "applics", :force => true do |t|
     t.integer  "user_id"
@@ -57,10 +57,12 @@ ActiveRecord::Schema.define(:version => 20141116183723) do
     t.string   "job_position"
     t.string   "job_email"
     t.string   "job_phone"
+    t.integer  "science_field_id"
+    t.integer  "science_specific_field_id"
     t.string   "mobile"
     t.string   "address"
     t.string   "country"
-    t.string   "association"
+    t.string   "kofst_association"
     t.string   "nationality"
     t.string   "final_academic_degree"
     t.string   "e_period1"
@@ -108,10 +110,6 @@ ActiveRecord::Schema.define(:version => 20141116183723) do
     t.text     "a_patents"
     t.text     "a_research_activites"
     t.text     "area_of_interest"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-    t.integer  "science_field_id"
-    t.integer  "science_specific_field_id"
     t.boolean  "i_joint_research"
     t.boolean  "i_research_and_consulting"
     t.boolean  "i_job"
@@ -121,8 +119,12 @@ ActiveRecord::Schema.define(:version => 20141116183723) do
     t.boolean  "i_seminar"
     t.boolean  "i_information_interaction"
     t.boolean  "i_others"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
+  add_index "kofst_applics", ["science_field_id"], :name => "index_kofst_applics_on_science_field_id"
+  add_index "kofst_applics", ["science_specific_field_id"], :name => "index_kofst_applics_on_science_specific_field_id"
   add_index "kofst_applics", ["user_id"], :name => "index_kofst_applics_on_user_id"
 
   create_table "messages", :force => true do |t|
