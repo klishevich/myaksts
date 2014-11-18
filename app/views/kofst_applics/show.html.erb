@@ -20,7 +20,7 @@
       <%= f.input :job_email %>
       <%= f.input :job_phone %>
       <%= f.input :science_field_id, collection: ScienceField.all, label_method: :name, value_method: :id, prompt: t(:choose_value) %>
-      <%= f.label :science_specific_field_id %><%= f.text_field :science_specific_field_id %>
+      <%= f.input :science_specific_field_id, collection: ScienceSpecificField.all, label_method: :name, value_method: :id, prompt: t(:choose_value) %>
       <%= f.input :mobile %>
       <%= f.input :address %>
       <%= f.input :country, as: :string %>
