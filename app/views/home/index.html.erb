@@ -12,12 +12,16 @@
                   <p><%= link_to "Отправка сообщений", messages_path, class: "btn btn-large btn-success"%></p>
                   <p><%= link_to "Мониторинг отправки", "resque", class: "btn btn-large btn-success", target: "_blank"%></p>
                 <% else %>
-                  <% if current_user.applic %>
-                    <p><%= link_to t(:step2_view_btn), current_user.applic, class: "btn btn-large btn-success"%></p>
+                  <% if current_user.kofst_applics %>
+                    <p><%= link_to t(:step2_view_btn), current_user.kofst_applics.first, class: "btn btn-large btn-success"%></p>
                   <% else %>
                     <p><%= link_to t(:step2_apply_btn), new_kofst_applic_path, class: "btn btn-large btn-success"%></p>
                   <% end %>
                 <% end %>
+              <% else %>
+                  <p><%= link_to t(:home_link_log_in), new_user_session_path, class: "btn btn-large btn-success"%></p>
+                  <p>или</p>
+                  <p><%= link_to t(:sign_up), new_user_registration_path, class: "btn btn-large btn-success"%></p>                
               <% end %>
             </div>   
           </div>

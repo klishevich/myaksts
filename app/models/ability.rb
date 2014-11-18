@@ -8,6 +8,7 @@ class Ability
       can :manage, :all
     else
       can :crud, Applic, :user_id => user.id
+      can :crud, KofstApplic, :user_id => user.id
     end
     # Define abilities for the passed in user here. For example:
     #

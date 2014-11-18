@@ -7,11 +7,15 @@
   <div class="span12 applic-form">
     <%= simple_form_for(@applic) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
+      <div class="img">
+        <%= f.label :avatar %>
+        <%= image_tag @applic.avatar.url(:medium) %>
+        <%= f.file_field :avatar %>
+      </div>
       <%= f.input :korean_name %>
       <%= f.input :english_name %>
       <%= f.input :gender, collection: [[t(:male), "male"], [t(:female), "female"]],label_method: :first, value_method: :last, prompt: t(:choose_value) %>
-      <%= f.input :birth_date, as: :date, start_year: Date.today.year - 90,
-                              end_year: Date.today.year - 12 %>
+      <%= f.input :birth_date, as: :date, start_year: Date.today.year - 90,end_year: Date.today.year - 12, prompt: t(:choose_value) %>
       <h3><%= t(:current_job) %></h3> 
       <%= f.input :job_type %>      
       <%= f.input :job_organization %>  
@@ -19,8 +23,8 @@
       <%= f.input :job_position %>
       <%= f.input :job_email %>
       <%= f.input :job_phone %>
-      <%= f.input :science_field_id, collection: ScienceField.all, label_method: :name, value_method: :id, prompt: t(:choose_value) %>
-      <%= f.input :science_specific_field_id, collection: ScienceSpecificField.all, label_method: :name, value_method: :id, prompt: t(:choose_value) %>
+      <%= f.input :science_field_id, collection: ScienceField.all, label_method: :name, value_method: :id, prompt: t(:choose_value), :input_html => {:onChange => 'update_science_specific_field(this);'} %>
+      <%= f.input :science_specific_field_id, collection: ScienceSpecificField.all, label_method: :name, value_method: :id, prompt: t(:choose_value) %>      
       <%= f.input :mobile %>
       <%= f.input :address %>
       <%= f.input :country, as: :string %>
@@ -36,13 +40,13 @@
           <th><%= t(:major) %></th>
         </tr>
         <tr>
-          <td><%= f.text_field :e_period1 %></td>
-          <td><%= f.text_field :e_degree1 %></td>
-          <td><%= f.text_field :e_university1 %></td>
-          <td><%= f.text_field :e_major1 %></td>
+          <td><%= f.input :e_period1, label: false %></td>
+          <td><%= f.input :e_degree1, label: false %></td>
+          <td><%= f.input :e_university1, label: false %></td>
+          <td><%= f.input :e_major1, label: false %></td>
         </tr>
         <tr>
-          <td><%= f.text_field :e_period2 %></td>
+          <td><%= f.input :e_period2, label: false %></td>
           <td><%= f.text_field :e_degree2 %></td>
           <td><%= f.text_field :e_university2 %></td>
           <td><%= f.text_field :e_major2 %></td>
@@ -75,10 +79,10 @@
           <th><%= t(:business_in_charge) %></th>
         </tr>
         <tr>
-          <td><%= f.text_field :p_period1 %></td>
-          <td><%= f.text_field :p_organization1 %></td>
-          <td><%= f.text_field :p_position1 %></td>
-          <td><%= f.text_field :p_business_in_charge1 %></td>
+          <td><%= f.input :p_period1, label: false %></td>
+          <td><%= f.input :p_organization1, label: false %></td>
+          <td><%= f.input :p_position1, label: false %></td>
+          <td><%= f.input :p_business_in_charge1, label: false %></td>
         </tr>
         <tr>
           <td><%= f.text_field :p_period2 %></td>
@@ -106,20 +110,20 @@
         </tr>                                                       
       </table>      
       <h3><%= t(:research_achievements) %></h3>      
-      <%= f.input :a_publications %>
-      <%= f.input :a_awards %>
-      <%= f.input :a_patents %>
-      <%= f.input :a_research_activites %>
+      <%= f.input :a_publications, :input_html => {:rows => 10} %>
+      <%= f.input :a_awards, :input_html => {:rows => 10} %>
+      <%= f.input :a_patents, :input_html => {:rows => 10} %>
+      <%= f.input :a_research_activites, :input_html => {:rows => 10} %>
       <h3><%= t(:area_of_interest) %></h3>       
-      <%= f.input :i_joint_research, as: :boolean %>
-      <%= f.input :i_research_and_consulting, as: :boolean %>
-      <%= f.input :i_job, :as => :boolean %>
-      <%= f.input :i_starting_a_business, as: :boolean %>
-      <%= f.input :i_lecture, as: :boolean %>
-      <%= f.input :i_internation_conference, as: :boolean %>
-      <%= f.input :i_seminar, as: :boolean%>
-      <%= f.input :i_information_interaction, as: :boolean %>
-      <%= f.input :i_others, as: :boolean %>
+      <%= f.input :i_joint_research, as: :boolean, inline_label: true, label: false %>
+      <%= f.input :i_research_and_consulting, as: :boolean, inline_label: true, label: false %>
+      <%= f.input :i_job, :as => :boolean, inline_label: true, label: false %>
+      <%= f.input :i_starting_a_business, as: :boolean, inline_label: true, label: false %>
+      <%= f.input :i_lecture, as: :boolean, inline_label: true, label: false %>
+      <%= f.input :i_internation_conference, as: :boolean, inline_label: true, label: false %>
+      <%= f.input :i_seminar, as: :boolean, inline_label: true, label: false %>
+      <%= f.input :i_information_interaction, as: :boolean, inline_label: true, label: false %>
+      <%= f.input :i_others, as: :boolean, inline_label: true, label: false %>
     <% end %>
   </div>
 </div> 

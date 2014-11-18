@@ -10,7 +10,7 @@ gem "slim-rails"
 gem 'bootstrap-datepicker-rails'
 gem "prawn"
 gem 'resque', :require => 'resque/server'
-gem 'safe_attributes'
+gem "paperclip", "~> 4.2"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

@@ -1,7 +1,7 @@
 class KofstApplicsController < ApplicationController
   before_filter :signed_in_user
   # before_filter :have_no_applics, only: [:new, :create]
-  # load_and_authorize_resource 
+  load_and_authorize_resource 
   # before_filter :admin_user, only: :index
 
   def index
@@ -15,10 +15,13 @@ class KofstApplicsController < ApplicationController
   end
 
   def new
-    @applic = current_user.kofst_applics.build(job_email: current_user.email, english_name: current_user.name)
+    @applic = current_user.kofst_applics.build(job_email: current_user.email, 
+      english_name: current_user.name, country: "Russia", kofst_association: "AKSTS Russia", 
+      nationality: "Russian Federation")
   end
 
   def create
+    params[:kofst_applic][:applic_language] = I18n.locale.to_s
     @applic = current_user.kofst_applics.build(params[:kofst_applic])
     if @applic.save
       # @applic.deliver
