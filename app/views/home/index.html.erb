@@ -12,7 +12,7 @@
                   <p><%= link_to "Отправка сообщений", messages_path, class: "btn btn-large btn-success"%></p>
                   <p><%= link_to "Мониторинг отправки", "resque", class: "btn btn-large btn-success", target: "_blank"%></p>
                 <% else %>
-                  <% if current_user.kofst_applics %>
+                  <% if !current_user.kofst_applics.empty? %>
                     <p><%= link_to t(:step2_view_btn), current_user.kofst_applics.first, class: "btn btn-large btn-success"%></p>
                   <% else %>
                     <p><%= link_to t(:step2_apply_btn), new_kofst_applic_path, class: "btn btn-large btn-success"%></p>

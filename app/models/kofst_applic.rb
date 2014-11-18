@@ -59,8 +59,10 @@ class KofstApplic < ActiveRecord::Base
   validate :science_specific_field_ok
 
   def science_specific_field_ok
-    if self.science_specific_field.science_field_id != self.science_field.id
-      errors.add(:science_specific_field_id, :science_specific_field_not_ok)
+    if !self.science_specific_field.nil? and !self.science_field.nil?
+      if self.science_specific_field.science_field_id != self.science_field.id
+        errors.add(:science_specific_field_id, :science_specific_field_not_ok)
+      end
     end
   end  
 
