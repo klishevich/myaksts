@@ -2,8 +2,14 @@
       <div class="jumbotron">
         <div class="row">
           <div class="span7">
-            <p style="text-align:center;"><b>Добро пожаловать в личный кабинет АНТОК!</b></p>  
-            <p>Личный кабинет поможет нам автоматизировать работу по участию в конференциях семинарах и обмену актуальной информацией!</p>
+            <p style="text-align:center;"><b><%= t(:welcome_myaksts)%></b></p>
+            <p style="text-align:center;">
+              <% if params[:locale]=='en' %>
+                Personal AKSTS member page helps to automate interaction for conference and seminars!
+              <% else %>
+                Личный кабинет поможет нам автоматизировать работу по участию в конференциях семинарах и обмену актуальной информацией!
+              <% end %>
+            </p>
             <br/>
             <div class="buttonsclass">
               <% if user_signed_in? %>
@@ -20,7 +26,7 @@
                 <% end %>
               <% else %>
                   <p><%= link_to t(:home_link_log_in), new_user_session_path, class: "btn btn-large btn-success"%></p>
-                  <p>или</p>
+                  <p><%= t(:or) %></p>
                   <p><%= link_to t(:sign_up), new_user_registration_path, class: "btn btn-large btn-success"%></p>                
               <% end %>
             </div>   
@@ -28,7 +34,11 @@
           <div class="span5">
             <%= image_tag "teneb.jpg" %>
             <div id="small">
-              Тэн Э.Б., проф. Национального исследовательского технологического университета "МИСиС", президент АНТОК
+              <% if params[:locale]=='en' %>
+                E.B. Ten., prof. National University of Science and Technology "MISIS" (MISIS), president of AKSTS Russia
+              <% else %>
+                Тэн Э.Б., проф. Национального исследовательского технологического университета "МИСиС", президент АНТОК
+              <% end %>
             </div>
           </div>
         </div>

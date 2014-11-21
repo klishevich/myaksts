@@ -7,7 +7,19 @@ function update_science_specific_field(element){
        $el.append($("<option></option>")
           .attr("value", value.id).text(value.name));
     });
-  });    
+  });     
+};
+
+function update_science_specific_field_ru(element){
+  var $el = $("#kofst_applic_science_specific_field_id");
+  $el.empty(); 
+  $.getJSON("/science_specific_fields/index?term=" + element.value,function(result){
+    $.each(result, function(key, value){
+       $el.append($("<option></option>")
+          .attr("value", value.id).text(value.name_ru));
+    });
+  });     
+};
 
     // var newOptions = {"Option 1": "value1",
     //   "Option 2": "value2",
@@ -19,9 +31,7 @@ function update_science_specific_field(element){
     // $.each(newOptions, function(key, value) {
     //   $el.append($("<option></option>")
     //      .attr("value", value).text(key));
-    // });    
-
-};
+    // });   
 
     // var str1 = "t"
     // var res = str1.concat(element.id);

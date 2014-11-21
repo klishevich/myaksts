@@ -6,7 +6,7 @@ class ScienceSpecificFieldsController < ApplicationController
   	else
   		ssf = []
   	end
-    list = ssf.map {|u| Hash[ id: u.id, name: u.name]}
+    list = ssf.map {|u| Hash[ id: u.id, name: u.name, name_ru: u.name_ru]}
     render json: list  	
   end
 end

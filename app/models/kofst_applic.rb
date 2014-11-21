@@ -27,6 +27,7 @@ class KofstApplic < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :avatar, presence: true
+  validates :english_name, presence: true
   validates :gender, presence: true  
   validates :birth_date, presence: true
   validates :job_type, presence: true

@@ -18,8 +18,13 @@
       <%= f.input :job_position %>
       <%= f.input :job_email %>
       <%= f.input :job_phone %>
-      <%= f.input :science_field_id, collection: ScienceField.all, label_method: :name, value_method: :id, prompt: t(:choose_value), :input_html => {:onChange => 'update_science_specific_field(this);'} %>
-      <%= f.input :science_specific_field_id, collection: ScienceSpecificField.all, label_method: :name, value_method: :id, prompt: t(:choose_value) %>      
+      <% if params[:locale]=='en' %>
+        <%= f.input :science_field_id, collection: ScienceField.all, label_method: :name, value_method: :id, prompt: t(:choose_value), :input_html => {:onChange => 'update_science_specific_field(this);'} %>
+        <%= f.input :science_specific_field_id, collection: ScienceSpecificField.all, label_method: :name, value_method: :id, prompt: t(:choose_value) %>
+      <% else %>
+        <%= f.input :science_field_id, collection: ScienceField.all, label_method: :name_ru, value_method: :id, prompt: t(:choose_value), :input_html => {:onChange => 'update_science_specific_field_ru(this);'} %>
+        <%= f.input :science_specific_field_id, collection: ScienceSpecificField.all, label_method: :name_ru, value_method: :id, prompt: t(:choose_value) %>
+      <% end %>      
       <%= f.input :mobile %>
       <%= f.input :address %>
       <%= f.input :country, as: :string %>

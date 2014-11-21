@@ -54,7 +54,13 @@
           &copy; <a href="http://www.aksts.ru">www.aksts.ru</a> 2014
         <nav>
           <ul>
-            <li>Разработка сайта <a href="http://www.busation.com/">@busation</a></li>
+            <li>
+              <% if params[:locale]=='en' %>
+                Site made by
+              <% else %>
+                Разработка сайта
+              <% end %>
+              <a href="http://www.busation.com/">@busation</a></li>
           </ul>
         </nav>
       </footer>       

@@ -16,7 +16,7 @@ class KofstApplicsController < ApplicationController
 
   def new
     @applic = current_user.kofst_applics.build(job_email: current_user.email, 
-      english_name: current_user.name, country: "Russia", kofst_association: "AKSTS Russia", 
+      country: "Russia", kofst_association: "AKSTS Russia", 
       nationality: "Russian Federation")
   end
 

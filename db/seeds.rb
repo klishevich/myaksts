@@ -356,26 +356,3 @@ field.science_specific_fields.create([
   { name: "Construction Environment/Equipment", name_ru: "Строительство окружающей среды/Оборудование" },	
   { name: "Other Construction/Transportation", name_ru: "Другой раздел данной науки" }	
 ])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
