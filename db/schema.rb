@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141118100425) do
+ActiveRecord::Schema.define(:version => 20141121090814) do
 
   create_table "applics", :force => true do |t|
     t.integer  "user_id"
@@ -155,6 +155,7 @@ ActiveRecord::Schema.define(:version => 20141118100425) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name_ru"
   end
 
   create_table "science_specific_fields", :force => true do |t|
@@ -162,6 +163,7 @@ ActiveRecord::Schema.define(:version => 20141118100425) do
     t.string   "name"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.string   "name_ru"
   end
 
   add_index "science_specific_fields", ["science_field_id"], :name => "index_science_specific_fields_on_science_field_id"
