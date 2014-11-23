@@ -1,5 +1,5 @@
 class ApplicMailer < ActionMailer::Base
-  default from: "mans1st@yandex.ru"
+  default from: 'mans1st@yandex.ru'
 
   # def welcome_email(user)
   # 	# Rails.logger.debug 'welcome_email'
@@ -24,8 +24,7 @@ class ApplicMailer < ActionMailer::Base
   end
 
   def test_email1
-  	Rails.logger.debug 'test_email'
-  	mail(:to => 'm.klishevich@yandex.ru', :subject => "testing rails", body: "lasfkasf")
+    Rails.logger.debug 'test_email'
+    mail(to: 'm.klishevich@yandex.ru', subject: 'testing rails', body: 'lasfkasf')
   end
-
 end

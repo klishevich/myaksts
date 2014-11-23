@@ -7,15 +7,15 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :role_ids, :as => :admin
+  attr_accessible :role_ids, as: :admin
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :is_antok_member, :antok_id,
-    :is_foreign
+                  :is_foreign
 
   validates :name, presence: true
 
-  has_one :applic, dependent: :destroy  
+  has_one :applic, dependent: :destroy
 
-  has_many :kofst_applics, dependent: :destroy 
+  has_many :kofst_applics, dependent: :destroy
 
   validate :antok_id_cannot_be_blank
 
@@ -29,11 +29,10 @@ class User < ActiveRecord::Base
 
   private
 
-    def update_foreign_params
-      if self.is_foreign
-        self.is_antok_member = true
-        self.antok_id = 'F'
-      end
+  def update_foreign_params
+    if is_foreign
+      self.is_antok_member = true
+      self.antok_id = 'F'
     end
-  
+  end
 end

@@ -6,11 +6,11 @@ gem 'pg'
 gem 'capistrano'
 gem 'rvm-capistrano'
 gem 'capistrano-deploy'
-gem "slim-rails"
+gem 'slim-rails'
 gem 'bootstrap-datepicker-rails'
-gem "prawn"
-gem 'resque', :require => 'resque/server'
-gem "paperclip", "~> 4.2"
+gem 'prawn'
+gem 'resque', require: 'resque/server'
+gem 'paperclip', '~> 4.2'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -24,13 +24,14 @@ gem 'devise'
 gem 'figaro'
 gem 'rolify'
 gem 'simple_form'
-gem 'therubyracer', :platform=>:ruby
+gem 'therubyracer', platform: :ruby
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
-  gem 'hub', :require=>nil
+  gem 'binding_of_caller', platforms: [:mri_19, :mri_20, :rbx]
+  gem 'hub', require: nil
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'rubocop', require: false
 end
 group :development, :test do
   gem 'factory_girl_rails'
@@ -42,7 +43,7 @@ group :production do
 end
 group :test do
   gem 'capybara'
-  gem 'cucumber-rails', :require=>false
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner', '1.0.1'
   gem 'email_spec'
   gem 'launchy'

@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :message do
-    title "MyString"
-    body "MyText"
+    title 'MyString'
+    body 'MyText'
     send_email false
   end
 end

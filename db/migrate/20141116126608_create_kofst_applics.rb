@@ -16,7 +16,7 @@ class CreateKofstApplics < ActiveRecord::Migration
 
       t.integer :science_field_id
       t.integer :science_specific_field_id
-    
+
       t.string :mobile
       t.string :address
       t.string :country
@@ -50,7 +50,7 @@ class CreateKofstApplics < ActiveRecord::Migration
       t.string :p_period3
       t.string :p_period4
       t.string :p_period5
-      t.string :p_organization1	
+      t.string :p_organization1
       t.string :p_organization2
       t.string :p_organization3
       t.string :p_organization4
@@ -81,12 +81,12 @@ class CreateKofstApplics < ActiveRecord::Migration
       t.boolean :i_internation_conference
       t.boolean :i_seminar
       t.boolean :i_information_interaction
-      t.boolean :i_others       
+      t.boolean :i_others
 
       t.timestamps
     end
-    add_index :kofst_applics, [:user_id]    
+    add_index :kofst_applics, [:user_id]
     add_index :kofst_applics, [:science_field_id]
-    add_index :kofst_applics, [:science_specific_field_id]        
+    add_index :kofst_applics, [:science_specific_field_id]
   end
 end

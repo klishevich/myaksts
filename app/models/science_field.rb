@@ -1,4 +1,4 @@
 class ScienceField < ActiveRecord::Base
-  has_many :science_specific_fields	
+  has_many :science_specific_fields
   attr_accessible :name, :name_ru
 end
