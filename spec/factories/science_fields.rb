@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :science_field do
-    name "MyString"
+    name 'MyString'
   end
 end

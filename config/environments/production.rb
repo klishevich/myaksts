@@ -71,15 +71,15 @@ Myaksts::Application.configure do
   #   password: ENV["GMAIL_PASSWORD"]
   # }
 
-  config.action_mailer.default_url_options = { :host => 'my.aksts.ru' }
+  config.action_mailer.default_url_options = { host: 'my.aksts.ru' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :sendmail
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default charset: 'utf-8'
 
-  config.action_mailer.sendmail_settings = { :arguments => "-i" }
+  config.action_mailer.sendmail_settings = { arguments: '-i' }
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)

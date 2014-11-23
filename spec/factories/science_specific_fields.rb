@@ -3,6 +3,6 @@
 FactoryGirl.define do
   factory :science_specific_field do
     science_field nil
-    name "MyString"
+    name 'MyString'
   end
 end

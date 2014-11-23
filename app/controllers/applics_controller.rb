@@ -1,16 +1,16 @@
 class ApplicsController < ApplicationController
   before_filter :signed_in_user
   before_filter :have_no_applic, only: [:new, :create]
-  load_and_authorize_resource 
+  load_and_authorize_resource
   # before_filter :admin_user, only: :index
 
   def index
-    @applics=Applic.limit(100).order("id")
+    @applics = Applic.limit(100).order('id')
     authorize! :index, @applics
     respond_to do |format|
       format.html
       format.csv { render text: @applics.to_csv }
-      format.xls #{ send_data @applics.to_csv(col_sep: "\t") }
+      format.xls # { send_data @applics.to_csv(col_sep: "\t") }
     end
   end
 
@@ -37,13 +37,13 @@ class ApplicsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        send_data pdf.render, filename: "applic#{@applic.id}.pdf", type: "application/pdf", disposition: "inline"
-      end          
+        send_data pdf.render, filename: "applic#{@applic.id}.pdf", type: 'application/pdf', disposition: 'inline'
+      end
     end
   end
 
   def edit
-  	@applic=Applic.find(params[:id])
+    @applic = Applic.find(params[:id])
   end
 
   def update
@@ -64,16 +64,15 @@ class ApplicsController < ApplicationController
     unless signed_in?
       redirect_to root_path, notice: t(:please_sign_in)
     end
-  end 
+  end
 
   def have_applic
     current_user.applic
   end
 
   def have_no_applic
-    unless !have_applic
+    if have_applic
       redirect_to current_user.applic, notice: t(:you_already_have_application)
     end
-  end   
-
+  end
 end
