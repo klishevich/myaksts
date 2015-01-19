@@ -6,11 +6,11 @@ class KofstApplicsController < ApplicationController
 
   def index
     @applics=KofstApplic.limit(100).order("id")
-    # authorize! :index, @applics
+    authorize! :index, @applics
     respond_to do |format|
       format.html
-      # format.csv { render text: @applics.to_csv }
-      # format.xls #{ send_data @applics.to_csv(col_sep: "\t") }
+      format.csv { render text: @applics.to_csv }
+      format.xls #{ send_data @applics.to_csv(col_sep: "\t") }
     end
   end
 
