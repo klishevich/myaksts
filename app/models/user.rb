@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 
   has_one :applic, dependent: :destroy  
 
-  has_many :kofst_applics, dependent: :destroy 
+  has_one :kofst_applic, dependent: :destroy 
 
   validate :antok_id_cannot_be_blank
 

@@ -28,8 +28,8 @@ Myaksts::Application.configure do
     domain: "gmail.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
+    user_name: "111",
+    password: "111"
   }  
 
   # Print deprecation notices to the Rails logger
