@@ -4,7 +4,7 @@ gem 'rails', '3.2.16'
 gem 'sqlite3'
 gem 'pg'
 gem 'capistrano'
-gem 'rvm-capistrano'
+gem 'rvm-capistrano', require: false
 gem 'capistrano-deploy'
 gem "slim-rails"
 gem 'bootstrap-datepicker-rails'
