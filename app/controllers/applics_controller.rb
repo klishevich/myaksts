@@ -18,7 +18,7 @@ class ApplicsController < ApplicationController
     tel = current_user.kofst_applic.mobile + " / " + current_user.kofst_applic.job_phone
     @applic = current_user.build_applic(fio: current_user.name, email: current_user.email, 
       phones: tel, uch_stepen: current_user.kofst_applic.e_degree1, 
-      work_company: current_user.kofst_applic.p_organization1, work_position: current_user.kofst_applic.p_position1)
+      work_company: current_user.kofst_applic.job_organization, work_position: current_user.kofst_applic.job_position)
   end
 
   def create
@@ -26,7 +26,7 @@ class ApplicsController < ApplicationController
     if @applic.save
       @applic.deliver
       flash[:success] = t(:application_sent)
-      redirect_to @applic
+      redirect_to root_path
     else
       render 'new'
     end

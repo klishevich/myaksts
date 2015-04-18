@@ -15,18 +15,18 @@ class KofstApplicsController < ApplicationController
   end
 
   def new
-    @applic = current_user.kofst_applics.build(job_email: current_user.email, 
+    @applic = current_user.build_kofst_applic(job_email: current_user.email, 
       country: "Russia", kofst_association: "AKSTS Russia", 
       nationality: "Russian Federation")
   end
 
   def create
     params[:kofst_applic][:applic_language] = I18n.locale.to_s
-    @applic = current_user.kofst_applics.build(params[:kofst_applic])
+    @applic = current_user.build_kofst_applic(params[:kofst_applic])
     if @applic.save
       # @applic.deliver
       # flash[:success] = t(:application_sent)
-      redirect_to @applic
+      redirect_to root_path
     else
       render 'new'
     end

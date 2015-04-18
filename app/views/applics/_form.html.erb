@@ -4,30 +4,12 @@
       <%= render 'shared/error_messages', object: f.object %>
       <h3><%= t(:personal_info) %></h3>
       <%= f.label :fio %><%= f.text_field :fio %>
-      <% if not_antok_member? %>
-        <%= f.label :fio_eng %><%= f.text_field :fio_eng %>      
-        <%= f.label :birth_date %><%= f.text_field :birth_date %>     
-        <%= f.label :sex %><%= f.select :sex, 
-          options_for_select([[t(:choose_value),""],[t(:male), "Мужской"], 
-            [t(:female), "Женский"]], @applic.sex) %>   
-        <%= f.label :post_address %><%= f.text_field :post_address %>
-      <% end %>
       <%= f.label :email %><%= f.text_field :email %>
       <%= f.label :phones %><%= f.text_field :phones %>   
       <h3><%= t(:education) %></h3>    
-      <% if not_antok_member? %>              
-        <%= f.label :edu_institute %><%= f.text_field :edu_institute %>  
-        <%= f.label :edu_institute_address %><%= f.text_field :edu_institute_address %>      
-        <%= f.label :edu_specialization %><%= f.text_field :edu_specialization %>  
-      <% end %>
       <%= f.label :uch_stepen %><%= f.text_field :uch_stepen %>
       <h3><%= t(:work) %></h3>      
       <%= f.label :work_company %><%= f.text_field :work_company %>
-      <% if not_antok_member? %>      
-        <%= f.label :work_start_year %><%= f.text_field :work_start_year %>
-        <%= f.label :work_department %><%= f.text_field :work_department %>
-        <%= f.label :work_specialization %><%= f.text_field :work_specialization %>
-      <% end %>
       <%= f.label :work_position %><%= f.text_field :work_position %>
       <% if params[:locale]!='en' %>
         <h3><%= t(:additional_info) %></h3>
@@ -36,9 +18,6 @@
             [t(:ekaterinburg), "Екатеринбург"], [t(:novosibirsk),"Новосибирск"], [t(:krasnoyarsk),"Красноярск"],
             [t(:far_east),"Дальний Восток"]], :selected=> @applic.antok_city) %>
       <% end %>
-      <% if not_antok_member? %>       
-        <%= f.label :public_organizations %><%= f.text_field :public_organizations %>
-      <% end %>  
       <h3><%= t(:applicaion_info) %></h3>
       <%= f.label :science_interests %><%= f.text_area :science_interests, rows: 5 %>
       <%= f.label :conf_topic %><%= f.text_field :conf_topic %>

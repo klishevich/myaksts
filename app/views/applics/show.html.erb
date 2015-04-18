@@ -7,35 +7,16 @@
       <%= render 'shared/error_messages', object: f.object %>
       <h3><%= t(:personal_info) %></h3>
       <%= f.label :fio %><%= f.text_field :fio, disabled: true  %>
-      <% if not_antok_member? %>
-        <%= f.label :fio_eng %><%= f.text_field :fio_eng, disabled: true  %>      
-        <%= f.label :birth_date %><%= f.text_field :birth_date, disabled: true  %>     
-        <%= f.label :sex %><%= f.text_field :sex, disabled: true  %>   
-        <%= f.label :post_address %><%= f.text_field :post_address, disabled: true  %>
-      <% end %>
       <%= f.label :email %><%= f.text_field :email, disabled: true  %>
       <%= f.label :phones %><%= f.text_field :phones, disabled: true  %>   
       <h3><%= t(:education) %></h3>   
-      <% if not_antok_member? %>                 
-        <%= f.label :edu_institute %><%= f.text_field :edu_institute, disabled: true  %>  
-        <%= f.label :edu_institute_address %><%= f.text_field :edu_institute_address, disabled: true  %>      
-        <%= f.label :edu_specialization %><%= f.text_field :edu_specialization, disabled: true  %>  
-      <% end %>
       <%= f.label :uch_stepen %><%= f.text_field :uch_stepen, disabled: true  %>
       <h3><%= t(:work) %></h3>
-      <%= f.label :work_company %><%= f.text_field :work_company, disabled: true  %>
-      <% if not_antok_member? %> 
-        <%= f.label :work_start_year %><%= f.text_field :work_start_year, disabled: true  %>
-        <%= f.label :work_department %><%= f.text_field :work_department, disabled: true  %>
-        <%= f.label :work_specialization %><%= f.text_field :work_specialization, disabled: true  %>
-      <% end %>        
+      <%= f.label :work_company %><%= f.text_field :work_company, disabled: true  %>      
       <%= f.label :work_position %><%= f.text_field :work_position, disabled: true  %>
       <% if params[:locale]!='en' %>
         <h3><%= t(:additional_info) %></h3>
         <%= f.label :antok_city %><%= f.text_field :antok_city, disabled: true  %>
-      <% end %>
-      <% if not_antok_member? %> 
-        <%= f.label :public_organizations %><%= f.text_field :public_organizations, disabled: true  %>
       <% end %>
       <h3><%= t(:applicaion_info) %></h3>
       <%= f.label :science_interests %><%= f.text_area :science_interests, rows: 5, disabled: true %>

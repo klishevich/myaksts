@@ -19,18 +19,25 @@
             </p>
             <br/>
             <div class="buttonsclass">
-              <% if user_signed_in? %>
+              <% if user_signed_in? %>                   
                 <% if current_user.has_role? :admin %>
                   <p><%= link_to "Смотреть все анкеты", kofst_applics_path, class: "btn btn-large btn-success"%></p>                
                   <p><%= link_to "Смотреть все заявки", applics_path, class: "btn btn-large btn-success"%></p>
                   <p><%= link_to "Отправка сообщений", messages_path, class: "btn btn-large btn-success"%></p>
                   <p><%= link_to "Мониторинг отправки", "resque", class: "btn btn-large btn-success", target: "_blank"%></p>
                 <% else %>
+                  <p><%= link_to t(:step1_view_btn), edit_user_registration_path, class: "btn btn-large"%></p>  
                   <% if current_user.kofst_applic %>
-                    <p><%= link_to t(:step2_view_btn), current_user.kofst_applic, class: "btn btn-large btn-success"%></p>
+                    <p><%= link_to t(:step2_view_btn), current_user.kofst_applic, class: "btn btn-large"%></p>
+                    <% if current_user.applic %>
+                      <p><%= link_to t(:step3_view_btn), current_user.applic, class: "btn btn-large"%></p>
+                    <% else %>
+                      <p><%= link_to t(:step3_apply_btn), new_applic_path, class: "btn btn-large btn-success"%></p>
+                    <% end %>
                   <% else %>
                     <p><%= link_to t(:step2_apply_btn), new_kofst_applic_path, class: "btn btn-large btn-success"%></p>
                   <% end %>
+
                 <% end %>
               <% else %>
                   <!--p><%= link_to t(:home_link_log_in), new_user_session_path, class: "btn btn-large btn-success"%></p>
