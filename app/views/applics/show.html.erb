@@ -29,6 +29,15 @@
       <%= f.select :participation_type, 
           options_for_select([[t(:choose_value),""], [t(:participance), "Очное"], [t(:publications_only), "Заочное"]], :selected=> @applic.participation_type), {}, {:disabled => true} %>
       <!-- <%= f.text_field :participation_type, disabled: true  %> -->
+      <h3><%= t(:compensation_info) %></h3> 
+      <%= f.label :need_compensation, :class => "checkbox inline" %> <%= f.check_box :need_compensation, disabled: true  %>
+      <br/>
+      <br/>
+      <div id="compensation_info_block">
+        <%= f.label :inn %> <%= f.text_field :inn, disabled: true  %>
+        <%= f.label :snils %> <%= f.text_field :snils, disabled: true  %>
+        <%= f.label :registration %> <%= f.text_field :registration,  disabled: true  %>
+      </div>
     <% end %>    
     <%= link_to t(:home_link), root_path, class: "btn btn-large btn-secondary" %>
   </div>

@@ -2,7 +2,8 @@ class Applic < ActiveRecord::Base
   attr_accessible  :fio, :fio_eng, :birth_date, :sex, :post_address, :email, :phones, :edu_institute,
       :edu_institute_address, :edu_specialization, :uch_stepen, :work_company, :work_start_year,
       :work_department, :work_position, :work_specialization, :public_organizations, :antok_city,
-      :science_interests, :conf_topic, :conf_section, :conf_coauthors, :participation_type  
+      :science_interests, :conf_topic, :conf_section, :conf_coauthors, :participation_type,
+      :need_compensation, :inn, :snils, :registration
   belongs_to :user
 
   validates :user_id, presence: true
@@ -18,6 +19,8 @@ class Applic < ActiveRecord::Base
   validates :conf_topic, presence: true, length: {minimum: 10}
   validates :conf_section, presence: true
   validates :participation_type, presence: true
+
+  validate :inn2, :snils2, :registration2
 
   # validate :fio_eng_cannot_be_blank, :birth_date_cannot_be_blank, :birth_date_should_be_1920_2000, 
   #     :sex_cannot_be_blank, :post_address_cannot_be_blank,
@@ -39,6 +42,23 @@ class Applic < ActiveRecord::Base
     end
   end  
 
+  def inn2
+    if self.inn.blank?
+      errors.add(:inn, :blank)
+    end
+  end
+
+  def snils2
+    if self.snils.blank?
+      errors.add(:snils, :blank)
+    end
+  end
+
+  def registration2
+    if self.registration.blank?
+      errors.add(:registration, :blank)
+    end
+  end
   # def fio_eng_cannot_be_blank
   #   if !self.user.is_antok_member? && fio_eng.blank?
   #     errors.add(:fio_eng, :blank)

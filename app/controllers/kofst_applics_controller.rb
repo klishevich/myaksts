@@ -25,7 +25,7 @@ class KofstApplicsController < ApplicationController
     @applic = current_user.build_kofst_applic(params[:kofst_applic])
     if @applic.save
       # @applic.deliver
-      # flash[:success] = t(:application_sent)
+      flash[:success] = t(:step2_application_sent)
       redirect_to root_path
     else
       render 'new'

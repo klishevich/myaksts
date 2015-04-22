@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141121090814) do
+ActiveRecord::Schema.define(:version => 20150422185547) do
 
   create_table "applics", :force => true do |t|
     t.integer  "user_id"
@@ -40,6 +40,10 @@ ActiveRecord::Schema.define(:version => 20141121090814) do
     t.string   "participation_type"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
+    t.boolean  "need_compensation"
+    t.string   "inn"
+    t.string   "snils"
+    t.text     "registration"
   end
 
   add_index "applics", ["user_id"], :name => "index_applics_on_user_id"
