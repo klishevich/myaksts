@@ -32,6 +32,9 @@
       <%= f.input :nationality %>
       <%= f.input :final_academic_degree, collection: [[t(:bachelor), "bachelor"], [t(:master), "master"], [t(:phd_or_doctor), "phd_or_doctor"]], label_method: :first, value_method: :last, prompt: t(:choose_value) %>   
       <h3><%= t(:education) %></h3> 
+      <div class="alert alert-info">
+       <%= t(:education_warning) %>
+      </div>
       <table class="t1">
         <tr>
           <th><%= t(:period) %></th>
@@ -71,6 +74,9 @@
         </tr>                                
       </table>
       <h3><%= t(:professional_activities) %></h3> 
+      <div class="alert alert-info">
+       <%= t(:professional_warning) %>
+      </div>
       <table class="t1">
         <tr>
           <th><%= t(:period) %></th>
@@ -125,7 +131,6 @@
       <%= f.input :i_information_interaction, as: :boolean, inline_label: true, label: false %>
       <%= f.input :i_others, as: :boolean, inline_label: true, label: false %>
        <div class="alert alert-info">
-         <button type="button" class="close" data-dismiss="alert">&times;</button>
            <%= t(:step2_warning) %>
        </div>
       <%= f.submit t(:save), class: "btn btn-large btn-primary", id: "Save" %>

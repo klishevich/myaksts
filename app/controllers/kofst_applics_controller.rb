@@ -16,8 +16,7 @@ class KofstApplicsController < ApplicationController
 
   def new
     @applic = current_user.build_kofst_applic(job_email: current_user.email, 
-      country: "Russia", kofst_association: "AKSTS Russia", 
-      nationality: "Russian Federation")
+      country: "Russia", nationality: "Russian Federation")
   end
 
   def create
@@ -25,7 +24,7 @@ class KofstApplicsController < ApplicationController
     @applic = current_user.build_kofst_applic(params[:kofst_applic])
     if @applic.save
       # @applic.deliver
-      flash[:success] = t(:step2_application_sent)
+      flash[:success] = t(:step3_application_sent)
       redirect_to root_path
     else
       render 'new'

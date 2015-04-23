@@ -23,7 +23,7 @@ class ApplicsController < ApplicationController
     @applic = current_user.build_applic(params[:applic])
     if @applic.save
       @applic.deliver
-      flash[:success] = t(:step3_application_sent)
+      flash[:success] = t(:step2_application_sent)
       redirect_to root_path
     else
       render 'new'

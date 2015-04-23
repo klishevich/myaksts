@@ -42,7 +42,7 @@ class KofstApplic < ActiveRecord::Base
   validates :mobile, presence: true
   validates :address, presence: true
   validates :country, presence: true
-  validates :kofst_association, presence: true
+  # validates :kofst_association, presence: true
   validates :nationality, presence: true
   validates :final_academic_degree, presence: true
   validates :e_period1, presence: true

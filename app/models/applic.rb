@@ -43,19 +43,19 @@ class Applic < ActiveRecord::Base
   end  
 
   def inn2
-    if self.inn.blank?
+    if self.inn.blank? && self.need_compensation?
       errors.add(:inn, :blank)
     end
   end
 
   def snils2
-    if self.snils.blank?
+    if self.snils.blank? && self.need_compensation?
       errors.add(:snils, :blank)
     end
   end
 
   def registration2
-    if self.registration.blank?
+    if self.registration.blank? && self.need_compensation?
       errors.add(:registration, :blank)
     end
   end
