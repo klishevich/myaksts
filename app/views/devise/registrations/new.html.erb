@@ -10,8 +10,13 @@
     <%= f.input :is_foreign, :as => :boolean %>
   <% end %>
   <% if params[:locale]!='en' %>
-    <%= f.input :is_antok_member, :as => :boolean %> 
-    <%= f.input :antok_id%>
+    <%= f.input :is_antok_member, :as => :boolean %>   
+    <div id="antok_id_block">
+      <%= f.input :antok_id%>
+      <div class="alert alert-info">
+        <p>Тут можно узнать свой АНТОК ID - <a href="/antok_id" target="_blank">страница поиска АНТОК ID</a></p>
+      </div>
+    </div>
   <% end %>
   <%= f.input :email, :required => true %>
   <%= f.input :password, :required => true %>

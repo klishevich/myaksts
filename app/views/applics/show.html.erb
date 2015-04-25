@@ -30,7 +30,7 @@
           options_for_select([[t(:choose_value),""], [t(:participance), "Очное"], [t(:publications_only), "Заочное"]], :selected=> @applic.participation_type), {}, {:disabled => true} %>
       <!-- <%= f.text_field :participation_type, disabled: true  %> -->
       <h3><%= t(:compensation_info) %></h3> 
-      <%= f.label :need_compensation, :class => "checkbox inline" %> <%= f.check_box :need_compensation, disabled: true  %>
+      <%= f.label :need_compensation %> <%= f.check_box :need_compensation, disabled: true  %>
       <br/>
       <br/>
       <div id="compensation_info_block">

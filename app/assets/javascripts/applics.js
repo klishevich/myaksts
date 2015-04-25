@@ -15,3 +15,23 @@ $(document).ready(function(){
         $("#compensation_info_block").hide();
     }
 });
+
+//js for sign up page
+
+$(document).ready(function(){   
+	$('#user_is_antok_member').click(function() {
+	    if( $(this).is(':checked')) {
+	        $("#antok_id_block").show();
+	    } else {
+	        $("#antok_id_block").hide();
+	    }
+	}); 
+});
+
+$(document).ready(function(){   
+    if( $('#user_is_antok_member').is(':checked')) {
+        $("#antok_id_block").show();
+    } else {
+        $("#antok_id_block").hide();
+    }
+});
