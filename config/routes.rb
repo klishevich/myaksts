@@ -1,4 +1,6 @@
 Myaksts::Application.routes.draw do
+  match '/antok_id', to: 'antok_members#index'
+
   get "science_specific_fields/index"
 
   devise_for :user

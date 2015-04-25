@@ -1,0 +1,16 @@
+h1 Поиск своего АНТОК ID
+table class="table table-striped"
+  tr
+    th АНТОК ID
+    th ФИО
+    th Год рождения
+  - var = 0
+  - @members.each do |member|
+    - var+=1
+    tr
+      td = member.antok_id
+      td = member.fio
+      td = member.birth_date
+      / td = l member.birth_date.in_time_zone("Moscow"), format: :short      
+
+ 
