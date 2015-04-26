@@ -10,17 +10,22 @@ class Applic < ActiveRecord::Base
   validates :fio, presence: true, length: {minimum: 5}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}  
-  validates :phones, presence: true, length: {minimum: 10}
+  validates :phones, presence: true, length: {minimum: 5}
   validates :uch_stepen, presence: true, length: {minimum: 5}
   validates :work_company, presence: true, length: {minimum: 5}
   validates :work_position, presence: true, length: {minimum: 5}
   # validates :antok_city, presence: true
   validates :science_interests, presence: true, length: {minimum: 5}
-  validates :conf_topic, presence: true, length: {minimum: 10}
+  validates :conf_topic, presence: true, length: {minimum: 5}
   validates :conf_section, presence: true
   validates :participation_type, presence: true
 
-  validate :inn2, :snils2, :registration2
+  validates :inn, presence: true, length: {is: 12}, numericality: true, :if => :need_compensation?
+  validates :snils, presence: true, length: {is: 11}, numericality: true, :if => :need_compensation?
+  validates :registration, presence: true, length: {minimum: 10}, :if => :need_compensation?
+
+
+  # validate :inn2, :snils2, :registration2
 
   # validate :fio_eng_cannot_be_blank, :birth_date_cannot_be_blank, :birth_date_should_be_1920_2000, 
   #     :sex_cannot_be_blank, :post_address_cannot_be_blank,
@@ -42,23 +47,27 @@ class Applic < ActiveRecord::Base
     end
   end  
 
-  def inn2
-    if self.inn.blank? && self.need_compensation?
-      errors.add(:inn, :blank)
-    end
-  end
+  # def need_compensation?
+  #   self
+  # end
 
-  def snils2
-    if self.snils.blank? && self.need_compensation?
-      errors.add(:snils, :blank)
-    end
-  end
+  # def inn2
+  #   if self.inn.blank? && self.need_compensation?
+  #     errors.add(:inn, :blank)
+  #   end
+  # end
 
-  def registration2
-    if self.registration.blank? && self.need_compensation?
-      errors.add(:registration, :blank)
-    end
-  end
+  # def snils2
+  #   if self.snils.blank? && self.need_compensation?
+  #     errors.add(:snils, :blank)
+  #   end
+  # end
+
+  # def registration2
+  #   if self.registration.blank? && self.need_compensation?
+  #     errors.add(:registration, :blank)
+  #   end
+  # end
   # def fio_eng_cannot_be_blank
   #   if !self.user.is_antok_member? && fio_eng.blank?
   #     errors.add(:fio_eng, :blank)

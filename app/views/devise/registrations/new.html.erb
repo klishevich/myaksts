@@ -13,7 +13,7 @@
     <%= f.input :is_antok_member, :as => :boolean %>   
     <div id="antok_id_block">
       <%= f.input :antok_id%>
-      <div class="alert alert-info">
+      <div class="alert alert-info" style="width:470px;">
         <p>Тут можно узнать свой АНТОК ID - <a href="/antok_id" target="_blank">страница поиска АНТОК ID</a></p>
       </div>
     </div>
@@ -22,5 +22,12 @@
   <%= f.input :password, :required => true %>
   <%= f.input :password_confirmation, :required => true %>
   <%= f.button :submit, t(:sign_up), :class => 'btn-primary' %>
+  <% if params[:locale]!='en' %>
+    <br/>
+    <br/>
+    <div class="alert alert-info" style="width:470px;">
+      Если нужна компенсация расходов, то на втором шаге потребуется ИНН, СНИЛС и адрес регистрации с индексом. Пожалуйста, приготовьте информацию заранее.
+    </div>
+  <% end %>
 <% end %>
 <%= render "devise/shared/links" %>
