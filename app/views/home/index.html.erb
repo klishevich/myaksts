@@ -5,16 +5,26 @@
       <!--p style="text-align:center;"><b><%= t(:welcome_myaksts)%></b></p-->
       <p style="text-align:center;">
         <% if params[:locale]=='en' %>
-          <p style="text-align:center;"><b>2015 CONFERENCE IS COMING!</b></p>
+          <p style="text-align:center;"><b>WELCOME TO AKSTS RUSSIA 2015 CONFERENCE</b></p>
           <p>2015 Science and Technology AKSTS conference will  be from 19 to 21 of July 2015.</p>
-          <p>Conference will be hold in Moscow or Moscow territory. Conference will be in format CIS - Korea. Soon registration will be opened.</p>
+          <p>Conference will be hold in Moscow or Moscow territory. Conference will be in format CIS - Korea.</p>
           <p>Sincerely Yours AKSTS</p>
         <% else %>
-          <p style="text-align:center;"><b>КОНФЕРЕНЦИЯ 2015 УЖЕ СКОРО!</b></p>
-          <p>Определены сроки проведения Ежегодной конференции по науке и технологиям, проводимой АНТОК - с 19 по 21 июля 2015 года.</p>
-          <p>Место поведения конференции - Москва или ближнее Подмосковье. Конференция планируется в формате СНГ - Корея. В ближайшее время будет открыта онлайн регистрация участников конференции и объявлен сбор тезисов.</p>
-          <p>Регистрация откроется в ближайшие дни.</p>
-          <p>С уважением, Ваш АНТОК</p>
+          <p style="text-align:center;"><b>ДОБРО ПОЖАЛОВАТЬ НА КОНФЕРЕНЦИЮ АНТОК-2015</b></p>
+          <p>Рад сообщить, что Ассоциация научно-технических обществ корейцев  (АНТОК) России проводит очередную XVI научную конференцию. Она состоится в г. Москве с 19 по 21 июля 2015 г. </p>
+          <p>Конференция проводится в рамках празднования 25-летия установления дипломатических отношений между Российской Федерацией и Республикой Корея. </p>
+          <p>Основными организаторами конференции вступают Российская академия наук (РАН) и Корейская федерация по науке и технологии (KOFST). </p>
+          <p>Со-организаторами конференции являются АНТОК и Корейско-Российский Центр сотрудничества по науке и технологии (KORUSTEC). Планируется, что к нашей конференции в качестве со-организаторов присоединятся научно-технические общества Узбекистана (ТИНБО) и Казахстана (КАХАК). </p>
+          <p>Мы надеемся, что в этом году наша конференция будет весьма представительной, в ней примут участие выдающиеся ученые из многих стран и она станет значимым событием в ряду мероприятий, проводимых в рамках празднования 25-летия установления дипломатических отношений между Российской Федерацией и Республикой Корея. </p>
+          <p>Предлагается следующий график проведения конференции:</p>
+          <ul style="text-align:left;">
+            <li><b>19 июля</b> – провести открытие конференции и пленарное заседание в г. Москве в здании Президиума РАН с 14 до 17 час. <br/>Затем отъезд на автобусах, прибытие и размещение в подмосковном санатории, приветственный ужин. </li>
+            <li><b>20 июля</b> - секционные заседания по различным направлениям (см. Информационное письмо) и банкет.</li>
+            <li><b>21 июня</b> – 10.00 – 12.00 – завершение секционных заседаний и закрытие конференции; <br/>12.00 – 13.30 – прощальный обед, отъезд в Москву и автономная культурная программа.</li>
+          </ul>
+          <p>С уважением, Тен Э.Б.</p>
+          <p style="text-align:center;"><b>РЕГИСТРАЦИЯ НА КОНФЕРЕНЦИЮ</b></p>
+          <p><b>Для участия в конференции необходимо подать заявку через сайт.</b> Для зарегистрированных пользователей (тех кто участвовал в конференции АНТОК-2014) используйте кнопку "Вход". Для новых пользователей используйте кнопку "Регистрация".</p>
         <% end %>
       </p>
       <br/>
@@ -53,9 +63,9 @@
             <% end %>
           <% end %>
         <% else %>
-            <!--p><%= link_to t(:home_link_log_in), new_user_session_path, class: "btn btn-large btn-success"%></p>
-            <p><%= t(:or) %></p>
-            <p><%= link_to t(:sign_up), new_user_registration_path, class: "btn btn-large btn-success"%></p-->                
+          <p><%= link_to t(:home_link_log_in), new_user_session_path, class: "btn btn-large btn-success"%></p>
+          <p><%= t(:or) %></p>
+          <p><%= link_to t(:sign_up), new_user_registration_path, class: "btn btn-large btn-success"%></p>
         <% end %>
       </div>   
     </div>
@@ -63,11 +73,15 @@
       <%= image_tag "teneb.jpg" %>
       <div id="small">
         <% if params[:locale]=='en' %>
-          E.B. Ten., prof. National University of Science and Technology "MISIS" (MISIS), president of AKSTS Russia
+          <div>E.B. Ten., prof. National University of Science and Technology "MISIS" (MISIS), president of AKSTS Russia</div>
         <% else %>
-          Тэн Э.Б., проф. Национального исследовательского технологического университета "МИСиС", президент АНТОК
+          <div>Тэн Э.Б., проф. Национального исследовательского технологического университета "МИСиС", президент АНТОК</div>
         <% end %>
       </div>
+      <div id="attach">
+        <p style="text-align:center;"><%= link_to "Скачать информационное письмо (Рус.)", '/docs/ConfAKSTS2015_inform1_RUS.docx' %></p>
+                  <!-- <p style="text-align:center;"><%= link_to "Download conference program (Eng.)", '/docs/Program_ENG_5.pdf'%></p>   -->
+      </div>      
     </div>
   </div>
 <!--         <h1><%= t(:home_welcome) %></h1>
