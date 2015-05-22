@@ -5,9 +5,13 @@
       <h3><%= t(:personal_info) %></h3>
       <%= f.label :fio %><%= f.text_field :fio %>
       <%= f.label :email %><%= f.text_field :email %>
-      <%= f.label :phones %><%= f.text_field :phones %>   
+      <%= f.label :phones %><%= f.text_field :phones %>          
+      <%= f.label :phone_work %><%= f.text_field :phone_work %>   
+      <%= f.label :phone_home %><%= f.text_field :phone_home %>   
       <h3><%= t(:education) %></h3>    
-      <%= f.label :uch_stepen %><%= f.text_field :uch_stepen %>
+      <%= f.label :uch_stepen %><%= f.select :uch_stepen, 
+          options_for_select([[t(:choose_value),""], [t(:st_doctor),"Доктор наук"], [t(:st_kandidat), "Кандидат наук"], [t(:st_magister), "Магистр"], [t(:st_special),"Специалист"], [t(:st_bachelor),"Бакалавр"],
+            [t(:st_student),"Студент"]], :selected=> @applic.uch_stepen) %>
       <h3><%= t(:work) %></h3>      
       <%= f.label :work_company %><%= f.text_field :work_company %>
       <%= f.label :work_position %><%= f.text_field :work_position %>

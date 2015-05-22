@@ -104,6 +104,7 @@ en:
       accepted: must be accepted
       blank: can't be blank
       should_be_1920_2000: must be from 1920 to 2000
+      antok_id_not_found: antok_id not found
       present: must be blank
       confirmation: ! "doesn't match %{attribute}"
       empty: can't be empty
@@ -224,7 +225,9 @@ en:
         birth_date: "Birth date (YYYY-MM-DD)"
         sex: "Gender"
         post_address: "Postal address"
-        phones: "Telephone with the country and city code (mobile/ office / home / fax)"
+        phones: "Mobile phone (10 digets, only numbers)"
+        phone_work: "Work phone (10 digets, only numbers)"
+        phone_home: "Home phone (10 digets, only numbers)"
         edu_institute: "Education: University"
         edu_institute_address: "University address"
         edu_specialization: "Specialization / Major"
@@ -376,3 +379,9 @@ en:
   or: "or"
   education_warning: "Not less then 1 record"
   professional_warning: "Not less then 1 record"
+  st_doctor: "PhD doctor"
+  st_kandidat: "PhD candidate"
+  st_magister: "Magister"
+  st_special: "Specialist"
+  st_bachelor: "Bachelor"
+  st_student: "Student"

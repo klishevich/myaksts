@@ -9,8 +9,12 @@
       <%= f.label :fio %><%= f.text_field :fio, disabled: true  %>
       <%= f.label :email %><%= f.text_field :email, disabled: true  %>
       <%= f.label :phones %><%= f.text_field :phones, disabled: true  %>   
+      <%= f.label :phone_work %><%= f.text_field :phone_work, disabled: true %>   
+      <%= f.label :phone_home %><%= f.text_field :phone_home, disabled: true %>       
       <h3><%= t(:education) %></h3>   
-      <%= f.label :uch_stepen %><%= f.text_field :uch_stepen, disabled: true  %>
+      <%= f.label :uch_stepen %><%= f.select :uch_stepen, 
+          options_for_select([[t(:choose_value),""], [t(:st_doctor),"Доктор наук"], [t(:st_kandidat), "Кандидат наук"], [t(:st_magister), "Магистр"], [t(:st_special),"Специалист"], [t(:st_bachelor),"Бакалавр"],
+            [t(:st_student),"Студент"]], :selected=> @applic.uch_stepen), {:size=>30}, {:disabled => true} %>      
       <h3><%= t(:work) %></h3>
       <%= f.label :work_company %><%= f.text_field :work_company, disabled: true  %>      
       <%= f.label :work_position %><%= f.text_field :work_position, disabled: true  %>

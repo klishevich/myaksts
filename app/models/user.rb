@@ -17,13 +17,21 @@ class User < ActiveRecord::Base
 
   has_one :kofst_applic, dependent: :destroy 
 
-  validate :antok_id_cannot_be_blank
+  validate :antok_id_should_be_correct
 
   before_save :update_foreign_params
 
-  def antok_id_cannot_be_blank
-    if is_antok_member && antok_id.blank?
-      errors.add(:antok_id, :blank)
+  def antok_id_should_be_correct
+    if is_antok_member
+      if antok_id.blank?
+        errors.add(:antok_id, :blank)
+      else
+        member = AntokMember.where(antok_id: antok_id).first
+        if member.nil?
+          Rails.logger.info("!!!! nil")
+          errors.add(:antok_id, :antok_id_not_found) 
+        end     
+      end
     end
   end
 
