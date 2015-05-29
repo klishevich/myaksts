@@ -30,19 +30,20 @@
       <%= f.label :conf_coauthors %><%= f.text_field :conf_coauthors %>
       <%= f.label :participation_type %><%= f.select :participation_type, 
           options_for_select([[t(:choose_value),""], [t(:participance), "Очное"], [t(:publications_only), "Заочное"]], :selected=> @applic.participation_type) %>
-      <h3><%= t(:compensation_info) %></h3>
-      
-      <%= f.label :need_compensation %> <%= f.check_box :need_compensation %>
-      <br/>
-      <br/>
-      <div id="compensation_info_block">
-        <div class="alert alert-info">
-           <%= t(:step2_compensation_info) %>
-       </div>
-        <%= f.label :inn %> <%= f.text_field :inn %>
-        <%= f.label :snils %> <%= f.text_field :snils %>
-        <%= f.label :registration %> <%= f.text_field :registration %>
-      </div>
+      <% if current_user.is_antok_member %>
+        <h3><%= t(:compensation_info) %></h3>
+        <%= f.label :need_compensation %> <%= f.check_box :need_compensation %>
+        <br/>
+        <br/>
+        <div id="compensation_info_block">
+          <div class="alert alert-info">
+            <%= t(:step2_compensation_info) %>
+          </div>
+          <%= f.label :inn %> <%= f.text_field :inn %>
+          <%= f.label :snils %> <%= f.text_field :snils %>
+          <%= f.label :registration %> <%= f.text_field :registration %>
+        </div>
+      <% end %>  
        <div class="alert alert-info">
            <%= t(:step2_warning) %>
        </div>

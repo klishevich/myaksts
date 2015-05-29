@@ -14,9 +14,19 @@
     <%= f.input :antok_id%>  
   <% end %>
   <%= f.input :email, :required => true %>
-  <%= f.input :password, :autocomplete => "off", :hint => t(:leave_it_blank), :required => false %>
+  <% if params[:locale]!='en' %>
+    <div class="alert alert-info" style="width:470px;">
+      Поля "Пароль" и "Подтверждение пароля" заполняются, только если вы хотите изменить текущий пароль
+    </div>
+  <% end %>  
+  <%= f.input :password, :autocomplete => "off", :required => false %>
   <%= f.input :password_confirmation, :required => false %>
-  <%= f.input :current_password, :hint => t(:we_need_your_current_password), :required => true %>
+  <% if params[:locale]!='en' %>
+    <div class="alert alert-info" style="width:470px;">
+      Текущий пароль заполняется обязательно, чтобы сохранить изменения
+    </div>
+  <% end %>   
+  <%= f.input :current_password, :required => true %>
   <%= f.button :submit, t(:update), :class => 'btn btn-large btn-primary' %>
 <% end %>
 <h3><%= t(:cancel_my_account) %></h3>
