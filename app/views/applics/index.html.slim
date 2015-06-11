@@ -10,6 +10,7 @@ table class="table table-striped"
     th Тип участия
     th Дата подачи (МСК)    
     th 
+    th
   - var = 0
   - @applics.each do |applic|
     - var+=1
@@ -22,6 +23,7 @@ table class="table table-striped"
       td = applic.participation_type
       td = l applic.created_at.in_time_zone("Moscow"), format: :short      
       td = link_to 'Скачать анкету', applic_path(applic, format: :pdf)
+      td = link_to 'Изменить', edit_applic_path(applic)
 
 / ul.applics
 /   - @applics.each do |applic|
