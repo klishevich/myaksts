@@ -356,6 +356,7 @@ en:
   biotechnology_biology: "Biotechnology, Biology, Living systems technology, Oceanography"
   geology_natural_resources: "Geology, Natural resources"
   social_sciences: "Social sciences"
+  aviation_space: "Aviation and Aerospace"
   participance: "Full time paticipation"
   publications_only: "Distance involved"
   sign_in: "Sign in"
@@ -386,3 +387,4 @@ en:
   st_bachelor: "Bachelor"
   st_student: "Student"
   find_antokid: "Find AKSTS ID"
+  your_login: "Your login for personal AKSTS member page http://my.aksts.ru - "

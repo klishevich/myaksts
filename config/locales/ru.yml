@@ -409,6 +409,7 @@ ru:
     biotechnology_biology: "Биотехнологии, биология, технологии живых систем, океанография"
     geology_natural_resources: "Геология, природные ресурсы"
     social_sciences: "Общественные науки"
+    aviation_space: "Авиационные и космические технологии"
     participance: "Очное"
     publications_only: "Заочное"
     sign_in: "Вход"
@@ -451,3 +452,4 @@ ru:
     st_bachelor: "Бакалавр"
     st_student: "Студент"
     find_antokid: "Найти АНТОК ID"
+    your_login: "Ваш логин для входа в личный кабинет АНТОК http://my.aksts.ru - "

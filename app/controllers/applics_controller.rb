@@ -5,7 +5,7 @@ class ApplicsController < ApplicationController
   # before_filter :admin_user, only: :index
 
   def index
-    @applics=Applic.limit(100).order("id")
+    @applics=Applic.limit(200).order("id")
     authorize! :index, @applics
     respond_to do |format|
       format.html

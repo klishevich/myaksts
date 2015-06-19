@@ -1,7 +1,6 @@
 h1 => @applic.user.name 
-p = t(:application_registered) 
+p = t(:application_registered)
 p #{t(:application_id_number)} #{@applic.id}
+p #{t(:your_login)} #{@applic.user.email}
 p = t(:questions_application)
 p = t(:abstracts)
-- if I18n.locale.to_s == 'en'
-  p = link_to "Download template for the Abstracts", 'http://e2014.aksts.ru/docs/Template_Papers.doc'

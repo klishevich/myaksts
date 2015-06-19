@@ -26,7 +26,7 @@
       <%= f.label :science_interests %><%= f.text_area :science_interests, rows: 5 %>
       <%= f.label :conf_topic %><%= f.text_field :conf_topic %>
       <%= f.label :conf_section %><%= f.select :conf_section, 
-          options_for_select([[t(:choose_value),""],[t(:physics_maths),"Физика, математика"], [t(:it_nanothechnologies), "Информационные (IT) и нанотехнологии"], [t(:power_electrical_engineering),"Энергетика, электротехника, машиностроение, механика"], [t(:chemistry_new_materials), "Химия, новые материалы и технологии их обработки"], [t(:biotechnology_biology), "Биотехнологии, биология, технологии живых систем, океанография"], [t(:geology_natural_resources), "Геология, природные ресурсы"], [t(:social_sciences), "Общественные науки"]], :selected=> @applic.conf_section) %>
+          options_for_select([[t(:choose_value),""],[t(:physics_maths),"Физика, математика"], [t(:it_nanothechnologies), "Информационные (IT) и нанотехнологии"], [t(:power_electrical_engineering),"Энергетика, электротехника, машиностроение, механика"], [t(:chemistry_new_materials), "Химия, новые материалы и технологии их обработки"], [t(:biotechnology_biology), "Биотехнологии, биология, технологии живых систем, океанография"], [t(:geology_natural_resources), "Геология, природные ресурсы"], [t(:social_sciences), "Общественные науки"], [t(:aviation_space), "Авиационные и космические технологии"]], :selected=> @applic.conf_section) %>
       <%= f.label :conf_coauthors %><%= f.text_field :conf_coauthors %>
       <%= f.label :participation_type %><%= f.select :participation_type, 
           options_for_select([[t(:choose_value),""], [t(:participance), "Очное"], [t(:publications_only), "Заочное"]], :selected=> @applic.participation_type) %>

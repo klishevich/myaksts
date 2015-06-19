@@ -3,6 +3,7 @@ p Скачать все анкеты: #{link_to "Excel", applics_path(format: "x
 table class="table table-striped"
   tr
     th №
+    th № анкеты
     th ФИО
     / th Работа, должность
     th Член АНТОК
@@ -16,6 +17,7 @@ table class="table table-striped"
     - var+=1
     tr
       td = var
+      td = applic.id
       td = link_to applic.fio, applic
       / td #{applic.work_company}, #{applic.work_position}
       td = (applic.user.is_antok_member ? "Да" : "Нет")
