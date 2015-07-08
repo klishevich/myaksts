@@ -370,7 +370,7 @@ en:
   update: "Update"
   unhappy: "Unhappy"
   cancel_my_account: "Cancel my account"
-  are_you_sure: "Are you sure"
+  are_you_sure: "Your application will also be deleted. Are you sure"
   back: "Back"
   application_id_number: "Your application number"
   questions_application: "If you have question or wish to correnct the application email to AKSTSRussia@gmail.com"
