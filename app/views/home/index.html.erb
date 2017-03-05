@@ -15,34 +15,34 @@
     <div class="invite_wrapper">
       <% if user_signed_in? %>                   
         <% if current_user.has_role? :admin %>
-          <p><%= link_to "Смотреть все анкеты", kofst_applics_path, class: "btn btn-large btn-success"%></p>
-          <p><%= link_to "Смотреть все заявки", applics_path, class: "btn btn-large btn-success"%></p>
-          <p><%= link_to "Отправка сообщений", messages_path, class: "btn btn-large btn-success"%></p>
-          <p><%= link_to "Мониторинг отправки", "resque", class: "btn btn-large btn-success", target: "_blank"%></p>
+          <p><%= link_to "Смотреть все анкеты", kofst_applics_path, class: "btn btn-lg btn-primary"%></p>
+          <p><%= link_to "Смотреть все заявки", applics_path, class: "btn btn-lg btn-primary"%></p>
+          <p><%= link_to "Отправка сообщений", messages_path, class: "btn btn-lg btn-primary"%></p>
+          <p><%= link_to "Мониторинг отправки", "resque", class: "btn btn-lg btn-primary", target: "_blank"%></p>
         <% else %>
           <% if current_user.is_antok_member? %>
-            <p><%= link_to t(:step1_view_btn), edit_user_registration_path, class: "btn btn-large"%></p>
+            <p><%= link_to t(:step1_view_btn), edit_user_registration_path, class: "btn btn-default btn-lg"%></p>
             <% if current_user.applic %>
-              <p><%= link_to t(:step2_view_btn), current_user.applic, class: "btn btn-large"%></p>
+              <p><%= link_to t(:step2_view_btn), current_user.applic, class: "btn btn-default btn-lg"%></p>
             <% else %>
-              <p><%= link_to t(:step2_apply_btn), new_applic_path, class: "btn btn-large btn-success"%></p>
+              <p><%= link_to t(:step2_apply_btn), new_applic_path, class: "btn btn-lg btn-primary"%></p>
             <% end %>
           <% else %>
-            <p><%= link_to t(:step1_view_btn), edit_user_registration_path, class: "btn btn-large"%></p>
+            <p><%= link_to t(:step1_view_btn), edit_user_registration_path, class: "btn btn-default btn-lg"%></p>
             <% if current_user.applic %>
-              <p><%= link_to t(:step2_view_btn), current_user.applic, class: "btn btn-large"%></p>
+              <p><%= link_to t(:step2_view_btn), current_user.applic, class: "btn btn-default btn-lg"%></p>
               <% if current_user.kofst_applic %>
-                <p><%= link_to t(:step3_view_btn), current_user.kofst_applic, class: "btn btn-large"%></p>
+                <p><%= link_to t(:step3_view_btn), current_user.kofst_applic, class: "btn btn-default btn-lg"%></p>
               <% else %>
                 <% if current_user.applic.need_compensation? %>
-                  <p><%= link_to t(:step3_apply_btn), new_kofst_applic_path, class: "btn btn-large btn-success"%></p>
+                  <p><%= link_to t(:step3_apply_btn), new_kofst_applic_path, class: "btn btn-lg btn-primary"%></p>
                   <div class="alert alert-info">
                     Персональная анкета заполняется НЕ членами АНТОК, при необходимости компенсации транспортных расходов.
                   </div>
                 <% end %>
               <% end %>
             <% else %>
-              <p><%= link_to t(:step2_apply_btn), new_applic_path, class: "btn btn-large btn-success"%></p>
+              <p><%= link_to t(:step2_apply_btn), new_applic_path, class: "btn btn-lg btn-primary"%></p>
             <% end %>                  
           <% end %>
         <% end %>
@@ -61,8 +61,7 @@
         </div>
       <% end %>
       <div class="attach">
-        <div><%= link_to "О конференции (Рус.)", '#' %></div>
-        <div><%= link_to "Скачать информационное письмо (Рус.)", '#' %></div>
+        <div><%= link_to "Скачать информационное письмо (Рус.)", '/docs/Inform1_STconference.pdf' %></div>
       </div> 
     </div> 
   </div>

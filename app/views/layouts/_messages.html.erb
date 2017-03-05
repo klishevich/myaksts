@@ -1,6 +1,7 @@
+<%# Rails flash messages styled for Bootstrap 2.3 %>
+
 <% flash.each do |key, value| %>
-<% key_class = key.to_s == 'notice' ? 'alert alert-info' : "alert alert-#{key}" %>
-<div class="<%= key_class %>" role="alert">
+<div class="alert alert-<%= key %>">
 	<a class="close" data-dismiss="alert">&times;</a>
 	<%= value %>
 </div>
