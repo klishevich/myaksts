@@ -2,18 +2,6 @@
 <div class="jumbotron">
   <div class="row">
     <div class="span7">
-      <!--p style="text-align:center;"><b><%= t(:welcome_myaksts)%></b></p-->
-      <p style="text-align:center;">
-        <% if params[:locale]=='en' %>
-          <p style="text-align:center;"><b>WELCOME TO AKSTS RUSSIA 2015 CONFERENCE</b></p>
-          <p>2015 Science and Technology AKSTS conference will  be from 19 to 21 of July 2015.</p>
-          <p>Conference will be hold in Moscow or Moscow territory. Conference will be in format CIS - Korea.</p>
-          <p>Sincerely Yours AKSTS</p>
-        <% else %>
-          <p style="text-align:center;"><b>ДОБРО ПОЖАЛОВАТЬ НА КОНФЕРЕНЦИЮ АНТОК-2015</b></p>
-          <p><b>Для участия в конференции необходимо подать заявку через сайт.</b> Для зарегистрированных пользователей (тех кто участвовал в конференции АНТОК-2014) используйте кнопку "Вход". Для новых пользователей используйте кнопку "Регистрация".</p>
-        <% end %>
-      </p>
       <br/>
       <div class="buttonsclass">
         <% if user_signed_in? %>                   
@@ -50,9 +38,18 @@
             <% end %>
           <% end %>
         <% else %>
-          <p><%= link_to t(:home_link_log_in), new_user_session_path, class: "btn btn-large btn-success"%></p>
-          <p><%= t(:or) %></p>
+          <p style="text-align:center;">
+            <% if params[:locale]=='en' %>
+              <p style="text-align:center;"><b>WELCOME TO AKSTS-2017 CONFERENCE SAKHALIN</b></p>
+              <p style="text-align:center;">2017 Science and Technology AKSTS conference will be hold in Sakhalin.</p>
+            <% else %>
+              <p style="text-align:center;"><b>ДОБРО ПОЖАЛОВАТЬ НА КОНФЕРЕНЦИЮ АНТОК-2017 САХАЛИН</b></p>
+              <p style="text-align:center;"><b>Для участия в конференции необходимо подать заявку через сайт.</b> Если Вы уже зарегистировались на эту конференцию и хотите зайти в личный кабинет, нажмите кнопку "Вход".</p>
+            <% end %>
+          </p>
           <p><%= link_to t(:sign_up), new_user_registration_path, class: "btn btn-large btn-success"%></p>
+          <p><%= t(:or) %></p>
+          <p><%= link_to t(:home_link_log_in), new_user_session_path, class: "btn btn-large btn-default"%></p>
         <% end %>
       </div>   
     </div>
@@ -66,8 +63,8 @@
         <% end %>
       </div>
       <div id="attach">
-        <p style="text-align:center;"><%= link_to "О конференции (Рус.)", '/docs/about_conf_ru.docx' %></p>
-        <p style="text-align:center;"><%= link_to "Скачать информационное письмо (Рус.)", '/docs/ConfAKSTS2015_inform1_RUS.docx' %></p>
+        <p style="text-align:center;"><%= link_to "О конференции (Рус.)", '#' %></p>
+        <p style="text-align:center;"><%= link_to "Скачать информационное письмо (Рус.)", '#' %></p>
                   <!-- <p style="text-align:center;"><%= link_to "Download conference program (Eng.)", '/docs/Program_ENG_5.pdf'%></p>   -->
       </div>      
     </div>
