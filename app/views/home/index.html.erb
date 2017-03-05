@@ -1,111 +1,69 @@
-<!-- Jumbotron -->
-<div class="jumbotron">
-  <div class="row">
-    <div class="span7">
-      <br/>
-      <div class="buttonsclass">
-        <% if user_signed_in? %>                   
-          <% if current_user.has_role? :admin %>
-            <p><%= link_to "Смотреть все анкеты", kofst_applics_path, class: "btn btn-large btn-success"%></p>                
-            <p><%= link_to "Смотреть все заявки", applics_path, class: "btn btn-large btn-success"%></p>
-            <p><%= link_to "Отправка сообщений", messages_path, class: "btn btn-large btn-success"%></p>
-            <p><%= link_to "Мониторинг отправки", "resque", class: "btn btn-large btn-success", target: "_blank"%></p>
-          <% else %>
-            <% if current_user.is_antok_member? %>
-              <p><%= link_to t(:step1_view_btn), edit_user_registration_path, class: "btn btn-large"%></p>
-              <% if current_user.applic %>
-                <p><%= link_to t(:step2_view_btn), current_user.applic, class: "btn btn-large"%></p>
-              <% else %>
-                <p><%= link_to t(:step2_apply_btn), new_applic_path, class: "btn btn-large btn-success"%></p>
-              <% end %>
-            <% else %>
-              <p><%= link_to t(:step1_view_btn), edit_user_registration_path, class: "btn btn-large"%></p>
-              <% if current_user.applic %>
-                <p><%= link_to t(:step2_view_btn), current_user.applic, class: "btn btn-large"%></p>
-                <% if current_user.kofst_applic %>
-                  <p><%= link_to t(:step3_view_btn), current_user.kofst_applic, class: "btn btn-large"%></p>
-                <% else %>
-                  <% if current_user.applic.need_compensation? %>
-                    <p><%= link_to t(:step3_apply_btn), new_kofst_applic_path, class: "btn btn-large btn-success"%></p>
-                    <div class="alert alert-info">
-                      Персональная анкета заполняется НЕ членами АНТОК, при необходимости компенсации транспортных расходов.
-                    </div>
-                  <% end %>
-                <% end %>
-              <% else %>
-                <p><%= link_to t(:step2_apply_btn), new_applic_path, class: "btn btn-large btn-success"%></p>
-              <% end %>                  
-            <% end %>
-          <% end %>
-        <% else %>
-          <p style="text-align:center;">
-            <% if params[:locale]=='en' %>
-              <p style="text-align:center;"><b>WELCOME TO AKSTS-2017 CONFERENCE SAKHALIN</b></p>
-              <p style="text-align:center;">2017 Science and Technology AKSTS conference will be hold in Sakhalin.</p>
-            <% else %>
-              <p style="text-align:center;"><b>ДОБРО ПОЖАЛОВАТЬ НА КОНФЕРЕНЦИЮ АНТОК-2017 САХАЛИН</b></p>
-              <p style="text-align:center;"><b>Для участия в конференции необходимо подать заявку через сайт.</b> Если Вы уже зарегистировались на эту конференцию и хотите зайти в личный кабинет, нажмите кнопку "Вход".</p>
-            <% end %>
-          </p>
-          <p><%= link_to t(:sign_up), new_user_registration_path, class: "btn btn-large btn-success"%></p>
-          <p><%= t(:or) %></p>
-          <p><%= link_to t(:home_link_log_in), new_user_session_path, class: "btn btn-large btn-default"%></p>
-        <% end %>
-      </div>   
-    </div>
-    <div class="span5">
-      <%= image_tag "teneb.jpg" %>
-      <div id="small">
+<div class="row frontpage">
+  <div class="col-md-4">
+    <div class="ten_class">
+      <%= image_tag "teneb.jpg", class: "img-responsive" %>
+      <div class="ten_desc">
         <% if params[:locale]=='en' %>
           <div>E.B. Ten., prof. National University of Science and Technology "MISIS" (MISIS), president of AKSTS Russia</div>
         <% else %>
           <div>Тэн Э.Б., проф. Национального исследовательского технологического университета "МИСиС", президент АНТОК</div>
         <% end %>
-      </div>
-      <div id="attach">
-        <p style="text-align:center;"><%= link_to "О конференции (Рус.)", '#' %></p>
-        <p style="text-align:center;"><%= link_to "Скачать информационное письмо (Рус.)", '#' %></p>
-                  <!-- <p style="text-align:center;"><%= link_to "Download conference program (Eng.)", '/docs/Program_ENG_5.pdf'%></p>   -->
-      </div>      
+      </div>     
     </div>
   </div>
-<!--         <h1><%= t(:home_welcome) %></h1>
-  <p class="lead"><%= t(:home_lead) %></p> -->
-<!--             <div class="my1">
-      <div id="myCarousel" class="carousel slide">
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-            <li data-target="#myCarousel" data-slide-to="2" class=""></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="item active">
-              <%= image_tag("slide-image-1.jpg", alt: "") %>
-              <div class="carousel-caption">
-                <p>Конференция 2011 года, Звенигород</p>
-              </div>
-            </div>
-            <div class="item">
-              <%= image_tag("slide-image-2.jpg", alt: "") %>
-              <div class="carousel-caption">
-                <p>Этническая корейская научная конференция, Сеул, 2012</p>
-              </div>
-            </div>
-            <div class="item">
-              <%= image_tag("slide-image-3.jpg", alt: "") %>
-              <div class="carousel-caption">
-                <p>Конференция 2013 года, Новосибирск</p>
-              </div>
-            </div>
-          </div>
-          <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-          <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+  <div class="col-md-8">
+    <div class="invite_wrapper">
+      <% if user_signed_in? %>                   
+        <% if current_user.has_role? :admin %>
+          <p><%= link_to "Смотреть все анкеты", kofst_applics_path, class: "btn btn-large btn-success"%></p>
+          <p><%= link_to "Смотреть все заявки", applics_path, class: "btn btn-large btn-success"%></p>
+          <p><%= link_to "Отправка сообщений", messages_path, class: "btn btn-large btn-success"%></p>
+          <p><%= link_to "Мониторинг отправки", "resque", class: "btn btn-large btn-success", target: "_blank"%></p>
+        <% else %>
+          <% if current_user.is_antok_member? %>
+            <p><%= link_to t(:step1_view_btn), edit_user_registration_path, class: "btn btn-large"%></p>
+            <% if current_user.applic %>
+              <p><%= link_to t(:step2_view_btn), current_user.applic, class: "btn btn-large"%></p>
+            <% else %>
+              <p><%= link_to t(:step2_apply_btn), new_applic_path, class: "btn btn-large btn-success"%></p>
+            <% end %>
+          <% else %>
+            <p><%= link_to t(:step1_view_btn), edit_user_registration_path, class: "btn btn-large"%></p>
+            <% if current_user.applic %>
+              <p><%= link_to t(:step2_view_btn), current_user.applic, class: "btn btn-large"%></p>
+              <% if current_user.kofst_applic %>
+                <p><%= link_to t(:step3_view_btn), current_user.kofst_applic, class: "btn btn-large"%></p>
+              <% else %>
+                <% if current_user.applic.need_compensation? %>
+                  <p><%= link_to t(:step3_apply_btn), new_kofst_applic_path, class: "btn btn-large btn-success"%></p>
+                  <div class="alert alert-info">
+                    Персональная анкета заполняется НЕ членами АНТОК, при необходимости компенсации транспортных расходов.
+                  </div>
+                <% end %>
+              <% end %>
+            <% else %>
+              <p><%= link_to t(:step2_apply_btn), new_applic_path, class: "btn btn-large btn-success"%></p>
+            <% end %>                  
+          <% end %>
+        <% end %>
+      <% else %>
+        <div class="invite_to_conf">
+          <% if params[:locale]=='en' %>
+            <h2>WELCOME TO AKSTS-2017 CONFERENCE SAKHALIN</h2>
+            <h4>2017 Science and Technology AKSTS conference will be hold in Sakhalin.</h4>
+          <% else %>
+            <h2>ДОБРО ПОЖАЛОВАТЬ НА КОНФЕРЕНЦИЮ АНТОК-2017 САХАЛИН</h2>
+            <h4>Для участия в конференции необходимо подать заявку через сайт. Если Вы уже зарегистировались на эту конференцию и хотите зайти в личный кабинет, нажмите кнопку "Вход".</h4>
+          <% end %>
+          <p><%= link_to t(:sign_up), new_user_registration_path, class: "btn btn-primary btn-lg"%></p>
+          <p><%= t(:or) %></p>
+          <p><%= link_to t(:home_link_log_in), new_user_session_path, class: "btn btn-default btn-lg"%></p>
         </div>
-      </div> -->
-
-<!--         <% if !user_signed_in? %>
-  <%= link_to t(:sign_up), new_user_registration_path, class: "btn btn-large btn-success"%>
-  <% end %> -->
-
+      <% end %>
+      <div class="attach">
+        <div><%= link_to "О конференции (Рус.)", '#' %></div>
+        <div><%= link_to "Скачать информационное письмо (Рус.)", '#' %></div>
+      </div> 
+    </div> 
+  </div>
 </div>
-
