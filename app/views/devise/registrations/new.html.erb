@@ -9,7 +9,9 @@
       <%= display_base_errors resource %>
       <%= f.input :name, :autofocus => true, :required => true, :input_html => { :class => 'form-control' } %>
       <% if params[:locale]=='en' %>
-        <%= f.input :is_foreign, :as => :boolean %>
+        <div class="form_checkbox">
+          <%= f.input :is_foreign, :as => :boolean %>
+        </div>
       <% end %>
       <% if params[:locale]!='en' %>
         <div class="form_checkbox">
