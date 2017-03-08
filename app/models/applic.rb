@@ -3,15 +3,18 @@ class Applic < ActiveRecord::Base
       :edu_institute_address, :edu_specialization, :uch_stepen, :work_company, :work_start_year,
       :work_department, :work_position, :work_specialization, :public_organizations, :antok_city,
       :science_interests, :conf_topic, :conf_section, :conf_coauthors, :participation_type,
-      :need_compensation, :inn, :snils, :registration, :phone_work, :phone_home
+      :need_compensation, :inn, :snils, :registration, :phone_work, :phone_home, :work_city, :uch_zvanie
   belongs_to :user
 
   validates :user_id, presence: true
   validates :fio, presence: true, length: {minimum: 5}
+  validates :fio_eng, presence: true, length: {minimum: 5}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}  
-  validates :uch_stepen, presence: true, length: {minimum: 5}
+  # validates :uch_zvanie, presence: true
+  # validates :uch_stepen, presence: true
   validates :work_company, presence: true, length: {minimum: 5}
+  validates :work_city, presence: true
   validates :work_position, presence: true, length: {minimum: 5}
   # validates :antok_city, presence: true
   validates :science_interests, presence: true, length: {minimum: 5}
@@ -19,22 +22,12 @@ class Applic < ActiveRecord::Base
   validates :conf_section, presence: true
   validates :participation_type, presence: true
 
-  validates :inn, presence: true, length: {is: 12}, numericality: true, :if => :need_compensation?
-  validates :snils, presence: true, length: {is: 11}, numericality: true, :if => :need_compensation?
-  validates :registration, presence: true, length: {minimum: 10}, :if => :need_compensation?
+  # validates :inn, presence: true, length: {is: 12}, numericality: true, :if => :need_compensation?
+  # validates :snils, presence: true, length: {is: 11}, numericality: true, :if => :need_compensation?
+  # validates :registration, presence: true, length: {minimum: 10}, :if => :need_compensation?
 
   validates :phones, presence: true, length: {is: 10}, numericality: true
 
-
-  # validate :inn2, :snils2, :registration2
-
-  # validate :fio_eng_cannot_be_blank, :birth_date_cannot_be_blank, :birth_date_should_be_1920_2000, 
-  #     :sex_cannot_be_blank, :post_address_cannot_be_blank,
-  # 		:edu_institute_cannot_be_blank, :edu_institute_address_cannot_be_blank, :edu_specialization_cannot_be_blank,
-  # 		:work_start_year_cannot_be_blank, :work_department_cannot_be_blank, :work_specialization_cannot_be_blank,
-  # 		:public_organizations_cannot_be_blank
-
-  # Delivers to subscribers via email
   def deliver
     ApplicMailer.new_applic_notification(self).deliver
   end
@@ -46,101 +39,6 @@ class Applic < ActiveRecord::Base
         csv << applic.attributes.values_at(*column_names)
       end
     end
-  end  
-
-  # def need_compensation?
-  #   self
-  # end
-
-  # def inn2
-  #   if self.inn.blank? && self.need_compensation?
-  #     errors.add(:inn, :blank)
-  #   end
-  # end
-
-  # def snils2
-  #   if self.snils.blank? && self.need_compensation?
-  #     errors.add(:snils, :blank)
-  #   end
-  # end
-
-  # def registration2
-  #   if self.registration.blank? && self.need_compensation?
-  #     errors.add(:registration, :blank)
-  #   end
-  # end
-  # def fio_eng_cannot_be_blank
-  #   if !self.user.is_antok_member? && fio_eng.blank?
-  #     errors.add(:fio_eng, :blank)
-  #   end
-  # end
-
-  # def birth_date_cannot_be_blank
-  #   if !self.user.is_antok_member? && birth_date.blank?
-  #     errors.add(:birth_date, :blank)
-  #   end
-  # end
-
-  # def birth_date_should_be_1920_2000
-  #   if !self.user.is_antok_member? && !birth_date.blank? && 
-  #     ((birth_date < Date.strptime("{ 1920, 1, 1 }", "{ %Y, %m, %d }")) ||
-  #     (birth_date > Date.strptime("{ 2000, 1, 1 }", "{ %Y, %m, %d }")))
-  #     errors.add(:birth_date, :should_be_1920_2000)
-  #   end
-  # end
-  
-  # def sex_cannot_be_blank
-  #   if !self.user.is_antok_member? && sex.blank?
-  #     errors.add(:sex, :blank)
-  #   end
-  # end
-
-  # def post_address_cannot_be_blank
-  #   if !self.user.is_antok_member? && post_address.blank?
-  #     errors.add(:post_address, :blank)
-  #   end
-  # end
-
-  # def edu_institute_cannot_be_blank
-  #   if !self.user.is_antok_member? && edu_institute.blank?
-  #     errors.add(:edu_institute, :blank)
-  #   end
-  # end
-
-  # def edu_institute_address_cannot_be_blank
-  #   if !self.user.is_antok_member? && edu_institute_address.blank?
-  #     errors.add(:edu_institute_address, :blank)
-  #   end
-  # end
-
-  # def edu_specialization_cannot_be_blank
-  #   if !self.user.is_antok_member? && edu_specialization.blank?
-  #     errors.add(:edu_specialization, :blank)
-  #   end
-  # end  
-
-  # def work_start_year_cannot_be_blank
-  #   if !self.user.is_antok_member? && work_start_year.blank?
-  #     errors.add(:work_start_year, :blank)
-  #   end
-  # end 
-
-  # def work_department_cannot_be_blank
-  #   if !self.user.is_antok_member? && work_department.blank?
-  #     errors.add(:work_department, :blank)
-  #   end
-  # end 
-
-  # def work_specialization_cannot_be_blank
-  #   if !self.user.is_antok_member? && work_specialization.blank?
-  #     errors.add(:work_specialization, :blank)
-  #   end
-  # end 
-
-  # def public_organizations_cannot_be_blank
-  #   if !self.user.is_antok_member? && public_organizations.blank?
-  #     errors.add(:public_organizations, :blank)
-  #   end
-  # end         
+  end       
 
 end

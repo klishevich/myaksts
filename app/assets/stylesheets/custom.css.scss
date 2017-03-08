@@ -3,10 +3,29 @@
   line-height: 20px;
 }
 
+.frontpage_img {
+  img {
+    margin: 0 auto;
+  }
+}
+
 .frontpage {
   margin-top: 20px;
 }
 
+.banner {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  img {
+    margin: 0 auto
+  }
+}
+
+.home_conf_title {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 .ten_class {
   text-align: center;
   img {
@@ -48,7 +67,7 @@ textarea.form-control {
   border-color: #bce8f1;
 }
 
-.alert-error {
+.alert-error, .alert-alert {
   color: #a94442;
   background-color: #f2dede;
   border-color: #ebccd1;

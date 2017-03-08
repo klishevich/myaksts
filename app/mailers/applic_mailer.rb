@@ -1,5 +1,5 @@
 class ApplicMailer < ActionMailer::Base
-  default from: "mans1st@yandex.ru"
+  default from: "no-reply@conf2017.aksts.ru"
 
   # def welcome_email(user)
   # 	# Rails.logger.debug 'welcome_email'

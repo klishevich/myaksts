@@ -12,7 +12,25 @@
     <main role="main">
       <div class="container">
       <%= render 'layouts/nav2017' %>
-      <h1><%= t :home_conf_antok %></h1>
+      <div class="row banners">
+        <div class="col-md-2 banner">
+          <%= image_tag "banner1.png", class: "img-responsive" %>
+        </div>
+        <div class="col-md-2 banner">
+          <%= image_tag "banner2.gif", class: "img-responsive" %>
+        </div>
+        <div class="col-md-2 banner">
+          <%= image_tag "banner3.png", class: "img-responsive" %>
+        </div>
+        <div class="col-md-2 banner">
+          <%= image_tag "banner4.png", class: "img-responsive" %>
+        </div>
+        <div class="col-md-2 banner">баннер ТИНБО</div>
+        <div class="col-md-2 banner">
+          <%= image_tag "banner6.png", class: "img-responsive" %>
+        </div>
+      </div>
+      <h1 class="home_conf_title"><%= t :home_conf_antok %></h1>
       <%= render 'layouts/messages' %>
       <%= yield %> 
       <footer class="footer">

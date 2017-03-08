@@ -1,17 +1,10 @@
-<div class="row frontpage">
-  <div class="col-md-4">
-    <div class="ten_class">
-      <%= image_tag "teneb.jpg", class: "img-responsive" %>
-      <div class="ten_desc">
-        <% if params[:locale]=='en' %>
-          <div>E.B. Ten., prof. National University of Science and Technology "MISIS" (MISIS), president of AKSTS Russia</div>
-        <% else %>
-          <div>Тэн Э.Б., проф. Национального исследовательского технологического университета "МИСиС", президент АНТОК</div>
-        <% end %>
-      </div>     
-    </div>
+<div class="row frontpage_img">
+  <div class="col-md-12">
+    <%= image_tag "home_img2.jpg", class: "img-responsive" %>
   </div>
-  <div class="col-md-8">
+</div>
+<div class="row frontpage">
+  <div class="col-md-8 col-md-offset-2">
     <div class="invite_wrapper">
       <% if user_signed_in? %>                   
         <% if current_user.has_role? :admin %>
@@ -48,20 +41,15 @@
         <% end %>
       <% else %>
         <div class="invite_to_conf">
-          <% if params[:locale]=='en' %>
-            <h2>WELCOME TO AKSTS-2017 CONFERENCE SAKHALIN</h2>
-            <h4>2017 Science and Technology AKSTS conference will be hold in Sakhalin.</h4>
-          <% else %>
-            <h2>ДОБРО ПОЖАЛОВАТЬ НА КОНФЕРЕНЦИЮ АНТОК-2017 САХАЛИН</h2>
-            <h4>Для участия в конференции необходимо подать заявку через сайт. Если Вы уже зарегистировались на эту конференцию и хотите зайти в личный кабинет, нажмите кнопку "Вход".</h4>
-          <% end %>
+          <h2><%= t :home_conf_welcome %></h2>
+          <h4><%= t :home_conf_description %></h4>
           <p><%= link_to t(:sign_up), new_user_registration_path, class: "btn btn-primary btn-lg"%></p>
           <p><%= t(:or) %></p>
           <p><%= link_to t(:home_link_log_in), new_user_session_path, class: "btn btn-default btn-lg"%></p>
         </div>
       <% end %>
       <div class="attach">
-        <div><%= link_to "Скачать информационное письмо (Рус.)", '/docs/Inform1_STconference.pdf' %></div>
+        <div><%= link_to "Скачать информационное письмо (Рус.)", '/docs/Inform1_STconference2.pdf' %></div>
       </div> 
     </div> 
   </div>

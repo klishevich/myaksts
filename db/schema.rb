@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150522201723) do
+ActiveRecord::Schema.define(:version => 20170308163653) do
 
   create_table "antok_members", :force => true do |t|
     t.string   "antok_id"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(:version => 20150522201723) do
     t.text     "registration"
     t.string   "phone_work"
     t.string   "phone_home"
+    t.string   "uch_zvanie"
+    t.string   "work_city"
   end
 
   add_index "applics", ["user_id"], :name => "index_applics_on_user_id"
@@ -90,6 +92,42 @@ ActiveRecord::Schema.define(:version => 20150522201723) do
     t.string   "inn"
     t.string   "snils"
     t.text     "registration"
+  end
+
+  create_table "applics2015", :id => false, :force => true do |t|
+    t.integer  "id"
+    t.integer  "user_id"
+    t.string   "fio"
+    t.string   "fio_eng"
+    t.date     "birth_date"
+    t.string   "sex"
+    t.text     "post_address"
+    t.string   "email"
+    t.string   "phones"
+    t.string   "edu_institute"
+    t.text     "edu_institute_address"
+    t.string   "edu_specialization"
+    t.string   "uch_stepen"
+    t.string   "work_company"
+    t.integer  "work_start_year"
+    t.string   "work_department"
+    t.string   "work_position"
+    t.string   "work_specialization"
+    t.text     "public_organizations"
+    t.string   "antok_city"
+    t.text     "science_interests"
+    t.text     "conf_topic"
+    t.string   "conf_section"
+    t.text     "conf_coauthors"
+    t.string   "participation_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "need_compensation"
+    t.string   "inn"
+    t.string   "snils"
+    t.text     "registration"
+    t.string   "phone_work"
+    t.string   "phone_home"
   end
 
   create_table "kofst_applics", :force => true do |t|
@@ -272,6 +310,16 @@ ActiveRecord::Schema.define(:version => 20150522201723) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "messages2014", :id => false, :force => true do |t|
+    t.integer  "id"
+    t.string   "title"
+    t.text     "body"
+    t.string   "send_type"
+    t.string   "email4test"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "roles", :force => true do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -322,6 +370,26 @@ ActiveRecord::Schema.define(:version => 20150522201723) do
   add_index "users", ["antok_id"], :name => "index_users_on_antok_id"
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "users2015", :id => false, :force => true do |t|
+    t.integer  "id"
+    t.string   "email"
+    t.string   "encrypted_password"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count"
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.boolean  "is_antok_member"
+    t.string   "antok_id"
+    t.boolean  "is_foreign"
+  end
 
   create_table "users_roles", :id => false, :force => true do |t|
     t.integer "user_id"
