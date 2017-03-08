@@ -4,13 +4,17 @@
 }
 
 .frontpage_img {
-  img {
-    margin: 0 auto;
+  text-align: center;
+  .home_img{
+    margin-top: 40px;
+    img {
+      margin: 0 auto;
+    }
   }
 }
 
 .frontpage {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .banner {
@@ -55,6 +59,10 @@
 
 textarea.form-control {
   height: 200px;
+}
+
+.search_antok_id_table {
+  margin-top: 20px;
 }
 
 .footer {

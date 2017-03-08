@@ -1,10 +1,15 @@
 <div class="row frontpage_img">
   <div class="col-md-12">
-    <%= image_tag "home_img2.jpg", class: "img-responsive" %>
+    <h2><%= t :home_conf_welcome %></h2>
   </div>
 </div>
 <div class="row frontpage">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-6">
+    <div class="home_img">
+      <%= image_tag "home_img3.jpg", class: "img-responsive" %>
+    </div>
+  </div>
+  <div class="col-md-6">
     <div class="invite_wrapper">
       <% if user_signed_in? %>                   
         <% if current_user.has_role? :admin %>
@@ -41,7 +46,6 @@
         <% end %>
       <% else %>
         <div class="invite_to_conf">
-          <h2><%= t :home_conf_welcome %></h2>
           <h4><%= t :home_conf_description %></h4>
           <p><%= link_to t(:sign_up), new_user_registration_path, class: "btn btn-primary btn-lg"%></p>
           <p><%= t(:or) %></p>

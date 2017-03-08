@@ -1,0 +1,36 @@
+<h1>Поиск своего АНТОК ID</h1>
+<div class="alert alert-info">
+  Поиск производится по точному совпадению. Введите полностью ФИО. Если результат поиска пустой, то попробуйте поиск по фамилии и имени без отчества. Если вы не смогли найти свой ID, то свяжитесь AKSTSRussia@gmail.com
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <%= form_tag(antok_id_path + '#antok_id_table', :method => "get") do %>
+      <div class="form-group">
+        <label for="fio">
+          <abbr title="required">*</abbr> 
+          ФИО
+        </label>
+        <div class="controls">
+          <%= text_field_tag :fio, params[:fio], class: "form-control", id: "fio" %>
+        </div>
+      </div>
+      <%= submit_tag "Найти", :name => nil, class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<div class="row search_antok_id_table" id="antok_id_table">
+  <table class="table table-striped">
+    <tr>
+      <th>АНТОК ID</th>
+      <th>ФИО</th>
+      <th>Год рождения</th>
+    </tr>
+    <% @members.each_with_index do |member, index| %>
+      <tr>
+        <td><%= member.antok_id %></td>
+        <td><%= member.fio %></td>
+        <td><%= member.birth_year == 1899 ? "нет данных" : member.birth_year %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

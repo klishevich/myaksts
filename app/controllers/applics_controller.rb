@@ -16,7 +16,7 @@ class ApplicsController < ApplicationController
 
   def new
     # tel = current_user.kofst_applic.mobile + " / " + current_user.kofst_applic.job_phone
-    @applic = current_user.build_applic(fio: current_user.name, email: current_user.email)
+    @applic = current_user.build_applic(fio: current_user.name, email: current_user.email, work_country: t(:russia))
   end
 
   def create
