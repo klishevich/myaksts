@@ -20,10 +20,11 @@ class ApplicsController < ApplicationController
   end
 
   def create
+    # ApplicMailer.test_email1.deliver
     @applic = current_user.build_applic(params[:applic])
     if @applic.save
-      @applic.deliver
       flash[:success] = t(:step2_application_sent)
+      @applic.deliver
       redirect_to root_path
     else
       render 'new'

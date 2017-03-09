@@ -1,5 +1,5 @@
 class ApplicMailer < ActionMailer::Base
-  default from: "no-reply@conf2017.aksts.ru"
+  default from: "akstsrussianews@gmail.com"
 
   # def welcome_email(user)
   # 	# Rails.logger.debug 'welcome_email'
@@ -19,13 +19,13 @@ class ApplicMailer < ActionMailer::Base
 
   def new_applic_notification(applic)
     @applic = applic
-    # mail to: "for54biz@yandex.ru, AKSTSRussia@gmail.com, yunbase@mail.ru, #{applic.email}", subject: t(:application_registered)
-    mail to: "m.klishevich@yandex.ru, ivkimivkim@gmail.com, AKSTSRussia@gmail.com, #{applic.email}", subject: t(:application_registered)
+    # mail to: "m.klishevich@yandex.ru, ivkimivkim@gmail.com, AKSTSRussia@gmail.com, #{applic.email}", subject: t(:application_registered)
+    mail to: "#{applic.email}", subject: t(:application_registered)
   end
 
   def test_email1
   	Rails.logger.debug 'test_email'
-  	mail(:to => 'm.klishevich@yandex.ru', :subject => "testing rails", body: "lasfkasf")
+  	mail(:to => 'busation@gmail.com', :subject => "testing rails", body: "lasfkasf")
   end
 
 end
