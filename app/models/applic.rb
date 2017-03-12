@@ -3,7 +3,7 @@ class Applic < ActiveRecord::Base
       :edu_institute_address, :edu_specialization, :uch_stepen, :work_company, :work_start_year,
       :work_department, :work_position, :work_specialization, :public_organizations, :antok_city,
       :science_interests, :conf_topic, :conf_section, :conf_coauthors, :participation_type,
-      :need_compensation, :inn, :snils, :registration, :phone_work, :phone_home, :work_city, :uch_zvanie, :work_country
+      :need_compensation, :inn, :snils, :registration, :phone_work, :phone_home, :work_city, :uch_zvanie, :work_country, :acad_position
   belongs_to :user
 
   validates :user_id, presence: true

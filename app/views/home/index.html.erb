@@ -1,8 +1,3 @@
-<div class="row frontpage_img">
-  <div class="col-md-12">
-    <h2><%= t :home_conf_welcome %></h2>
-  </div>
-</div>
 <div class="row frontpage">
   <div class="col-md-6">
     <div class="home_img">
@@ -18,36 +13,17 @@
           <p><%= link_to "Отправка сообщений", messages_path, class: "btn btn-lg btn-primary"%></p>
           <p><%= link_to "Мониторинг отправки", "resque", class: "btn btn-lg btn-primary", target: "_blank"%></p>
         <% else %>
-          <% if current_user.is_antok_member? %>
-            <p><%= link_to t(:step1_view_btn), edit_user_registration_path, class: "btn btn-default btn-lg"%></p>
-            <% if current_user.applic %>
-              <p><%= link_to t(:step2_view_btn), current_user.applic, class: "btn btn-default btn-lg"%></p>
-            <% else %>
-              <p><%= link_to t(:step2_apply_btn), new_applic_path, class: "btn btn-lg btn-primary"%></p>
-            <% end %>
+          <p><%= link_to t(:step1_view_btn), edit_user_registration_path, class: "btn btn-default btn-lg"%></p>
+          <% if current_user.applic %>
+            <p><%= link_to t(:step2_view_btn), current_user.applic, class: "btn btn-default btn-lg"%></p>
           <% else %>
-            <p><%= link_to t(:step1_view_btn), edit_user_registration_path, class: "btn btn-default btn-lg"%></p>
-            <% if current_user.applic %>
-              <p><%= link_to t(:step2_view_btn), current_user.applic, class: "btn btn-default btn-lg"%></p>
-              <% if current_user.kofst_applic %>
-                <p><%= link_to t(:step3_view_btn), current_user.kofst_applic, class: "btn btn-default btn-lg"%></p>
-              <% else %>
-                <% if current_user.applic.need_compensation? %>
-                  <p><%= link_to t(:step3_apply_btn), new_kofst_applic_path, class: "btn btn-lg btn-primary"%></p>
-                  <div class="alert alert-info">
-                    Персональная анкета заполняется НЕ членами АНТОК, при необходимости компенсации транспортных расходов.
-                  </div>
-                <% end %>
-              <% end %>
-            <% else %>
-              <p><%= link_to t(:step2_apply_btn), new_applic_path, class: "btn btn-lg btn-primary"%></p>
-            <% end %>                  
+            <p><%= link_to t(:step2_apply_btn), (new_applic_path + '#new_applic'), class: "btn btn-lg btn-primary"%></p>
           <% end %>
         <% end %>
       <% else %>
         <div class="invite_to_conf">
           <h4><%= t :home_conf_description %></h4>
-          <p><%= link_to t(:sign_up), new_user_registration_path, class: "btn btn-primary btn-lg"%></p>
+          <p><%= link_to t(:sign_up), (new_user_registration_path + '#new_registration'), class: "btn btn-primary btn-lg"%></p>
           <p><%= t(:or) %></p>
           <p><%= link_to t(:home_link_log_in), new_user_session_path, class: "btn btn-default btn-lg"%></p>
         </div>
