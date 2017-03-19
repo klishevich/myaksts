@@ -7,28 +7,30 @@
   <Worksheet ss:Name="Sheet1">
     <Table>
       <Row>
-        <Cell><Data ss:Type="String">Номер заявки</Data></Cell>
+        <Cell><Data ss:Type="String">ID заявки</Data></Cell>
         <Cell><Data ss:Type="String">Дата подачи заявки</Data></Cell>
         <Cell><Data ss:Type="String">Член АНТОК</Data></Cell>
         <Cell><Data ss:Type="String">ID АНТОК</Data></Cell>
         <Cell><Data ss:Type="String">ФИО</Data></Cell>
+        <Cell><Data ss:Type="String">ФИО по-английски</Data></Cell>
         <Cell><Data ss:Type="String">Email</Data></Cell>
         <Cell><Data ss:Type="String">Мобильный телефон</Data></Cell>
         <Cell><Data ss:Type="String">Рабочий телефон</Data></Cell>
         <Cell><Data ss:Type="String">Домашний телефон</Data></Cell>
+        <Cell><Data ss:Type="String">Ученое звание</Data></Cell>
         <Cell><Data ss:Type="String">Ученая степень</Data></Cell>
+        <Cell><Data ss:Type="String">Академическая должность</Data></Cell>
         <Cell><Data ss:Type="String">Компания</Data></Cell>
+        <Cell><Data ss:Type="String">Страна</Data></Cell>
+        <Cell><Data ss:Type="String">Город</Data></Cell>
         <Cell><Data ss:Type="String">Должность</Data></Cell>
-        <Cell><Data ss:Type="String">Ближайшее подразделение АНТОК</Data></Cell>
+        <Cell><Data ss:Type="String">Ближайший АНТОК</Data></Cell>
         <Cell><Data ss:Type="String">Область научных интересов</Data></Cell>
         <Cell><Data ss:Type="String">Тема доклада</Data></Cell>
         <Cell><Data ss:Type="String">Направление</Data></Cell>
         <Cell><Data ss:Type="String">Соавторы</Data></Cell>
         <Cell><Data ss:Type="String">Тип участия</Data></Cell>
         <Cell><Data ss:Type="String">Нужна компенсация</Data></Cell>
-        <Cell><Data ss:Type="String">ИНН</Data></Cell>
-        <Cell><Data ss:Type="String">СНИЛС</Data></Cell>
-        <Cell><Data ss:Type="String">Адрес постоянной регистрации</Data></Cell>
       </Row>
     <% @applics.each do |applic| %>
       <Row>
@@ -37,12 +39,17 @@
         <Cell><Data ss:Type="String"><%= applic.user.is_antok_member ? "Да" : "Нет" %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.user.antok_id %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.fio %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.fio_eng %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.email %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.phones %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.phone_work %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.phone_home %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.uch_zvanie %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.uch_stepen %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.acad_position %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.work_company %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.work_country %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.work_city %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.work_position %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.antok_city %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.science_interests %></Data></Cell>
@@ -51,9 +58,6 @@
         <Cell><Data ss:Type="String"><%= applic.conf_coauthors %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.participation_type %></Data></Cell>      
         <Cell><Data ss:Type="String"><%= applic.need_compensation %></Data></Cell>      
-        <Cell><Data ss:Type="String"><%= applic.inn %></Data></Cell>      
-        <Cell><Data ss:Type="String"><%= applic.snils %></Data></Cell>      
-        <Cell><Data ss:Type="String"><%= applic.registration %></Data></Cell>      
       </Row>
     <% end %>
     </Table>

@@ -8,10 +8,7 @@
     <div class="invite_wrapper">
       <% if user_signed_in? %>                   
         <% if current_user.has_role? :admin %>
-          <p><%= link_to "Смотреть все анкеты", kofst_applics_path, class: "btn btn-lg btn-primary"%></p>
           <p><%= link_to "Смотреть все заявки", applics_path, class: "btn btn-lg btn-primary"%></p>
-          <p><%= link_to "Отправка сообщений", messages_path, class: "btn btn-lg btn-primary"%></p>
-          <p><%= link_to "Мониторинг отправки", "resque", class: "btn btn-lg btn-primary", target: "_blank"%></p>
         <% else %>
           <p><%= link_to t(:step1_view_btn), edit_user_registration_path, class: "btn btn-default btn-lg"%></p>
           <% if current_user.applic %>

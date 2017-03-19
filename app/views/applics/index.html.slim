@@ -1,16 +1,17 @@
 h1#h1_all_applics Поданные заявки
-p Скачать все анкеты: #{link_to "Excel", applics_path(format: "xls")} | #{link_to "CSV", applics_path(format: "csv")}
+p =link_to "Скачать все заявки в Excel", applics_path(format: "xls"), class: "btn btn-primary"
+/ p #{link_to "CSV", applics_path(format: "csv")}
 table class="table table-striped"
   tr
     th №
-    th № анкеты
+    th ID анкеты
     th ФИО
     / th Работа, должность
     th Член АНТОК
     th Направление
     th Тип участия
     th Дата подачи (МСК)    
-    th 
+    / th 
     th
   - var = 0
   - @applics.each do |applic|
@@ -24,7 +25,7 @@ table class="table table-striped"
       td = applic.conf_section
       td = applic.participation_type
       td = l applic.created_at.in_time_zone("Moscow"), format: :short      
-      td = link_to 'Скачать анкету', applic_path(applic, format: :pdf)
+      / td = link_to 'Скачать анкету', applic_path(applic, format: :pdf)
       td = link_to 'Изменить', edit_applic_path(applic)
 
 / ul.applics
