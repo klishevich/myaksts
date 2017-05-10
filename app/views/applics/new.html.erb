@@ -26,7 +26,7 @@
       <%= f.input :work_position, :input_html => { :class => 'form-control' } %>
       <% if params[:locale]!='en' %>
         <h3><%= t(:additional_info) %></h3>
-        <%= f.input :antok_city, collection: [[t(:choose_value),""], [t(:moscow),"Москва"], [t(:voronezh), "Воронеж"], [t(:ekaterinburg), "Екатеринбург"], [t(:novosibirsk),"Новосибирск"], [t(:krasnoyarsk),"Красноярск"], [t(:uz_sakhalinsk),"Южно-Сахалинск"], [t(:kaliningrad),"Калининград"]], selected: @applic.antok_city, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
+        <%= f.input :antok_city, collection: [[t(:choose_value),""], [t(:uz_sakhalinsk),"Южно-Сахалинск"], [t(:moscow),"Москва"], [t(:voronezh), "Воронеж"], [t(:ekaterinburg), "Екатеринбург"], [t(:novosibirsk),"Новосибирск"], [t(:krasnoyarsk),"Красноярск"], [t(:kaliningrad),"Калининград"]], selected: @applic.antok_city, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
       <% end %>
       <h3><%= t(:applicaion_info) %></h3>
       <%= f.input :science_interests, as: :text, :input_html => { :class => 'form-control' } %>
@@ -34,10 +34,6 @@
       <%= f.input :conf_section, collection: [[t(:choose_value),""],["Физика и математика","Физика и математика"], ["Информационные технологии и нанотехнологии", "Информационные технологии и нанотехнологии"], ["Энергетика и электротехника","Энергетика и электротехника"], ["Механика, машиностроение и приборостроение", "Механика, машиностроение и приборостроение"], ["Архитектура и строительство", "Архитектура и строительство"], ["Химия, новые материалы и технологии их обработки", "Химия, новые материалы и технологии их обработки"], ["Биотехнологии, биология, технологии живых систем и океанография", "Биотехнологии, биология, технологии живых систем и океанография"], ["Науки о земле и природные ресурсы", "Науки о земле и природные ресурсы"], ["Общественные науки","Общественные науки"]], selected: @applic.conf_section, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
       <%= f.input :conf_coauthors, as: :text, :input_html => { :class => 'form-control' } %>
       <%= f.input :participation_type, collection: [[t(:choose_value),""], [t(:participance), "Очное"], [t(:publications_only), "Заочное"]], selected: @applic.participation_type, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
-      <h3><%= t(:compensation_info) %></h3>
-      <div class="form_checkbox">
-        <%= f.input :need_compensation, :as => :boolean %>
-      </div>
       <br/> 
 	     <div class="alert alert-info">
 	         <%= t(:step2_warning) %>
