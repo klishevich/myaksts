@@ -14,34 +14,29 @@
       <%= render 'layouts/nav2017' %>
       <%= render 'layouts/messages' %>
       <div class="row banners">
-        <div class="col-md-2 hidden-md hidden-lg banner">
+        <div class="col-md-3 hidden-md hidden-lg banner">
           <%= image_tag "banner_aksts_kofst.jpg", class: "img-responsive" %>
         </div>
-        <div class="col-md-2 hidden-xs hidden-sm banner">
+        <div class="col-md-3 hidden-xs hidden-sm banner">
           <%= image_tag "banner1a.png", class: "img-responsive" %>
         </div>
-        <div class="col-md-2 hidden-xs hidden-sm banner">
+        <div class="col-md-3 hidden-xs hidden-sm banner">
           <%= image_tag "banner2a.gif", class: "img-responsive" %>
         </div>
-        <div class="col-md-2 banner">
-          <%= image_tag "banner3a.png", class: "img-responsive" %>
-        </div>
-        <div class="col-md-2 banner">
-          <%= image_tag "banner4a.png", class: "img-responsive" %>
-        </div>
-        <div class="col-md-2 banner">
+        <div class="col-md-3 banner">
           <%= image_tag "banner5a.png", class: "img-responsive" %>
         </div>
-        <div class="col-md-2 banner">
+        <div class="col-md-3 banner">
           <%= image_tag "banner6a.png", class: "img-responsive" %>
         </div>
       </div>
       <h1 class="home_conf_title"><%= t :home_conf_antok %></h1>
+      <h2 class="home_conf_subtitle"><%= t :home_conf_moto %></h2>
       <%= yield %> 
       <footer class="footer">
         <hr/>
         <div class="row">
-          <div class="col-md-4 col-md-offset-2">&copy; <a href="http://www.aksts.ru">www.aksts.ru</a> 2012 - 2017</div>
+          <div class="col-md-4 col-md-offset-2">&copy; <a href="http://www.aksts.ru">www.aksts.ru</a> 2012 - 2018</div>
           <div class="col-md-4">
             <% if params[:locale]=='en' %>
               Site made by <a href="http://www.busation.com">Michael Klishevich</a>

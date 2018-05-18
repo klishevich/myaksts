@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">AKSTS-2017 Sakhalin</a>
+      <a class="navbar-brand" href="/">AKSTS-2018 Moscow</a>
 <!--       <%= link_to image_tag("ru.png", alt: "", width: "29px", class: "lang_switch"), "#{request.path}?locale=ru", title: "Переключиться на Русский" %>
       <%= link_to image_tag("en.png", alt: "", width: "29px", class: "lang_switch"), "#{request.path}?locale=en", title: "Switch to English" %> -->
     </div>
@@ -18,12 +18,12 @@
       <ul class="nav navbar-nav">
         <li><%= link_to t(:home_link_home), root_path %></li>
         <% if user_signed_in? %>
-          <li><%= link_to t(:step2_my_account_btn), edit_user_registration_path %></li>
+          <!-- <li><%= link_to t(:step2_my_account_btn), edit_user_registration_path %></li>
           <li><%= link_to t(:find_antokid), antok_id_path %></li>
-          <li><%= link_to t(:home_link_log_out), destroy_user_session_path, :method=>'delete' %></li>
+          <li><%= link_to t(:home_link_log_out), destroy_user_session_path, :method=>'delete' %></li> -->
         <% else %>
-          <li><%= link_to t(:home_link_log_in), new_user_session_path %></li>
-          <li><%= link_to t(:sign_up), new_user_registration_path %></li>
+          <!-- <li><%= link_to t(:home_link_log_in), new_user_session_path %></li>
+          <li><%= link_to t(:sign_up), new_user_registration_path %></li> -->
         <% end %> 
       </ul>
     </div><!-- /.navbar-collapse -->
