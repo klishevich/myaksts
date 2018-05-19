@@ -20,6 +20,8 @@
 
 puts 'Create Admin Role'
 Role.create({ name: "admin"})
+puts 'Create User Role'
+Role.create({ name: "user"})
 
 puts 'ScienceField creation'
 ScienceField.create([

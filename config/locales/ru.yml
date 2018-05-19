@@ -266,6 +266,11 @@ ru:
           antok_id: "АНТОК ID (заполняется для членов общества)"
           cant_be_blank: "не может быть пустым"
           is_foreign: "Являюсь иностранным участником"
+        antok_member:
+          antok_id: "АНТОК ID"
+          fio: "ФИО"
+          birth_date: "Дата рождения"
+          birth_year: "Год рождения"
         applic:
           fio: "ФИО"
           fio_eng: "ФИО по-английски"

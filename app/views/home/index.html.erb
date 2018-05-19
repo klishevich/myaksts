@@ -8,7 +8,10 @@
     <div class="invite_wrapper">
       <% if user_signed_in? %>                   
         <% if current_user.has_role? :admin %>
-          <p><%= link_to "Смотреть все заявки", applics_path, class: "btn btn-lg btn-primary"%></p>
+          <h3>МЕНЮ АДМИНА</h3>
+          <p><%= link_to "Заявки", applics_path, class: "btn btn-lg btn-primary"%></p>
+          <p><%= link_to "Пользователи", users_path, class: "btn btn-lg btn-primary"%></p>
+          <p><%= link_to "Члены АНТОК", antok_members_path, class: "btn btn-lg btn-primary"%></p>
         <% else %>
           <p><%= link_to t(:step1_view_btn), edit_user_registration_path, class: "btn btn-default btn-lg"%></p>
           <% if current_user.applic %>
