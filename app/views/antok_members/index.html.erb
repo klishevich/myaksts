@@ -19,18 +19,20 @@
   </div>
 </div>
 <div class="row search_antok_id_table" id="antok_id_table">
-  <table class="table table-striped">
-    <tr>
-      <th>АНТОК ID</th>
-      <th>ФИО</th>
-      <th>Год рождения</th>
-    </tr>
-    <% @members.each_with_index do |member, index| %>
+  <div class="col-md-12">
+    <table class="table table-striped">
       <tr>
-        <td><%= member.antok_id %></td>
-        <td><%= member.fio %></td>
-        <td><%= member.birth_year == 1899 ? "нет данных" : member.birth_year %></td>
+        <th>АНТОК ID</th>
+        <th>ФИО</th>
+        <th>Год рождения</th>
       </tr>
-    <% end %>
-  </table>
+      <% @members.each_with_index do |member, index| %>
+        <tr>
+          <td><%= member.antok_id %></td>
+          <td><%= member.fio %></td>
+          <td><%= member.birth_year == 1899 ? "нет данных" : member.birth_year %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
