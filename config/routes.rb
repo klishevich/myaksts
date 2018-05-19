@@ -1,5 +1,5 @@
 Myaksts::Application.routes.draw do
-  match '/antok_id', to: 'antok_members#index'
+  match '/antok_id', to: 'find_antok_members#index'
 
   get "science_specific_fields/index"
 
@@ -32,4 +32,5 @@ Myaksts::Application.routes.draw do
   match '/edit_applic', to: 'applics#edit'
   match '/apply', to: 'applics#new'
 
+  resources :antok_members
 end

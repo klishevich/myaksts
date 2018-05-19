@@ -1,26 +1,47 @@
 class AntokMembersController < ApplicationController
+  before_filter :signed_in_user
+  load_and_authorize_resource
 
   def index
-    if params[:fio]
-	    search_str = params[:fio].mb_chars.downcase.strip
-	    @members = AntokMember.where("lower(fio) = ?", search_str)
-	else
-    	@members=[]
-	end
+    @members=AntokMember.limit(500).order("id")
+    authorize! :index, @members
     respond_to do |format|
       format.html
-    end	
+    end
   end
 
-    # if params[:term]
-    #   search_str = "%#{params[:term].downcase}%"
+  def new
+    @member = AntokMember.new
+  end
 
-    #   locale = I18n.locale.to_s
-    #   Rails.logger.info("!!!! #{locale}")
-    #   books = SearchProduct.where("lower(concat_name) like ?
-    #   	and locale = ?", search_str, locale).limit(10).order("concat_name")    
-    # else
-    #   books = SearchProduct.all
-    # end
+  def create
+    @member = AntokMember.new(params[:antok_member])
+    if @member.save
+      flash[:success] = t(:saved_successfuly)
+      redirect_to @member
+    else
+      render 'new'
+    end
+  end
 
+  def show
+    @member = AntokMember.find(params[:id])
+    respond_to do |format|
+      format.html        
+    end
+  end
+
+  def edit
+    @member=AntokMember.find(params[:id])
+  end
+
+  def update
+    @member = AntokMember.find(params[:id])
+    if @member.update_attributes(params[:antok_member])
+      flash[:success] = t(:saved_successfuly)
+      redirect_to @member
+    else
+      render 'edit'
+    end
+  end
 end

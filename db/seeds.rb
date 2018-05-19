@@ -18,6 +18,9 @@
 # puts 'user: ' << user.name
 # user.add_role :admin
 
+puts 'Create Admin Role'
+Role.create({ name: "admin"})
+
 puts 'ScienceField creation'
 ScienceField.create([
   { name: "Mathematics", name_ru: "Математика" },
