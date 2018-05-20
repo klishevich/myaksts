@@ -4,7 +4,6 @@ table class="table table-striped"
   tr
     th №
     th ФИО
-    / th Работа, должность
     th Член АНТОК
     th Научная сфера
     th Уточненная научная сфера
@@ -16,7 +15,6 @@ table class="table table-striped"
     tr
       td = var
       td = link_to applic.english_name, applic
-      / td #{applic.work_company}, #{applic.work_position}
       td = (applic.user.is_antok_member ? "Да" : "Нет")
       td = applic.science_field.name
       td = applic.science_specific_field.name

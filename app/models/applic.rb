@@ -1,9 +1,9 @@
 class Applic < ActiveRecord::Base
   attr_accessible  :fio, :fio_eng, :birth_date, :sex, :post_address, :email, :phones, :edu_institute,
-      :edu_institute_address, :edu_specialization, :uch_stepen, :work_company, :work_start_year,
+      :edu_institute_address, :edu_specialization, :uch_stepen, :work_company, :work_company_short, :work_start_year,
       :work_department, :work_position, :work_specialization, :public_organizations, :antok_city,
       :science_interests, :conf_topic, :conf_section, :conf_coauthors, :participation_type,
-      :need_compensation, :inn, :snils, :registration, :phone_work, :phone_home, :work_city, :uch_zvanie, :work_country, :acad_position
+      :need_compensation, :inn, :snils, :registration, :phone_work, :phone_home, :work_city, :uch_zvanie, :work_country
   belongs_to :user
 
   validates :user_id, presence: true
@@ -14,6 +14,7 @@ class Applic < ActiveRecord::Base
   validates :uch_zvanie, presence: true
   validates :uch_stepen, presence: true
   validates :work_company, presence: true, length: {minimum: 5}
+  validates :work_company_short, presence: true, length: {minimum: 3}
   validates :work_city, presence: true
   validates :work_position, presence: true, length: {minimum: 5}
   # validates :antok_city, presence: true

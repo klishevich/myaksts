@@ -11,13 +11,12 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :is_antok_member, :antok_id,
     :is_foreign
 
+  has_one :applic, dependent: :destroy
+  has_one :kofst_applic, dependent: :destroy
+
   validates :name, presence: true
-
-  has_one :applic, dependent: :destroy  
-
-  has_one :kofst_applic, dependent: :destroy 
-
   validate :antok_id_should_be_correct
+  validates :antok_id, uniqueness: {case_sensitive: false}, allow_blank: true
 
   before_save :update_foreign_params
 

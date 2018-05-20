@@ -4,14 +4,13 @@ p =link_to "Скачать все заявки в Excel", applics_path(format: "
 table class="table table-striped"
   tr
     th №
-    th ID анкеты
+    th ID заявки
     th ФИО
-    / th Работа, должность
     th Член АНТОК
     th Направление
     th Тип участия
     th Дата подачи (МСК)    
-    / th 
+    / th
     th
   - var = 0
   - @applics.each do |applic|
@@ -20,7 +19,6 @@ table class="table table-striped"
       td = var
       td = applic.id
       td = link_to applic.fio, applic
-      / td #{applic.work_company}, #{applic.work_position}
       td = (applic.user.is_antok_member ? "Да" : "Нет")
       td = applic.conf_section
       td = applic.participation_type
