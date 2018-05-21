@@ -1,36 +1,37 @@
 Myaksts::Application.routes.draw do
-  match '/antok_id', to: 'find_antok_members#index'
 
-  get "science_specific_fields/index"
+  # get "science_specific_fields/index"
 
-  devise_for :user
+  # devise_for :user
 
-  authenticate :user do
-    # Rails.logger.debug 
-    mount Resque::Server, :at => "/resque" #if current_user.has_role :admin
-  end
+  # authenticate :user do
+  #   # Rails.logger.debug 
+  #   mount Resque::Server, :at => "/resque" #if current_user.has_role :admin
+  # end
 
-  resources :messages
+  # resources :messages
 
-  match '/about', to: 'static_pages#about'
-  match '/programme', to: 'static_pages#programme'
-  match '/hotel', to: 'static_pages#hotel'  
-  match '/sponsors', to: 'static_pages#sponsors'  
+  # match '/programme', to: 'static_pages#programme'
+  # match '/hotel', to: 'static_pages#hotel'
+  # match '/sponsors', to: 'static_pages#sponsors'
 
   authenticated :user do
     root :to => 'home#index'
   end
   root :to => "home#index"
+
   devise_for :users, :controllers => { :registrations => 'users/registrations' }
+
   resources :users
-
   resources :applics
-
-  resources :kofst_applics
+  # resources :kofst_applics
   
-  get 'view_applic', to: 'applics#show'
-  match '/edit_applic', to: 'applics#edit'
-  match '/apply', to: 'applics#new'
-
+  # get 'view_applic', to: 'applics#show'
+  # match '/edit_applic', to: 'applics#edit'
+  # match '/apply', to: 'applics#new'
   resources :antok_members
+
+  match '/antok_id', to: 'find_antok_members#index'
+
+  match '/about', to: 'static_pages#about'
 end
