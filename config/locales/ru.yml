@@ -353,7 +353,7 @@ ru:
     save: "Сохранить"
     cancel: "Отменить"
     you_already_have_application: "У вас уже есть заявка на конференцию"
-    application_registered: "Зарегистрирована заявка на XVII МЕЖДУНАРОДНУЮ КОНФЕРЕНЦИЮ ПО НАУКЕ И ТЕХНОЛОГИЯМ"
+    application_registered: "Зарегистрирована заявка на XVIII МЕЖДУНАРОДНУЮ КОНФЕРЕНЦИЮ ПО НАУКЕ И ТЕХНОЛОГИЯМ"
     anketa: "Анкета участника конференции"
     personal_info: "Персональная информация"
     education: "Образование"
@@ -370,7 +370,7 @@ ru:
     birth_date: "Дата рождения (формат ДД.ММ.ГГГГ)"
     work_specialization: "Специализация"
     conf_coauthors: "Соавторы"
-    home_conf_antok: "XVIII МЕЖДУНАРОДНАЯ КОНФЕРЕНЦИЯ ПО НАУКЕ И ТЕХНОЛОГИЯМ"
+    home_conf_antok: 'XVIII МЕЖДУНАРОДНАЯ КОНФЕРЕНЦИЯ ПО НАУКЕ И ТЕХНОЛОГИЯМ "Россия-Корея-СНГ"'
     home_conf_moto: "SCIENCE. FRIENDSHIP. COLLABORATION."
     home_link_home: "Главная"
     home_link_about: "Об АНТОК"
