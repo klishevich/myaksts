@@ -11,31 +11,36 @@
   <body> 
     <main role="main">
       <div class="container">
-      <%= render 'layouts/nav2017' %>
+      <%= render 'layouts/nav' %>
       <%= render 'layouts/messages' %>
       <div class="row banners">
-        <div class="hidden-md hidden-lg banner">
-          <%= image_tag "banner_aksts_kofst.jpg", class: "img-responsive" %>
-        </div>
         <div class="col-md-offset-1 col-md-2 hidden-xs hidden-sm banner">
-          <%= image_tag "banner_aksts_a.png", class: "img-responsive" %>
+          <%= image_tag "banner_aksts2_a.jpg", class: "img-responsive" %>
         </div>
         <div class="col-md-2 hidden-xs hidden-sm banner">
-          <%= image_tag "banner_kofst_a.gif", class: "img-responsive" %>
+          <%= image_tag "banner_kofst2_a.jpg", class: "img-responsive" %>
         </div>
-
-        <div class="col-md-2 banner">
+        <div class="col-md-2 hidden-xs hidden-sm banner">
           <%= image_tag "banner_ook_a.jpg", class: "img-responsive" %>
-        </div>
-
-        <div class="hidden-md hidden-lg banner">
-          <%= image_tag "banner_kahak_tinbo.jpg", class: "img-responsive" %>
         </div>
         <div class="col-md-2 hidden-xs hidden-sm banner">
           <%= image_tag "banner_kahak_a.png", class: "img-responsive" %>
         </div>
         <div class="col-md-2 hidden-xs hidden-sm banner">
           <%= image_tag "banner_tinbo_a.png", class: "img-responsive" %>
+        </div>
+
+        <div class="hidden-md hidden-lg banner">
+          <%= image_tag "banner_aksts2_b.jpg", class: "img-responsive" %>
+        </div>
+        <div class="hidden-md hidden-lg banner">
+          <%= image_tag "banner_kofst2_b.jpg", class: "img-responsive" %>
+        </div>
+        <div class="hidden-md hidden-lg banner">
+          <%= image_tag "banner_ook_a.jpg", class: "img-responsive" %>
+        </div>
+        <div class="hidden-md hidden-lg banner">
+          <%= image_tag "banner_kahak_tinbo.jpg", class: "img-responsive" %>
         </div>
       </div>
       <%= yield %> 
