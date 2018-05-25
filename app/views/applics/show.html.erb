@@ -30,6 +30,7 @@
       <%= f.input :conf_section, collection: [[t(:choose_value),""],["Блок А: Биотехнологии, химия и общественные науки","Блок А"], ["Блок В: Физика, математика и IT", "Блок В"], ["Блок С: Инженерные науки, новые материалы и науки о земле","Блок С"]], selected: @applic.conf_section, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
       <%= f.input :conf_coauthors, as: :text, :input_html => { :class => 'form-control' } %>
       <%= f.input :participation_type, collection: [[t(:choose_value),""], [t(:participance), "Очное"], [t(:publications_only), "Заочное"]], selected: @applic.participation_type, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
+      <%= f.input :need_hotel, collection: Applic.need_hotel_collection, selected: @applic.need_hotel, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
       <br/>
     <% end %>
   </div>

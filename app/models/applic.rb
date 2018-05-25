@@ -3,7 +3,9 @@ class Applic < ActiveRecord::Base
       :edu_institute_address, :edu_specialization, :uch_stepen, :work_company, :work_company_short, :work_start_year,
       :work_department, :work_position, :work_specialization, :public_organizations, :antok_city,
       :science_interests, :conf_topic, :conf_section, :conf_coauthors, :participation_type,
-      :need_compensation, :inn, :snils, :registration, :phone_work, :phone_home, :work_city, :uch_zvanie, :work_country
+      :need_compensation, :inn, :snils, :registration, :phone_work, :phone_home, :work_city, :uch_zvanie, :work_country,
+      :need_hotel
+
   belongs_to :user
 
   validates :user_id, presence: true
@@ -17,6 +19,8 @@ class Applic < ActiveRecord::Base
   validates :work_company_short, presence: true, length: {minimum: 3}
   validates :work_city, presence: true
   validates :work_position, presence: true, length: {minimum: 5}
+  validates :need_hotel, presence: true
+
   # validates :antok_city, presence: true
   # validates :science_interests, presence: true, length: {minimum: 5}
   # validates :conf_topic, presence: true, length: {minimum: 5}
@@ -40,6 +44,14 @@ class Applic < ActiveRecord::Base
         csv << applic.attributes.values_at(*column_names)
       end
     end
-  end       
+  end
 
+  def self.need_hotel_collection
+    return [
+      [I18n.t(:choose_value), ""],
+      [I18n.t('need_hotel_collection.no_need'), 'no_need'],
+      [I18n.t('need_hotel_collection.need_26_27'), 'need_26_27'],
+      [I18n.t('need_hotel_collection.need_27_28'), 'need_27_28']
+    ]
+  end
 end

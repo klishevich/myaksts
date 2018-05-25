@@ -304,6 +304,7 @@ ru:
           inn: "ИНН"
           snils: "СНИЛС (только цифры без дефисов и пробелов)"
           registration: "Адрес постоянной регистрации с индексом"
+          need_hotel: "Нужна ли гостиница"
         kofst_applic:
           avatar: "Ваше фото"
           korean_name: "Фамилия и имя на корейском"
@@ -471,3 +472,7 @@ ru:
     home_conf_description_temp: 'Регистрация скоро откроется!'
     russia: "Россия"
     saved_successfuly: "Успешно сохранено"
+    need_hotel_collection:
+      no_need: "Не требуется"
+      need_26_27: "с 26 по 27 августа"
+      need_27_28: "с 27 по 28 августа"

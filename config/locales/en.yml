@@ -249,6 +249,7 @@ en:
         inn: "INN"
         snils: "Social Identification Number"
         registration: "Permanent registration address"
+        need_hotel: "Need hotel?"
       kofst_applic:
         avatar: "Photo"
         korean_name: "Korean Name"
@@ -393,3 +394,7 @@ en:
   find_antokid: "Find AKSTS ID"
   your_login: "Your login for personal member page http://conf2017.aksts.ru - "
   home_conf_description: 'Для участия в конференции необходимо подать заявку через сайт. Если Вы уже зарегистировались на эту конференцию и хотите просмотреть информацию по своей заявке, нажмите кнопку "Вход". (rus)'
+  need_hotel_collection:
+    no_need: "No"
+    need_26_27: "From 26 to 27 August"
+    need_27_28: "From 27 to 28 August"

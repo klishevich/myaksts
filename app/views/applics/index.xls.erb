@@ -30,6 +30,7 @@
         <Cell><Data ss:Type="String">Направление</Data></Cell>
         <Cell><Data ss:Type="String">Соавторы</Data></Cell>
         <Cell><Data ss:Type="String">Тип участия</Data></Cell>
+        <Cell><Data ss:Type="String">Нужна ли гостиница</Data></Cell>
       </Row>
     <% @applics.each do |applic| %>
       <Row>
@@ -56,6 +57,7 @@
         <Cell><Data ss:Type="String"><%= applic.conf_section %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.conf_coauthors %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.participation_type %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.need_hotel %></Data></Cell>
       </Row>
     <% end %>
     </Table>
