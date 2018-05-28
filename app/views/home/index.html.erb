@@ -9,6 +9,16 @@
   </div>
   <div class="col-md-6">
     <div class="invite_wrapper">
+      <h2>Уважаемые коллеги!</h2>
+      <h3>Приглашаем принять участие в XVIII МЕЖДУНАРОДНОЙ КОНФЕРЕНЦИИ ПО НАУКЕ И ТЕХНОЛОГИЯМ РОССИЯ-КОРЕЯ-СНГ, которая пройдет</h3>
+      <h4>с 26 по 28 августа 2018 года</h4>
+      <h4>в подмосковном пансионате (уточняется).</h4>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="invite_wrapper2">
       <% if user_signed_in? %>                   
         <% if current_user.has_role? :admin %>
           <h3>МЕНЮ АДМИНА</h3>
@@ -26,15 +36,49 @@
       <% else %>
         <div class="invite_to_conf">
           <h4><%= t :home_conf_description %></h4>
-          <p><%= link_to t(:sign_up), (new_user_registration_path + '#new_registration'), class: "btn btn-primary btn-lg" %></p>
-          <p><%= t(:or) %></p>
-          <p><%= link_to t(:home_link_log_in), new_user_session_path, class: "btn btn-default btn-lg"%></p>
+          <div class="buttons">
+            <p><%= link_to t(:sign_up), (new_user_registration_path + '#new_registration'), class: "btn btn-primary btn-lg" %></p>
+            <p><%= t(:or) %></p>
+            <p><%= link_to t(:home_link_log_in), new_user_session_path, class: "btn btn-default btn-lg"%></p>
+          </div>
         </div>
       <% end %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="invite_wrapper_dates">
+      <h3>Важные даты:</h3>
+      <ul>
+        <li>20 июня – завершение приема докладов</li>
+        <li>20 июля – извещение участников конференции о результатах рецензирования и принятии докладов</li>
+        <li>26-28 августа – проведение конференции</li>
+      </ul>
+      <h3>Расписание работы конференции:</h3>
+      <ul>
+        <li>26 августа – заезд участников конференции</li>
+        <li>27 августа – открытие конференции, пленарное заседание, работа научных секций и тематических семинаров</li>
+        <li>28 августа – пленарное заседание, секция стендовых докладов, культурная программа, закрытие конференции</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="invite_wrapper_contacts">
+      <h4>Контакты Оргкомитета:</h4>
+      <p><a href="mailto:AKSTSRussia@gmail.com">AKSTSRussia@gmail.com</a></p>
+      <p><b>ВАЖНО!</b> Просьба указывать в теме письма «АНТОК-2018».</p>
+      <p>Рабочие языки конференции: русский и английский.</p>
+      <p>Информационное письмо конференции: в приложении.</p>
+      <div class="respect">
+        С уважением,<br/>
+        Оргкомитет АНТОК
+      </div>
       <div class="attach">
         <div><%= link_to "Информационное письмо (Рус.)", '/docs/Inform1_v2.4.doc' %></div>
-        <!-- <div><%= link_to "Informational Letter (Eng.)", '/docs/Inform1_STconference_ENG2.pdf' %></div> -->
-      </div> 
-    </div> 
+      </div>
+    </div>
   </div>
 </div>

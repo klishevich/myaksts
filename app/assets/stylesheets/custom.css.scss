@@ -38,14 +38,28 @@
 .invite_wrapper {
   margin-top: 20px;
   text-align: center;
-  .invite_to_conf {
-    h2 {
-      margin-top: 40px;
-      margin-bottom: 40px;
-    }
-    h4 {
-      margin-bottom: 40px;
-    }
+}
+
+.invite_wrapper2 {
+  margin-top: 40px;
+  text-align: center;
+  .buttons {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.invite_wrapper_dates {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.invite_wrapper_contacts {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  .respect {
+    margin-top: 20px;
   }
   .attach {
     margin-top: 40px;
@@ -188,10 +202,6 @@ textarea.form-control {
 
 // ul.no-bullets {
 //   list-style-type: none;
-// }
-
-// #attach {
-//   margin-top:30px;
 // }
 
 // .mytext {
