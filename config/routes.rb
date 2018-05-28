@@ -34,4 +34,6 @@ Myaksts::Application.routes.draw do
   match '/antok_id', to: 'find_antok_members#index'
 
   match '/about', to: 'static_pages#about'
+  match '/history', to: 'static_pages#history'
+  match '/message', to: 'static_pages#message'
 end

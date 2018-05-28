@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
-  def about
-  end
+  def about; end
+  def history; end
+  def message; end
 
   def programme
   end
