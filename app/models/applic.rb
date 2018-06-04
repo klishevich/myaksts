@@ -51,7 +51,8 @@ class Applic < ActiveRecord::Base
       [I18n.t(:choose_value), ""],
       [I18n.t('need_hotel_collection.no_need'), 'no_need'],
       [I18n.t('need_hotel_collection.need_26_27'), 'need_26_27'],
-      [I18n.t('need_hotel_collection.need_27_28'), 'need_27_28']
+      [I18n.t('need_hotel_collection.need_27_28'), 'need_27_28'],
+      [I18n.t('need_hotel_collection.need_26_28'), 'need_26_28']
     ]
   end
 end
