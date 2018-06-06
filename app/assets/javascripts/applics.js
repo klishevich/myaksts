@@ -35,3 +35,7 @@ $(document).ready(function(){
         $("#antok_id_block").hide();
     }
 });
+
+$(document).ready(function(){
+  $("input.date_picker").datepicker({format: 'dd.mm.yyyy'});
+});

@@ -34,9 +34,9 @@ en:
     - Friday
     - Saturday
     formats:
-      default: ! '%Y-%m-%d'
-      long: ! '%B %d, %Y'
-      short: ! '%b %d'
+      default: ! '%d.%m.%Y'
+      long: ! '%d %B %Y'
+      short: ! '%d %b'
     month_names:
     -
     - January
@@ -203,9 +203,9 @@ en:
   time:
     am: am
     formats:
-      default: ! '%a, %d %b %Y %H:%M:%S %z'
-      long: ! '%B %d, %Y %H:%M'
-      short: ! '%d %b %H:%M'
+      default: ! '%a, %d %b %Y, %H:%M:%S %z'
+      long: ! '%d %B %Y, %H:%M'
+      short: ! '%d %b, %H:%M'
     pm: pm
   activerecord:
     attributes:
@@ -222,7 +222,7 @@ en:
       applic:
         fio: "Name (Last, first)"
         fio_eng: "Name (Last, first)"
-        birth_date: "Birth date (YYYY-MM-DD)"
+        birth_date: "Birth date (DD.MM.YYYY)"
         sex: "Gender"
         post_address: "Postal address"
         phones: "Mobile phone (10 digets, only numbers)"
@@ -308,7 +308,7 @@ en:
   application_number: "Application ID"
   application_date: "Date of submitting the Application"
   phones: "Telephones (Mobile/Office/Home/Fax)"
-  birth_date: "Birth date (YYYY-MM-DD)"
+  birth_date: "Birth date (DD.MM.YYYY)"
   work_specialization: "Specialization"
   conf_coauthors: "Co-Authors"
   home_conf_antok: "XVII МЕЖДУНАРОДНАЯ КОНФЕРЕНЦИЯ ПО НАУКЕ И ТЕХНОЛОГИЯМ (rus)"
