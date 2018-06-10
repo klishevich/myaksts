@@ -7,6 +7,7 @@ class Applic < ActiveRecord::Base
       :need_hotel
 
   belongs_to :user
+  has_one :applic_file, dependent: :destroy
 
   validates :user_id, presence: true
   validates :fio, presence: true, length: {minimum: 5}

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20180525054853) do
+ActiveRecord::Schema.define(:version => 20180610084525) do
 
   create_table "antok_members", :force => true do |t|
     t.string   "antok_id"
@@ -21,6 +21,22 @@ ActiveRecord::Schema.define(:version => 20180525054853) do
     t.datetime "updated_at", :null => false
     t.integer  "birth_year"
   end
+
+  create_table "applic_files", :force => true do |t|
+    t.integer  "applic_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "file1_file_name"
+    t.string   "file1_content_type"
+    t.integer  "file1_file_size"
+    t.datetime "file1_updated_at"
+    t.string   "file2_file_name"
+    t.string   "file2_content_type"
+    t.integer  "file2_file_size"
+    t.datetime "file2_updated_at"
+  end
+
+  add_index "applic_files", ["applic_id"], :name => "index_applic_files_on_applic_id"
 
   create_table "applics", :force => true do |t|
     t.integer  "user_id"

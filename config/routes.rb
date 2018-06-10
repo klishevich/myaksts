@@ -24,6 +24,7 @@ Myaksts::Application.routes.draw do
 
   resources :users
   resources :applics
+  resources :applic_files
   # resources :kofst_applics
   
   # get 'view_applic', to: 'applics#show'

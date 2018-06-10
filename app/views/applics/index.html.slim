@@ -9,8 +9,11 @@ table class="table table-striped"
     th Член АНТОК
     th Направление
     th Тип участия
-    th Дата подачи (МСК)    
+    th Дата подачи (МСК)   
     / th
+    th
+    th Доклад
+    th Акт
     th
   - var = 0
   - @applics.each do |applic|
@@ -22,9 +25,12 @@ table class="table table-striped"
       td = (applic.user.is_antok_member ? "Да" : "Нет")
       td = applic.conf_section
       td = applic.participation_type
-      td = l applic.created_at.in_time_zone("Moscow"), format: :short      
+      td = l applic.created_at.in_time_zone("Moscow"), format: :short
       / td = link_to 'Скачать анкету', applic_path(applic, format: :pdf)
-      td = link_to 'Изменить', edit_applic_path(applic)
+      td = link_to 'Изм. заявку', edit_applic_path(applic)
+      td = (applic.applic_file ? link_to('doc', applic.applic_file.file1.url, target: '_blank') : '-')
+      td = (applic.applic_file ? link_to('akt', applic.applic_file.file2.url, target: '_blank') : '-')
+      td = (applic.applic_file ? link_to('Изм. файлы', edit_applic_file_path(applic.applic_file)) : '')
 
 / ul.applics
 /   - @applics.each do |applic|

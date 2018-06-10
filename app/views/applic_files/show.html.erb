@@ -1,0 +1,30 @@
+<% provide(:title, t(:step3_title)) %>
+<h1 id="new_applic"><%= t(:step3_title) %></h1>
+<div class="alert alert-info">
+  <b>Шаг 3.</b> <%= t(:abstracts) %>
+</div>
+<div id="form_anchor" class="row">
+  <div class="col-md-6 applic-form">
+    <%= simple_form_for(@af) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div>
+        <div><b>Дата отправки</b></div>
+        <div><%= @af.created_at.strftime("%d.%m.%Y %H:%M GMT") %></div>
+        <br/>
+      </div>
+      <div>
+        <%= f.label :file1 %>
+        <br/>
+        <%#=  link_to @af.file1_file_name, @af.file1.url %>
+        <%= @af.file1_file_name %>
+      </div>
+      <br/>
+      <div>
+        <%= f.label :file2 %>
+        <br/>
+        <%#= link_to @af.file2_file_name, @af.file2.url %>
+        <%= @af.file2_file_name %>
+      </div>
+    <% end %>
+  </div>
+</div>
