@@ -36,6 +36,7 @@
             <% end %>
           <% else %>
             <p><%= link_to t(:step2_apply_btn), (new_applic_path + '#new_applic'), class: "btn btn-lg btn-primary"%></p>
+            <p><%= link_to t(:step3_apply_btn), '#', class: "btn btn-default btn-lg disabled"%></p>
           <% end %>
         <% end %>
       <% else %>

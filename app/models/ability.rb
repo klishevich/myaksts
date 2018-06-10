@@ -9,7 +9,9 @@ class Ability
     else
       can :crud, Applic, :user_id => user.id
       can :crud, KofstApplic, :user_id => user.id
-      can :crud, ApplicFile, :applic_id => user.applic.id
+      if user.applic
+        can :crud, ApplicFile, :applic_id => user.applic.id
+      end
     end
     # Define abilities for the passed in user here. For example:
     #
