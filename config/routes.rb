@@ -23,8 +23,9 @@ Myaksts::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => 'users/registrations' }
 
   resources :users
-  resources :applics
-  resources :applic_files
+  resources :applics do
+    resources :applic_files
+  end
   # resources :kofst_applics
   
   # get 'view_applic', to: 'applics#show'

@@ -1,7 +1,7 @@
 class ApplicFilesController < ApplicationController
   before_filter :signed_in_user
-  # before_filter :have_no_applic, only: [:new, :create]
-  # load_and_authorize_resource
+  load_and_authorize_resource
+  before_filter :set_applic
 
   def new
     @af = ApplicFile.new
@@ -30,11 +30,16 @@ class ApplicFilesController < ApplicationController
 
   def update
     @af = ApplicFile.find(params[:id])
-    if @af.update_attributes(params[:applic])
+    if @af.update_attributes(params[:applic_file])
       flash[:success] = t(:step3_updated_successfuly)
-      redirect_to @af
+      redirect_to applic_applic_file_path(@applic, @af)
     else
       render 'edit'
     end
+  end
+
+  private
+  def set_applic
+    @applic = Applic.find(params[:applic_id])
   end
 end

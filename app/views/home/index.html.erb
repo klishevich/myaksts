@@ -30,9 +30,9 @@
           <% if current_user.applic %>
             <p><%= link_to t(:step2_view_btn), current_user.applic, class: "btn btn-default btn-lg"%></p>
             <% if current_user.applic.applic_file %>
-              <p><%= link_to t(:step3_view_btn), current_user.applic.applic_file, class: "btn btn-default btn-lg"%></p>
+              <p><%= link_to t(:step3_view_btn), applic_applic_file_path(current_user.applic, current_user.applic.applic_file), class: "btn btn-default btn-lg"%></p>
             <% else %>
-              <p><%= link_to t(:step3_apply_btn), new_applic_file_path, class: "btn btn-primary btn-lg"%></p>
+              <p><%= link_to t(:step3_apply_btn), new_applic_applic_file_path(current_user.applic), class: "btn btn-primary btn-lg"%></p>
             <% end %>
           <% else %>
             <p><%= link_to t(:step2_apply_btn), (new_applic_path + '#new_applic'), class: "btn btn-lg btn-primary"%></p>

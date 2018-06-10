@@ -5,11 +5,11 @@
 </div>
 <div id="form_anchor" class="row">
   <div class="col-md-6 applic-form">
-    <%= simple_form_for(@af) do |f| %>
+    <%= simple_form_for([@applic, @af]) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <div>
-        <div><b>Дата отправки</b></div>
-        <div><%= @af.created_at.strftime("%d.%m.%Y %H:%M GMT") %></div>
+        <div><b>Дата изменений</b></div>
+        <div><%= @af.updated_at.strftime("%d.%m.%Y %H:%M GMT") %></div>
         <br/>
       </div>
       <div>

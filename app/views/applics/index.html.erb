@@ -1,0 +1,42 @@
+<h1 id="h1_all_applics">Поданные заявки</h1>
+<p>
+  <%= link_to "Скачать все заявки в Excel", applics_path(format: "xls"), class: "btn btn-primary" %> 
+</p>
+<table class="table table-striped">
+  <tr>
+    <th>№</th>
+    <th>ID заявки</th>
+    <th>ФИО</th>
+    <th>Член АНТОК</th>
+    <th>Направление</th>
+    <th>Тип участия</th>
+    <th>Дата изменений (GMT)</th>
+    <th></th>
+    <th>Доклад</th>
+    <th>Акт</th>
+    <th></th>
+  </tr>
+  <% @applics.each_with_index do |applic, index| %>
+  <tr>
+    <td><%= index + 1 %></td>
+    <td><%= applic.id %></td>
+    <td><%= link_to applic.fio, applic %></td>
+    <td><%= applic.user.is_antok_member ? "Да" : "Нет" %></td>
+    <td><%= applic.conf_section %></td>
+    <td><%= applic.participation_type %></td>
+    <td><%= l(applic.updated_at, format: :long) %></td>
+    <td><%= link_to 'Изм. Заявку', edit_applic_path(applic) %></td>
+    <% if applic.applic_file %>
+      <% af = applic.applic_file %>
+      <td><%= link_to 'doc', af.file1.url, target: '_blank' %></td>
+      <td><%= link_to 'akt', af.file2.url, target: '_blank' %></td>
+      <td><%= link_to 'Изм. Доклад', edit_applic_applic_file_path(applic, af) %></td>
+    <% else %>
+      <td></td>
+      <td></td>
+      <td><%= link_to 'Доб. Доклад', new_applic_applic_file_path(applic) %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+ 

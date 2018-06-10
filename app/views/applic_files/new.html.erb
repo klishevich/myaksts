@@ -5,7 +5,7 @@
 </div>
 <div id="form_anchor" class="row">
   <div class="col-md-6 applic-form">
-    <%= simple_form_for(@af) do |f| %>
+    <%= simple_form_for([@applic, @af]) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <div>
         <%= f.label :file1 %>
