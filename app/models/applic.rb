@@ -14,7 +14,7 @@ class Applic < ActiveRecord::Base
   validates :fio_eng, presence: true, length: {minimum: 5}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}  
-  validates :uch_zvanie, presence: true
+  # validates :uch_zvanie, presence: true
   validates :uch_stepen, presence: true
   validates :work_company, presence: true, length: {minimum: 5}
   validates :work_company_short, presence: true, length: {minimum: 3}
@@ -22,12 +22,12 @@ class Applic < ActiveRecord::Base
   validates :work_position, presence: true, length: {minimum: 5}
   validates :need_hotel, presence: true
   validates :birth_date, presence: true
+  validates :participation_type, presence: true
 
   # validates :antok_city, presence: true
   # validates :science_interests, presence: true, length: {minimum: 5}
   # validates :conf_topic, presence: true, length: {minimum: 5}
   # validates :conf_section, presence: true
-  # validates :participation_type, presence: true
 
   # validates :inn, presence: true, length: {is: 12}, numericality: true, :if => :need_compensation?
   # validates :snils, presence: true, length: {is: 11}, numericality: true, :if => :need_compensation?

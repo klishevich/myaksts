@@ -36,6 +36,24 @@ $(document).ready(function(){
     }
 });
 
-$(document).ready(function(){
+$(document).ready(function() {
   $("input.date_picker").datepicker({format: 'dd.mm.yyyy'});
+});
+
+function updateForParticipanceNoReport(is_participance_no_report) {
+  if (is_participance_no_report) {
+    $('#applic_need_hotel').val('no_need');
+    $('.participance_no_report_hide').hide();
+  } else {
+    $('.participance_no_report_hide').show();
+  }
+}
+
+// applics page
+$(document).ready(function() {
+  $('#applic_participation_type').change(function() {
+    var is_participance_no_report = this.value === 'participance_no_report';
+    console.log('applic_participation_type change', is_participance_no_report);
+    updateForParticipanceNoReport(is_participance_no_report);
+  }); 
 });

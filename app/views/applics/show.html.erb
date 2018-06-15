@@ -3,36 +3,7 @@
 <div class="row">
   <div class="col-md-6 applic-form">
     <%= simple_form_for(@applic) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-      <h3><%= t(:personal_info) %></h3>
-      <%= f.input :fio, :input_html => { :class => 'form-control' } %>
-      <%= f.input :fio_eng, :input_html => { :class => 'form-control' } %>
-      <%= f.input :birth_date, :as => :date_picker, :input_html => { :class => 'form-control' } %>
-      <%= f.input :email, :input_html => { :class => 'form-control' } %>
-      <%= f.input :phones, :input_html => { :class => 'form-control' } %>
-      <%= f.input :phone_work, :input_html => { :class => 'form-control' } %>
-      <%= f.input :phone_home, :input_html => { :class => 'form-control' } %>  
-      <h3><%= t(:education) %></h3>
-      <%= f.input :uch_zvanie, collection: [[t(:choose_value),""], ["Нет", "Нет"], ["Доцент", "доцент"], ["Профессор", "Профессор"], ["Член-корреспондент", "Член-корр."], ["Академик", "Академик"]], selected: @applic.uch_zvanie, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
-      <%= f.input :uch_stepen, collection: [[t(:choose_value),""], ["Нет", "Нет"], [t(:st_student),"Студент"], [t(:st_bachelor),"Бакалавр"], [t(:st_special),"Специалист"], [t(:st_magister), "Магистр"], [t(:st_kandidat), "Кандидат наук"], [t(:st_doctor),"Доктор наук"]], selected: @applic.uch_stepen, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
-      <h3><%= t(:work) %></h3>
-      <%= f.input :work_company, :input_html => { :class => 'form-control' } %>
-      <%= f.input :work_company_short, :input_html => { :class => 'form-control' } %>
-      <%= f.input :work_country, as: :string, :input_html => { :class => 'form-control' } %>
-      <%= f.input :work_city, :input_html => { :class => 'form-control' } %>
-      <%= f.input :work_position, :input_html => { :class => 'form-control' } %>
-      <% if params[:locale]!='en' %>
-        <h3><%= t(:additional_info) %></h3>
-        <%= f.input :antok_city, collection: [[t(:choose_value),""], [t(:moscow),"Москва"], [t(:kaliningrad),"Калининград"], [t(:voronezh), "Воронеж"], [t(:ekaterinburg), "Екатеринбург"], [t(:novosibirsk),"Новосибирск"], [t(:krasnoyarsk),"Красноярск"], [t(:vladivostok),"Владивосток"], [t(:uz_sakhalinsk),"Южно-Сахалинск"]], selected: @applic.antok_city, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
-      <% end %>
-      <h3><%= t(:applicaion_info) %></h3>
-      <%= f.input :science_interests, as: :text, :input_html => { :class => 'form-control' } %>
-      <%= f.input :conf_topic, as: :text, :input_html => { :class => 'form-control' } %>
-      <%= f.input :conf_section, collection: [[t(:choose_value),""],["Блок А: Биотехнологии, химия и общественные науки","Блок А"], ["Блок В: Физика, математика и IT", "Блок В"], ["Блок С: Инженерные науки, новые материалы и науки о земле","Блок С"]], selected: @applic.conf_section, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
-      <%= f.input :conf_coauthors, as: :text, :input_html => { :class => 'form-control' } %>
-      <%= f.input :participation_type, collection: [[t(:choose_value),""], [t(:participance), "Очное"], [t(:publications_only), "Заочное"]], selected: @applic.participation_type, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
-      <%= f.input :need_hotel, collection: Applic.need_hotel_collection, selected: @applic.need_hotel, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
-      <br/>
+      <%= render 'form_fields', f: f %>
     <% end %>
   </div>
 </div>
