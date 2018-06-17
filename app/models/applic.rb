@@ -27,7 +27,7 @@ class Applic < ActiveRecord::Base
   # validates :antok_city, presence: true
   # validates :science_interests, presence: true, length: {minimum: 5}
   # validates :conf_topic, presence: true, length: {minimum: 5}
-  # validates :conf_section, presence: true
+  validates :conf_section, presence: true
 
   # validates :inn, presence: true, length: {is: 12}, numericality: true, :if => :need_compensation?
   # validates :snils, presence: true, length: {is: 11}, numericality: true, :if => :need_compensation?
