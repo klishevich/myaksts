@@ -38,4 +38,5 @@ Myaksts::Application.routes.draw do
   match '/about', to: 'static_pages#about'
   match '/history', to: 'static_pages#history'
   match '/message', to: 'static_pages#message'
+  match '/program', to: 'static_pages#program'
 end
