@@ -10,10 +10,12 @@
     <th>Член АНТОК</th>
     <th>Направление</th>
     <th>Тип участия</th>
-    <th>Дата изменений (GMT)</th>
+    <th>Дата заявки (GMT)</th>
     <th></th>
+    <th>ID доклада</th>
     <th>Доклад</th>
     <th>Акт</th>
+    <th>Дата доклада (GMT)</th>
     <th></th>
   </tr>
   <% @applics.each_with_index do |applic, index| %>
@@ -28,10 +30,14 @@
     <td><%= link_to 'Изм. Заявку', edit_applic_path(applic) %></td>
     <% if applic.applic_file %>
       <% af = applic.applic_file %>
+      <td><%= applic.applic_file.id %></td>
       <td><%= link_to 'doc', af.file1.url, target: '_blank' %></td>
       <td><%= link_to 'akt', af.file2.url, target: '_blank' %></td>
+      <td><%= l(applic.applic_file.updated_at, format: :long) %></td>
       <td><%= link_to 'Изм. Доклад', edit_applic_applic_file_path(applic, af) %></td>
     <% else %>
+      <td></td>
+      <td></td>
       <td></td>
       <td></td>
       <td><%= link_to 'Доб. Доклад', new_applic_applic_file_path(applic) %></td>

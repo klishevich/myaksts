@@ -8,7 +8,8 @@
     <Table>
       <Row>
         <Cell><Data ss:Type="String">ID заявки</Data></Cell>
-        <Cell><Data ss:Type="String">Дата подачи заявки</Data></Cell>
+        <Cell><Data ss:Type="String">Дата создания заявки</Data></Cell>
+        <Cell><Data ss:Type="String">Дата изменения заявки</Data></Cell>
         <Cell><Data ss:Type="String">Член АНТОК</Data></Cell>
         <Cell><Data ss:Type="String">ID АНТОК</Data></Cell>
         <Cell><Data ss:Type="String">ФИО</Data></Cell>
@@ -33,13 +34,14 @@
         <Cell><Data ss:Type="String">Тип участия</Data></Cell>
         <Cell><Data ss:Type="String">Нужна ли гостиница</Data></Cell>
         <Cell><Data ss:Type="String">Отправлен доклад</Data></Cell>
-        <Cell><Data ss:Type="String">Файл доклада</Data></Cell>
-        <Cell><Data ss:Type="String">Файл акта</Data></Cell>
+        <Cell><Data ss:Type="String">ID доклада</Data></Cell>
+        <Cell><Data ss:Type="String">Дата изменения доклада</Data></Cell>
       </Row>
     <% @applics.each do |applic| %>
       <Row>
         <Cell><Data ss:Type="String"><%= applic.id %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.created_at.strftime("%d.%m.%Y") %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.updated_at.strftime("%d.%m.%Y") %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.user.is_antok_member ? "Да" : "Нет" %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.user.antok_id %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.fio %></Data></Cell>
@@ -64,8 +66,8 @@
         <Cell><Data ss:Type="String"><%= applic.participation_type %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.need_hotel %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.applic_file ? "Да" : "Нет" %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= applic.applic_file ? applic.applic_file.file1.url : "" %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= applic.applic_file ? applic.applic_file.file2.url : "" %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.applic_file ? applic.applic_file.id : "" %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.applic_file ? applic.applic_file.updated_at.strftime("%d.%m.%Y") : "" %></Data></Cell>
       </Row>
     <% end %>
     </Table>
