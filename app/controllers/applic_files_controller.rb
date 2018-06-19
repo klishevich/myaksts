@@ -8,7 +8,8 @@ class ApplicFilesController < ApplicationController
   end
 
   def create
-    @af = current_user.applic.build_applic_file(params[:applic_file])
+    applic = Applic.find(params[:applic_id])
+    @af = applic.build_applic_file(params[:applic_file])
     if @af.save
       flash[:success] = t(:step3_files_sent)
       redirect_to root_path

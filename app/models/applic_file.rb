@@ -4,6 +4,6 @@ class ApplicFile < ActiveRecord::Base
   has_attached_file :file2
   validates :file1, :file2, presence: true
   validates :applic_id, presence: true
-  validates_attachment_file_name :file1, :matches => [/doc\Z/, /docx\Z/]
-  validates_attachment_file_name :file2, :matches => [/pdf\Z/, /jpe?g\Z/, /png\Z/]
+  validates_attachment_file_name :file1, :matches => [/docx?\Z/, /DOCX?\Z/]
+  validates_attachment_file_name :file2, :matches => [/pdf\Z/, /jpe?g\Z/, /png\Z/, /PDF\Z/, /JPE?G\Z/, /PNG\Z/]
 end
