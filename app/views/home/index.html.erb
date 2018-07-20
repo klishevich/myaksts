@@ -2,17 +2,22 @@
 <h2 class="home_conf_subtitle"><%= t :home_conf_moto %></h2>
 <h2 class="home_conf_subtitle">26 - 28 августа, Москва</h2>
 <div class="row frontpage">
-  <div class="col-md-6">
+  <div class="col-md-4">
     <div class="home_img">
-      <%= image_tag "home_img_2018.jpg", class: "img-responsive" %>
+      <%= image_tag "logo_conf2018_4.png", class: "img-responsive" %>
     </div>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <div class="invite_wrapper">
-      <h2>Уважаемые коллеги!</h2>
-      <h3>Приглашаем принять участие в XVIII МЕЖДУНАРОДНОЙ КОНФЕРЕНЦИИ ПО НАУКЕ И ТЕХНОЛОГИЯМ РОССИЯ-КОРЕЯ-СНГ, которая пройдет в Москве</h3>
+      <h3>Уважаемые коллеги!</h3>
+      <h3 class="conf">Приглашаем принять участие в XVIII МЕЖДУНАРОДНОЙ КОНФЕРЕНЦИИ ПО НАУКЕ И ТЕХНОЛОГИЯМ РОССИЯ-КОРЕЯ-СНГ, которая пройдет в Москве</h3>
       <h4>с 26 по 28 августа 2018 года</h4>
       <h4>в гостинице <%= link_to 'Holiday Inn Лесная', 'http://www.moscow-hi.ru/lesnaya/', target: '_blank' %></h4>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="home_img">
+      <%= image_tag "home_img_2018.jpg", class: "img-responsive" %>
     </div>
   </div>
 </div>
@@ -85,7 +90,7 @@
       <div class="attach">
         <div><%= link_to "Информационное письмо (Рус.)", '/docs/Inform1_v3.0.docx' %></div>
         <br/>
-        <div><%= link_to "Программа конференции / Program", '/docs/2018_Program_EN_RU_v1.4.pdf', target: "_blank" %></div>
+        <div><%= link_to "Программа конференции / Program", '/docs/2018_Program_EN_RU_v1.12.pdf', target: "_blank" %></div>
         <br/>
         <div><%= link_to "О компенсации транспортных расходов", '/docs/tickets2018_v1.pdf', target: "_blank" %></div>
       </div>
