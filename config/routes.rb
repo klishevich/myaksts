@@ -11,10 +11,6 @@ Myaksts::Application.routes.draw do
 
   # resources :messages
 
-  # match '/programme', to: 'static_pages#programme'
-  # match '/hotel', to: 'static_pages#hotel'
-  # match '/sponsors', to: 'static_pages#sponsors'
-
   authenticated :user do
     root :to => 'home#index'
   end
@@ -39,4 +35,5 @@ Myaksts::Application.routes.draw do
   match '/history', to: 'static_pages#history'
   match '/message', to: 'static_pages#message'
   match '/program', to: 'static_pages#program'
+  match '/hotel', to: 'static_pages#hotel'
 end

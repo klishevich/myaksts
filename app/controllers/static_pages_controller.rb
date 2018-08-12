@@ -3,9 +3,7 @@ class StaticPagesController < ApplicationController
   def history; end
   def message; end
   def program; end
-
-  def hotel
-  end
+  def hotel; end
 
   def sponsors
   end
