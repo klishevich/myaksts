@@ -1,18 +1,18 @@
 <h1 class="home_conf_title"><%= t :home_conf_antok %></h1>
 <h2 class="home_conf_subtitle"><%= t :home_conf_moto %></h2>
-<h2 class="home_conf_subtitle">26 - 28 августа, Москва</h2>
+<h2 class="home_conf_subtitle">29 - 31 августа, Москва</h2>
 <div class="row frontpage">
   <div class="col-md-4">
     <div class="home_img">
-      <%= image_tag "logo_conf2018_4.png", class: "img-responsive" %>
+      <%= image_tag "logo_conf2018_5.png", class: "img-responsive" %>
     </div>
   </div>
   <div class="col-md-4">
     <div class="invite_wrapper">
       <h3>Уважаемые коллеги!</h3>
-      <h3 class="conf">Приглашаем принять участие в XVIII МЕЖДУНАРОДНОЙ КОНФЕРЕНЦИИ ПО НАУКЕ И ТЕХНОЛОГИЯМ РОССИЯ-КОРЕЯ-СНГ, которая пройдет в Москве</h3>
-      <h4>с 26 по 28 августа 2018 года</h4>
-      <h4>в гостинице <%= link_to 'Holiday Inn Лесная', 'http://www.moscow-hi.ru/lesnaya/', target: '_blank' %></h4>
+      <h3 class="conf">Приглашаем принять участие в XIX МЕЖДУНАРОДНОЙ КОНФЕРЕНЦИИ ПО НАУКЕ И ТЕХНОЛОГИЯМ РОССИЯ-КОРЕЯ-СНГ, которая пройдет в Москве</h3>
+      <h4>с 29 по 31 августа 2019 года</h4>
+      <!-- <h4>в гостинице <%= link_to 'Holiday Inn Лесная', 'http://www.moscow-hi.ru/lesnaya/', target: '_blank' %></h4> -->
     </div>
   </div>
   <div class="col-md-4">
@@ -46,11 +46,12 @@
         <% end %>
       <% else %>
         <div class="invite_to_conf">
-          <h4><%= t :home_conf_description %></h4>
+          <!-- <h4><%= t :home_conf_description %></h4> -->
           <div class="buttons">
-            <p><%= link_to t(:sign_up), (new_user_registration_path + '#new_registration'), class: "btn btn-primary btn-lg" %></p>
+            <h3 style="color: red;">РЕГИСТРАЦИЯ НА САЙТЕ БУДЕТ ОТКРЫТА 28 АПРЕЛЯ</h3>
+            <!-- <p><%= link_to t(:sign_up), (new_user_registration_path + '#new_registration'), class: "btn btn-primary btn-lg" %></p>
             <p><%= t(:or) %></p>
-            <p><%= link_to t(:home_link_log_in), new_user_session_path, class: "btn btn-default btn-lg"%></p>
+            <p><%= link_to t(:home_link_log_in), new_user_session_path, class: "btn btn-default btn-lg"%></p> -->
           </div>
         </div>
       <% end %>
@@ -62,11 +63,12 @@
     <div class="invite_wrapper_dates">
       <h3>НОВОСТИ</h3>
       <div class="news_record">
-        <h4>Составлен список участников</h4>
-        <p><b>23 августа 2018</b></p>
-        <p>Составлен список участников конференции. <br/>Ознакомиться можно тут - <%= link_to "Список участников", '/docs/participants_list_CISKC_2018.pdf', target: "_blank" %></p>
+        <h4>Регистрация на конференцию</h4>
+        <p><b>23 апреля 2019</b></p>
+        <p>Регистрация на конференцию AKSTS-2019 будет открыта 28 апреля. Регистрация будет производиться на этом сайте.</p>
+        <!-- <p>Составлен список участников конференции. <br/>Ознакомиться можно тут - <%= link_to "Список участников", '/docs/participants_list_CISKC_2018.pdf', target: "_blank" %></p> -->
       </div>
-      <div class="news_record">
+      <!-- <div class="news_record">
         <h4>Определены участники секций и воркшопов</h4>
         <p><b>13 августа 2018</b></p>
         <p>Определены участники всех секций и воркшопов. Просьба ознакомиться, при наличии вопросов обращайтесь в Оргкомитет. <br/>Читать тут - <%= link_to "Программа секций и воркшопов", '/docs/2018_WorkshopProgramEN-RU_v1.6.pdf', target: "_blank" %></p>
@@ -78,37 +80,35 @@
         <p>В день выступления Вы  должны разместить свой плакат в соответствии с номером, который Вы получите при регистрации. <b>По результатам работы членов Экспертной Комиссии будут определены победители сессии</b>.</p>
         <p>После окончания постерной сессии, пожалуйста, снимите плакат. Организационный комитет не несет ответственности за постеры, неубранные вовремя.</p>
         <p>Рекомендации по подготовке стендового доклада - <%= link_to "Стендовые требования", '/docs/stand.docx' %></p>
-      </div>
+      </div> -->
     </div>
   </div>
   <div class="col-md-6">
     <div class="invite_wrapper_dates">
       <h3>Важные даты</h3>
       <ul>
-        <li>20 июня – завершение приема докладов</li>
-        <li>20 июля – извещение участников конференции о результатах рецензирования и принятии докладов</li>
-        <li>26-28 августа – проведение конференции</li>
+        <li>31 мая 2019 – завершение приема докладов</li>
       </ul>
-      <h3>Расписание работы конференции</h3>
+      <!-- <h3>Расписание работы конференции</h3>
       <ul>
         <li>26 августа – заезд участников конференции</li>
         <li>27 августа – открытие конференции, пленарное заседание, работа научных секций и тематических семинаров</li>
         <li>28 августа – пленарное заседание, секция стендовых докладов, культурная программа, закрытие конференции</li>
-      </ul>
+      </ul> -->
       <h3>Информационное письмо и программа</h3>
       <p>Рабочие языки конференции: русский и английский.</p>
       <ul>
-        <li><%= link_to "Информационное письмо (Рус.)", '/docs/Inform1_v3.0.docx' %></li>
-        <li><%= link_to "Программа конференции / Program", '/docs/2018_Program_EN_RU_v2.6.pdf', target: "_blank" %></li>
+        <li><%= link_to "Информационное письмо (Рус.)", '/docs/inform1_v1.1.docx' %></li>
+        <!-- <li><%= link_to "Программа конференции / Program", '/docs/2018_Program_EN_RU_v2.6.pdf', target: "_blank" %></li>
         <li><%= link_to "Программа секций / Workshops program", '/docs/2018_WorkshopProgramEN-RU_v1.6.pdf', target: "_blank" %></li>
         <li><%= link_to "О компенсации транспортных расходов", '/docs/tickets2018_v1.pdf', target: "_blank" %></li>
         <li><%= link_to "Стендовые требования", '/docs/stand.docx' %></li>
-        <li><%= link_to "Список участников", '/docs/participants_list_CISKC_2018.pdf', target: "_blank" %></li>
+        <li><%= link_to "Список участников", '/docs/participants_list_CISKC_2018.pdf', target: "_blank" %></li> -->
       </ul>
     </div>
     <div class="invite_wrapper_dates">
       <h3>Контакты оргкомитета</h3>
-      <p><b>ВАЖНО!</b> Просьба указывать в теме письма «АНТОК-2018».</p>
+      <p><b>ВАЖНО!</b> Просьба указывать в теме письма «АНТОК-2019».</p>
       <p>Email: <a href="mailto:AKSTSRussia@gmail.com">AKSTSRussia@gmail.com</a></p>
       <div class="respect">
         С уважением,<br/>
