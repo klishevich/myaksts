@@ -14,14 +14,23 @@
       <%= render 'layouts/nav' %>
       <%= render 'layouts/messages' %>
       <div class="row banners">
-        <div class="col-md-2 hidden-xs hidden-sm banner">
-          <a href="http://www.aksts.ru/" target="_blank">
-            <%= image_tag "banner_aksts2_a.jpg", class: "img-responsive" %>
+        <!-- DESKTOP BANNERS -->
+        <div class="col-md-1 hidden-xs hidden-sm banner">
+          <a href="http://www.ntokaxak.kz/" target="_blank">
+            <%= image_tag "banner_kahak_a1.png", class: "img-responsive" %>
           </a>
+        </div>
+        <div class="col-md-1 hidden-xs hidden-sm banner">
+          <%= image_tag "banner_tinbo_a1.png", class: "img-responsive" %>
         </div>
         <div class="col-md-2 hidden-xs hidden-sm banner">
           <a href="http://www.kofst.or.kr/kofst_us/index.html" target="_blank">
             <%= image_tag "banner_kofst2_a.jpg", class: "img-responsive" %>
+          </a>
+        </div>
+        <div class="col-md-2 hidden-xs hidden-sm banner">
+          <a href="http://www.aksts.ru/" target="_blank">
+            <%= image_tag "banner_aksts2_a.jpg", class: "img-responsive" %>
           </a>
         </div>
         <div class="col-md-2 hidden-xs hidden-sm banner">
@@ -39,28 +48,21 @@
             <%= image_tag "banner_mdkm_a1.png", class: "img-responsive" %>
           </a>
         </div>
-        <div class="col-md-1 hidden-xs hidden-sm banner">
-          <a href="http://gazeta-rk.ru/" target="_blank">
-            <%= image_tag "banner_rk_a.jpg", class: "img-responsive" %>
-          </a>
-        </div>
-        <div class="col-md-1 hidden-xs hidden-sm banner">
-          <a href="http://www.ntokaxak.kz/" target="_blank">
-            <%= image_tag "banner_kahak_a1.png", class: "img-responsive" %>
-          </a>
-        </div>
-        <div class="col-md-1 hidden-xs hidden-sm banner">
-          <%= image_tag "banner_tinbo_a1.png", class: "img-responsive" %>
-        </div>
 
+        <!-- MOBILE BANNERS -->
         <div class="hidden-md hidden-lg banner">
-          <a href="http://www.aksts.ru/" target="_blank">
-            <%= image_tag "banner_aksts2_b.jpg", class: "img-responsive" %>
+          <a href="http://www.ntokaxak.kz/" target="_blank">
+            <%= image_tag "banner_kahak_tinbo.jpg", class: "img-responsive" %>
           </a>
         </div>
         <div class="hidden-md hidden-lg banner">
           <a href="http://www.kofst.or.kr/kofst_us/index.html" target="_blank">
             <%= image_tag "banner_kofst2_b.jpg", class: "img-responsive" %>
+          </a>
+        </div>
+        <div class="hidden-md hidden-lg banner">
+          <a href="http://www.aksts.ru/" target="_blank">
+            <%= image_tag "banner_aksts2_b.jpg", class: "img-responsive" %>
           </a>
         </div>
         <div class="hidden-md hidden-lg banner">
@@ -76,16 +78,6 @@
         <div class="hidden-md hidden-lg banner">
           <a href="https://vk.com/mdkm_rf" target="_blank">
             <%= image_tag "banner_mdkm_b.png", class: "img-responsive" %>
-          </a>
-        </div>
-        <div class="hidden-md hidden-lg banner">
-          <a href="http://gazeta-rk.ru/" target="_blank">
-            <%= image_tag "banner_rk_b.jpg", class: "img-responsive" %>
-          </a>
-        </div>
-        <div class="hidden-md hidden-lg banner">
-          <a href="http://www.ntokaxak.kz/" target="_blank">
-            <%= image_tag "banner_kahak_tinbo.jpg", class: "img-responsive" %>
           </a>
         </div>
       </div>

@@ -330,6 +330,7 @@ en:
   step2_warning: "Please, check the application before submitting. After the submitting it will become unedittablte."
   step2_application_sent: "Your application has been sent. Thank you!"
   step3_apply_btn: "Send files (step 3)"
+  step3_apply_btn_long: "Send paper and examination certificate"
   step3_view_btn: "View files (step 3)"
   step3_title: "Sending Your Presentation"
   step3_files_sent: "Your files has been sent"
@@ -389,10 +390,10 @@ en:
   st_bachelor: "Bachelor"
   st_student: "Student"
   find_antokid: "Find AKSTS ID"
-  your_login: "Your login for personal member page http://conf2018.aksts.ru - "
+  your_login: "Your login for personal member page http://conf2019.aksts.ru - "
   home_conf_description: 'Для участия в конференции необходимо подать заявку через сайт. Если Вы уже зарегистировались на эту конференцию и хотите просмотреть информацию по своей заявке, нажмите кнопку "Вход". (rus)'
   need_hotel_collection:
     no_need: "No"
-    need_26_27: "From 26 to 27 August"
-    need_27_28: "From 27 to 28 August"
-    need_26_28: "From 26 to 28 August"
+    need_29_30: "From 29 to 30 August"
+    need_30_31: "From 30 to 31 August"
+    need_29_31: "From 29 to 31 August"

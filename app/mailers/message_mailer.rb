@@ -1,5 +1,5 @@
 class MessageMailer < ActionMailer::Base
-  default from: "no-reply@conf2018.aksts.ru"
+  default from: "no-reply@conf2019.aksts.ru"
 
   def send_message_email(title, message, email)
     @message = message
