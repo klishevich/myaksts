@@ -20,7 +20,7 @@ class Applic < ActiveRecord::Base
   validates :work_company_short, presence: true, length: {minimum: 3}
   validates :work_city, presence: true
   validates :work_position, presence: true, length: {minimum: 5}
-  validates :need_hotel, presence: true
+  # validates :need_hotel, presence: true
   validates :birth_date, presence: true
   validates :participation_type, presence: true
 
