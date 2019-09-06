@@ -1,0 +1,21 @@
+<h1 id="h1_all_applics">Сертификаты участников AKSTS-2019</h1>
+<br/>
+
+<table class="table table-striped">
+  <tr>
+    <th>№</th>
+    <th>ФИО</th>
+    <th>Тип участия</th>
+    <th/>
+    <th/>
+  </tr>
+  <% @applics.each_with_index do |applic, index| %>
+  <tr>
+    <td><%= index + 1 %></td>
+    <td><%= applic.fio %></td>
+    <td><%= applic.participation_type == "participance_no_report" ? 'Очное без доклада' : applic.participation_type %></td>
+    <td><%= link_to 'на русском', '/certificates/' + applic.id.to_s %></td>
+    <td><%= link_to 'in english', '/certificates/' + applic.id.to_s + '/edit' %></td>
+  </tr>
+  <% end %>
+</table>
