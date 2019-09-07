@@ -320,6 +320,7 @@ en:
   home_link_log_out: "Log out"
   home_link_log_in: "Log in"
   sign_up_registration: "Register"
+  home_link_certificates: "Certificates"
   sign_up_info: "Step 1: Create new account"
   step1_view_btn: "Browse my account (step 1)"
   step2_apply_btn: "Submit conference application (step 2)"
