@@ -5,3 +5,13 @@
   text-align: center;
   width: 851px
 }
+
+.sign {
+  position: absolute;
+  top: 890px;
+  left: 150px;
+}
+
+.sign img {
+  width: 200px;
+}
