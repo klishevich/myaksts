@@ -1,6 +1,6 @@
 <%= render 'shared/error_messages', object: f.object %>
 <h3><%= t(:participance_info) %></h3>
-<%= f.input :participation_type, collection: [[t(:choose_value),""], [t(:participance), "Очное"], [t(:participance_no_report), "participance_no_report"], [t(:publications_only), "Заочное"]], selected: @applic.participation_type, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
+<%= f.input :participation_type, collection: [[t(:choose_value),""], [t(:participance), "participance"], [t(:participance_no_report), "participance_no_report"], [t(:publications_only), "publications_only"]], selected: @applic.participation_type, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
 <%#= f.input :need_hotel, collection: Applic.need_hotel_collection, selected: @applic.need_hotel, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
 <h3><%= t(:personal_info) %></h3>
 <%= f.input :fio, :input_html => { :class => 'form-control' } %>
