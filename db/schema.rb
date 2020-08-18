@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20180610084525) do
+ActiveRecord::Schema.define(:version => 20200818135632) do
 
   create_table "antok_members", :force => true do |t|
     t.string   "antok_id"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(:version => 20180610084525) do
     t.string   "acad_position"
     t.string   "work_company_short"
     t.string   "need_hotel"
+    t.integer  "birth_year"
   end
 
   add_index "applics", ["user_id"], :name => "index_applics_on_user_id"

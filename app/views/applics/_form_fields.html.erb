@@ -1,11 +1,10 @@
 <%= render 'shared/error_messages', object: f.object %>
 <h3><%= t(:participance_info) %></h3>
-<%= f.input :participation_type, collection: [[t(:choose_value),""], [t(:participance), "participance"], [t(:participance_no_report), "participance_no_report"], [t(:publications_only), "publications_only"]], selected: @applic.participation_type, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
+<%= f.input :participation_type, collection: [[t(:choose_value),""], [t(:participance), "participance"], [t(:publications_only), "publications_only"]], selected: @applic.participation_type, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
 <%#= f.input :need_hotel, collection: Applic.need_hotel_collection, selected: @applic.need_hotel, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
 <h3><%= t(:personal_info) %></h3>
 <%= f.input :fio, :input_html => { :class => 'form-control' } %>
-<%= f.input :fio_eng, :input_html => { :class => 'form-control' } %>
-<%= f.input :birth_date, :as => :date_picker, :input_html => { :class => 'form-control' } %>
+<%= f.input :birth_year, :input_html => { :class => 'form-control' } %>
 <%= f.input :email, :input_html => { :class => 'form-control' } %>
 <%= f.input :phones, :input_html => { :class => 'form-control' }, hint: "10 знаков, пример ввода 9161234567 / 4951234567" %>
 <%= f.input :phone_work, :input_html => { :class => 'form-control' } %>
@@ -14,7 +13,6 @@
 <%= f.input :uch_zvanie, collection: [[t(:choose_value),""], ["Нет", "Нет"], ["Доцент", "доцент"], ["Профессор", "Профессор"], ["Член-корреспондент", "Член-корр."], ["Академик", "Академик"]], selected: @applic.uch_zvanie, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
 <h3><%= t(:work) %></h3>
 <%= f.input :work_company, :input_html => { :class => 'form-control' } %>
-<%= f.input :work_company_short, :input_html => { :class => 'form-control' } %>
 <%= f.input :work_country, as: :string, :input_html => { :class => 'form-control' } %>
 <%= f.input :work_city, :input_html => { :class => 'form-control' } %>
 <%= f.input :work_position, :input_html => { :class => 'form-control' } %>
