@@ -73,7 +73,7 @@ Myaksts::Application.configure do
     password: ENV["GMAIL_PASSWORD"]
   }
 
-  config.action_mailer.default_url_options = { :host => 'conf2020.aksts.ru' }
+  config.action_mailer.default_url_options = { :host => 'conf2021.aksts.ru' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   # config.action_mailer.delivery_method = :sendmail

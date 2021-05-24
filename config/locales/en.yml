@@ -312,6 +312,7 @@ en:
   work_specialization: "Specialization"
   conf_coauthors: "Co-Authors"
   home_conf_antok: "XVII МЕЖДУНАРОДНАЯ КОНФЕРЕНЦИЯ ПО НАУКЕ И ТЕХНОЛОГИЯМ (rus)"
+  home_conf_moto: "Thirty years of Networking in Science!"
   home_link_home: "Home"
   home_link_message: "Welcome"
   home_link_about: "About AKSTS"
@@ -391,7 +392,7 @@ en:
   st_bachelor: "Bachelor"
   st_student: "Student"
   find_antokid: "Find AKSTS ID"
-  your_login: "Your login for personal member page http://conf2020.aksts.ru - "
+  your_login: "Your login for personal member page http://conf2021.aksts.ru - "
   home_conf_description: 'Для участия в конференции необходимо подать заявку через сайт. Если Вы уже зарегистировались на эту конференцию и хотите просмотреть информацию по своей заявке, нажмите кнопку "Вход". (rus)'
   need_hotel_collection:
     no_need: "No"
