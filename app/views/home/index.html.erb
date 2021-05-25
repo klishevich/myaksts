@@ -42,6 +42,9 @@
           <!-- <h4><%= t :home_conf_description %></h4> -->
           <div class="buttons">
             <br/>
+            <p><%= link_to t(:sign_up), (new_user_registration_path + '#new_registration'), class: "btn btn-primary btn-lg" %></p>
+            <p><%= t(:or) %></p>
+            <p><%= link_to t(:home_link_log_in), new_user_session_path, class: "btn btn-default btn-lg"%></p>
           </div>
         </div>
       <% end %>
