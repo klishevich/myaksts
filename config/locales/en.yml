@@ -396,6 +396,6 @@ en:
   home_conf_description: 'Для участия в конференции необходимо подать заявку через сайт. Если Вы уже зарегистировались на эту конференцию и хотите просмотреть информацию по своей заявке, нажмите кнопку "Вход". (rus)'
   need_hotel_collection:
     no_need: "No"
-    need_29_30: "From 29 to 30 August"
-    need_30_31: "From 30 to 31 August"
-    need_29_31: "From 29 to 31 August"
+    need_26_27: "From 26 to 27 August"
+    need_27_28: "From 27 to 28 August"
+    need_26_28: "From 26 to 28 August"

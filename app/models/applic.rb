@@ -20,7 +20,7 @@ class Applic < ActiveRecord::Base
   # validates :work_company_short, presence: true, length: {minimum: 3}
   validates :work_city, presence: true
   validates :work_position, presence: true, length: {minimum: 5}
-  # validates :need_hotel, presence: true
+  validates :need_hotel, presence: true
   # validates :birth_date, presence: true
   validates :birth_year, presence: true
   validates :participation_type, presence: true
@@ -53,9 +53,9 @@ class Applic < ActiveRecord::Base
     return [
       [I18n.t(:choose_value), ""],
       [I18n.t('need_hotel_collection.no_need'), 'no_need'],
-      [I18n.t('need_hotel_collection.need_29_30'), 'need_29_30'],
-      [I18n.t('need_hotel_collection.need_30_31'), 'need_30_31'],
-      [I18n.t('need_hotel_collection.need_29_31'), 'need_29_31']
+      [I18n.t('need_hotel_collection.need_26_27'), 'need_26_27'],
+      [I18n.t('need_hotel_collection.need_27_28'), 'need_27_28'],
+      [I18n.t('need_hotel_collection.need_26_28'), 'need_26_28']
     ]
   end
 end
