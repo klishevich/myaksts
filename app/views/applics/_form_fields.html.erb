@@ -21,7 +21,7 @@
   <%= f.input :antok_city, collection: [[t(:choose_value),""], [t(:moscow),"Москва"], [t(:kaliningrad),"Калининград"], [t(:voronezh), "Воронеж"], [t(:ekaterinburg), "Екатеринбург"], [t(:novosibirsk),"Новосибирск"], [t(:krasnoyarsk),"Красноярск"], [t(:vladivostok),"Владивосток"], [t(:uz_sakhalinsk),"Южно-Сахалинск"]], selected: @applic.antok_city, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
 <% end %>
 <h3><%= t(:applicaion_info) %></h3>
-<%= f.input :conf_section, collection: [[t(:choose_value),""],["Блок А: Биотехнологии, химия и общественные науки","Блок А"], ["Блок В: Физика, математика и IT", "Блок В"], ["Блок С: Инженерные науки, новые материалы и науки о земле","Блок С"], ["Блок D: История","Блок D"]], selected: @applic.conf_section, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
+<%= f.input :conf_section, collection: [[t(:choose_value),""],["Блок А: инженерные науки","Блок А"], ["Блок В: математика и информационные технологии", "Блок В"], ["Блок С: биотехнологии и медицина","Блок С"], ["Блок D: химия и новые материалы","Блок D"], ["Блок E: физика и науки о земле","Блок E"], ["Блок F: общественные науки история","Блок F"]], selected: @applic.conf_section, :input_html => { :class => 'form-control' }, label_method: :first, value_method: :last %>
 <%= f.input :science_interests, as: :text, :input_html => { :class => 'form-control' } %>
 <div class="participance_no_report_hide">
   <%= f.input :conf_topic, as: :text, :input_html => { :class => 'form-control' } %>
