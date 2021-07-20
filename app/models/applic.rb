@@ -11,7 +11,7 @@ class Applic < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :fio, presence: true, length: {minimum: 5}
-  # validates :fio_eng, presence: true, length: {minimum: 5}
+  validates :fio_eng, presence: true, length: {minimum: 5}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}  
   # validates :uch_zvanie, presence: true
