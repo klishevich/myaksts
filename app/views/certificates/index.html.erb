@@ -1,8 +1,9 @@
-<h1 id="h1_all_applics">Сертификаты участников AKSTS-2020</h1>
+<h1 id="h1_all_applics">Сертификаты участников AKSTS-2021</h1>
 <br/>
 <p style="font-weight: bold;">Чтобы сохранить сертификат откройте его по ссылке "просмотреть сертификат", нажмите кнопку печать и выберите опцию "сохранить PDF"</p>
 <p><%= link_to 'Пример настроек сохранения сертификата', 'sertSave.png', target: "_blank" %></p>
-<p>Если у вас проблемы с сохранением сертификата или требуется английская его версия, напишите на емайл info@codingbootcamp.ru письмо с темой "Сертификат конференции АНТОК-2020" в письме укажите ваше ФИО и какой требуется сертификат английский или русский. При заказе английского сертификата указывайте ваше имя и фамилию на английском.</p>
+<p>Если у вас проблемы с сохранением сертификата или требуется английская его версия, напишите на емайл info@codingbootcamp.ru письмо с темой "Сертификат конференции АНТОК-2021" в письме укажите ваше ФИО и какой требуется сертификат английский или русский. При заказе английского сертификата указывайте ваше имя и фамилию на английском.</p>
+<p>If you need an English version of ceftificate please contact me by email info@codingbootcamp.ru with subject "Certificate AKSTS-2021" and please provide your name in English</p>
 <br/>
 
 <table class="table table-striped">
@@ -19,7 +20,7 @@
     <td><%= applic.fio %></td>
     <td><%= applic.participation_type == "participance_no_report" ? 'Очное без доклада' : applic.participation_type %></td>
     <td><%= link_to 'просмотреть сертификат', '/certificates/' + applic.id.to_s %></td>
-    <td><%= link_to 'in english', '/certificates/' + applic.id.to_s + '/edit' %></td>
+    <!-- <td><%= link_to 'in english', '/certificates/' + applic.id.to_s + '/edit' %></td> -->
   </tr>
   <% end %>
 </table>
