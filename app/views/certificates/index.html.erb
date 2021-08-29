@@ -19,7 +19,7 @@
     <td><%= applic.fio %></td>
     <td><%= applic.participation_type == "participance_no_report" ? 'Очное без доклада' : applic.participation_type %></td>
     <td><%= link_to 'просмотреть сертификат', '/certificates/' + applic.id.to_s %></td>
-    <!-- <td><%= link_to 'in english', '/certificates/' + applic.id.to_s + '/edit' %></td> -->
+    <td><%= link_to 'in english', '/certificates/' + applic.id.to_s + '/edit' %></td>
   </tr>
   <% end %>
 </table>
