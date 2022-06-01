@@ -238,7 +238,7 @@ en:
         work_department: "Department"
         work_position: "Position"
         work_specialization: "Specialization (example: chemistry, power engineering, aerospace, new materials, biotechnologies, applied math, IT)"
-        antok_city: "Nearest AKSTS regional chapter (if applicable)"
+        antok_city: "Nearest region"
         public_organizations: "I'm a member of the following non-profit organizations (list)"
         science_interests: "Field of scientific or professional interests"
         conf_topic: "Title of my Conference talk is"
@@ -247,7 +247,7 @@ en:
         participation_type: "Full time paticipation or Distance involved"
         need_compensation: "Do you need compensation of transport expences?"
         inn: "INN"
-        snils: "Social Identification Number"
+        snils: "T-short size"
         registration: "Permanent registration address"
         need_hotel: "Need hotel?"
       kofst_applic:
@@ -354,6 +354,8 @@ en:
   kaliningrad: "Kaliningrad"
   uz_sakhalinsk: "Yuzhno-Sakhalinsk"
   vladivostok: "Vladivostok"
+  khabarovsk: "Khabarovsk"
+  primor_sakhalin: "Primorsky territory and Sakhalin"
   physics_maths: "Physics, Maths"
   it_nanothechnologies: "Information- (IT) and Nano- thechnologies"
   power_electrical_engineering: "Power and Electrical engineering, Machinery, Mechanics"
@@ -396,6 +398,6 @@ en:
   home_conf_description: 'Для участия в конференции необходимо подать заявку через сайт. Если Вы уже зарегистировались на эту конференцию и хотите просмотреть информацию по своей заявке, нажмите кнопку "Вход". (rus)'
   need_hotel_collection:
     no_need: "No"
+    need_25_26: "From 25 to 26 August"
     need_26_27: "From 26 to 27 August"
-    need_27_28: "From 27 to 28 August"
-    need_26_28: "From 26 to 28 August"
+    need_25_27: "From 25 to 27 August"

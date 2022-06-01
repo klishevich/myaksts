@@ -13,8 +13,8 @@
         <Cell><Data ss:Type="String">Член АНТОК</Data></Cell>
         <Cell><Data ss:Type="String">ID АНТОК</Data></Cell>
         <Cell><Data ss:Type="String">ФИО</Data></Cell>
-        <Cell><Data ss:Type="String">ФИО по-английски</Data></Cell>
-        <Cell><Data ss:Type="String">Дата рождения</Data></Cell>
+        <Cell><Data ss:Type="String">Фамилия и имя по-английски</Data></Cell>
+        <Cell><Data ss:Type="String">Год рождения</Data></Cell>
         <Cell><Data ss:Type="String">Email</Data></Cell>
         <Cell><Data ss:Type="String">Мобильный телефон</Data></Cell>
         <Cell><Data ss:Type="String">Рабочий телефон</Data></Cell>
@@ -22,7 +22,6 @@
         <Cell><Data ss:Type="String">Ученое звание</Data></Cell>
         <Cell><Data ss:Type="String">Ученая степень</Data></Cell>
         <Cell><Data ss:Type="String">Компания</Data></Cell>
-        <Cell><Data ss:Type="String">Компания сокращ.</Data></Cell>
         <Cell><Data ss:Type="String">Страна</Data></Cell>
         <Cell><Data ss:Type="String">Город</Data></Cell>
         <Cell><Data ss:Type="String">Должность</Data></Cell>
@@ -33,6 +32,7 @@
         <Cell><Data ss:Type="String">Соавторы</Data></Cell>
         <Cell><Data ss:Type="String">Тип участия</Data></Cell>
         <Cell><Data ss:Type="String">Нужна ли гостиница</Data></Cell>
+        <Cell><Data ss:Type="String">Размер футболки</Data></Cell>
         <Cell><Data ss:Type="String">Отправлен доклад</Data></Cell>
         <Cell><Data ss:Type="String">ID доклада</Data></Cell>
         <Cell><Data ss:Type="String">Дата изменения доклада</Data></Cell>
@@ -46,7 +46,7 @@
         <Cell><Data ss:Type="String"><%= applic.user.antok_id %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.fio %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.fio_eng %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= applic.birth_date %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.birth_year %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.email %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.phones %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.phone_work %></Data></Cell>
@@ -54,7 +54,6 @@
         <Cell><Data ss:Type="String"><%= applic.uch_zvanie %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.uch_stepen %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.work_company %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= applic.work_company_short %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.work_country %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.work_city %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.work_position %></Data></Cell>
@@ -65,6 +64,7 @@
         <Cell><Data ss:Type="String"><%= applic.conf_coauthors %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.participation_type %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.need_hotel %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= applic.snils %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.applic_file ? "Да" : "Нет" %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.applic_file ? applic.applic_file.id : "" %></Data></Cell>
         <Cell><Data ss:Type="String"><%= applic.applic_file ? applic.applic_file.updated_at.strftime("%d.%m.%Y") : "" %></Data></Cell>
